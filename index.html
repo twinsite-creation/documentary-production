@@ -481,6 +481,61 @@
       }
 
       /* ─── POPULAR FILMS ─── */
+      /* ─── FILM ACCORDION EXPAND ─── */
+      .film-expand {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition:
+          max-height 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+          opacity 0.4s ease;
+        opacity: 0;
+        z-index: 4;
+        background: linear-gradient(
+          to top,
+          rgba(10, 9, 6, 0.98) 0%,
+          rgba(10, 9, 6, 0.7) 100%
+        );
+      }
+      .film-card.film-open .film-expand {
+        max-height: 160px;
+        opacity: 1;
+      }
+      .film-expand-inner {
+        padding: 20px 16px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .film-expand-genre {
+        font-family: var(--font-display);
+        font-size: 9px;
+        letter-spacing: 0.3em;
+        color: var(--gold);
+        text-transform: uppercase;
+      }
+      .film-expand-desc {
+        font-family: var(--font-mono);
+        font-size: 13px;
+        color: var(--bone);
+        line-height: 1.6;
+        font-weight: 300;
+        letter-spacing: 0.01em;
+      }
+      /* Active card ring */
+      .film-card.film-open {
+        outline: 1px solid rgba(184, 151, 106, 0.35);
+        box-shadow:
+          0 0 0 1px rgba(184, 151, 106, 0.12),
+          0 24px 80px rgba(0, 0, 0, 0.7);
+      }
+      /* Keep label visible when open */
+      .film-card.film-open .film-card-label {
+        opacity: 0; /* expand panel replaces it */
+      }
       #films {
         padding: 140px 52px;
         overflow: hidden;
@@ -1414,7 +1469,7 @@
       </div>
     </section>
 
-    <!-- Popular Films -->
+    <!-- Popular Films 
     <section id="films">
       <div class="section-label reveal">
         <span>Selected Works</span>
@@ -1461,6 +1516,104 @@
             alt="Film 5"
           />
           <div class="film-card-label">Silent Archive — 2019</div>
+        </div>
+      </div>
+    </section>-->
+
+    <!-- Popular Films -->
+    <section id="films">
+      <div class="section-label reveal">
+        <span>Selected Works</span>
+      </div>
+      <div class="films-header">
+        <h2 class="films-title reveal">
+          The films that<br />changed perspectives
+        </h2>
+        <div class="films-count reveal reveal-delay-1">— 18 productions</div>
+      </div>
+
+      <div class="films-orbit" id="filmsOrbit">
+        <div class="film-card" data-film="shadows-of-kyiv">
+          <img
+            src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600&q=80"
+            alt="Film 1"
+          />
+          <div class="film-card-label">Shadows of Kyiv — 2022</div>
+          <div class="film-expand">
+            <div class="film-expand-inner">
+              <span class="film-expand-genre">Feature · 2022</span>
+              <p class="film-expand-desc">
+                An intimate portrait of a city's transformation during times of
+                radical change, told through the voices of those who stayed.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="film-card" data-film="the-last-witness">
+          <img
+            src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=700&q=80"
+            alt="Film 2"
+          />
+          <div class="film-card-label">The Last Witness — 2021</div>
+          <div class="film-expand">
+            <div class="film-expand-inner">
+              <span class="film-expand-genre">Short · 2021</span>
+              <p class="film-expand-desc">
+                Three elderly witnesses to the 20th century's most pivotal
+                moment — their memories as the final thread between past and
+                oblivion.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="film-card" data-film="dust-and-memory">
+          <img
+            src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=500&q=80"
+            alt="Film 3"
+          />
+          <div class="film-card-label">Dust & Memory — 2020</div>
+          <div class="film-expand">
+            <div class="film-expand-inner">
+              <span class="film-expand-genre">Feature · 2020</span>
+              <p class="film-expand-desc">
+                A meditation on what we choose to remember and what time erases.
+                Shot across five Eastern European cities over two years.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="film-card" data-film="iron-cartography">
+          <img
+            src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=600&q=80"
+            alt="Film 4"
+          />
+          <div class="film-card-label">Iron Cartography — 2023</div>
+          <div class="film-expand">
+            <div class="film-expand-inner">
+              <span class="film-expand-genre">Feature · 2023</span>
+              <p class="film-expand-desc">
+                Mapping the invisible borders drawn by conflict — a visual essay
+                on how war reshapes geography and identity simultaneously.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="film-card" data-film="silent-archive">
+          <img
+            src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=500&q=80"
+            alt="Film 5"
+          />
+          <div class="film-card-label">Silent Archive — 2019</div>
+          <div class="film-expand">
+            <div class="film-expand-inner">
+              <span class="film-expand-genre">Short · 2019</span>
+              <p class="film-expand-desc">
+                A journey through the forgotten footage of Ukrainian cinema from
+                the 1960s and what it reveals about a suppressed artistic
+                identity.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1937,6 +2090,80 @@
           b.style.transform = `rotate(${i === 0 ? -8 : i === 2 ? 6 : 0}deg) translateY(${s * (i + 1) * 0.3}px)`;
         });
       });
+
+      /* ─── FILM ACCORDION + DEEP LINKING ─── */
+      (function () {
+        const HASH_PREFIX = "films-";
+        const cards = document.querySelectorAll(".film-card[data-film]");
+
+        function openFilm(targetId, scroll) {
+          let opened = null;
+          cards.forEach((card) => {
+            const id = card.dataset.film;
+            if (id === targetId) {
+              card.classList.add("film-open");
+              opened = card;
+            } else {
+              card.classList.remove("film-open");
+            }
+          });
+
+          if (opened && scroll) {
+            setTimeout(() => {
+              const rect = opened.getBoundingClientRect();
+              const offset = window.scrollY + rect.top - 120;
+              window.scrollTo({ top: offset, behavior: "smooth" });
+            }, 80);
+          }
+        }
+
+        function closeAll() {
+          cards.forEach((card) => card.classList.remove("film-open"));
+        }
+
+        function updateHash(id) {
+          const hash = id ? `#${HASH_PREFIX}${id}` : "#films";
+          history.pushState(null, "", hash);
+        }
+
+        cards.forEach((card) => {
+          card.addEventListener("click", () => {
+            const id = card.dataset.film;
+            const isOpen = card.classList.contains("film-open");
+
+            if (isOpen) {
+              closeAll();
+              updateHash(null);
+            } else {
+              openFilm(id, false);
+              updateHash(id);
+            }
+          });
+        });
+
+        // Auto-open from URL on load
+        function initFromHash() {
+          const hash = window.location.hash; // e.g. #films-shadows-of-kyiv
+          if (hash.startsWith(`#${HASH_PREFIX}`)) {
+            const id = hash.slice(HASH_PREFIX.length + 1);
+            // Wait for gather animation to complete, then open + scroll
+            setTimeout(() => openFilm(id, true), 1000);
+          }
+        }
+
+        // Also handle browser back/forward
+        window.addEventListener("popstate", () => {
+          const hash = window.location.hash;
+          if (hash.startsWith(`#${HASH_PREFIX}`)) {
+            const id = hash.slice(HASH_PREFIX.length + 1);
+            openFilm(id, true);
+          } else {
+            closeAll();
+          }
+        });
+
+        initFromHash();
+      })();
     </script>
   </body>
 </html>
