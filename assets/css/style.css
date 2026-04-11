@@ -858,6 +858,14 @@ section {
   margin-bottom: 10px;
   letter-spacing: 0.02em;
 }
+.prod-title a {
+  text-decoration: none;
+  color: var(--cream);
+}
+
+.prod-title a:hover {
+  color: var(--gold);
+}
 .prod-desc {
   font-size: 18px;
 
