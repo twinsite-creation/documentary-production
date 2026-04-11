@@ -1,294 +1,95 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Iryna Bondar — Cinematographer · MOVIE Studio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Syncopate:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --black: #0a0906;
-      --deep: #110f0c;
-      --ash: #2c2825;
-      --smoke: #8a7f75;
-      --bone: #d1cec9;
-      --cream: #e8dfd2;
-      --gold: #b8976a;
-      --gold-dim: #7a6148;
-      --white: #f0e8dc;
-      --font-display: "Syncopate", sans-serif;
-      --font-mono: "Space Mono", monospace;
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--black);
-      color: var(--cream);
-      font-family: var(--font-mono);
-      overflow-x: hidden;
-      font-size: 18px;
-      min-height: 100vh;
-    }
-    .page-nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 28px 52px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(10, 9, 6, 0.88);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(184, 151, 106, 0.06);
-    }
-    .nav-home {
-      font-family: var(--font-display);
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.3em;
-      color: var(--white);
-      text-decoration: none;
-    }
-    .nav-back-links { display: flex; gap: 32px; align-items: center; }
-    .nav-back-links a {
-      font-family: var(--font-display);
-      font-size: 10px;
-      letter-spacing: 0.25em;
-      color: var(--smoke);
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: color 0.3s ease;
-    }
-    .nav-back-links a:hover { color: var(--gold); }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iryna Bondar — Cinematographer · MOVIE Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Syncopate:wght@400;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+  </head>
+  <body>
+    <nav class="page-nav">
+      <a href="../../" class="nav-home">MOVIE</a>
+      <div class="nav-back-links">
+        <a href="../../">← Home</a>
+        <a href="../../#team">← Team</a>
+      </div>
+    </nav>
 
-    .profile-hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding-top: 90px;
-    }
-    .profile-image-col {
-      position: sticky;
-      top: 90px;
-      height: calc(100vh - 90px);
-      overflow: hidden;
-    }
-    .profile-image-col img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: grayscale(25%) brightness(0.75) contrast(1.05);
-    }
-    .profile-image-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, transparent 60%, var(--black) 100%);
-      pointer-events: none;
-    }
-    .profile-content {
-      padding: 80px 64px 120px 80px;
-      display: flex;
-      flex-direction: column;
-    }
-    .profile-index {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      color: var(--gold-dim);
-      margin-bottom: 20px;
-    }
-    .profile-role {
-      font-family: var(--font-display);
-      font-size: 10px;
-      letter-spacing: 0.4em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .profile-role::before {
-      content: "";
-      width: 32px;
-      height: 1px;
-      background: var(--gold-dim);
-      opacity: 0.5;
-    }
-    .profile-name {
-      font-family: var(--font-mono);
-      font-size: clamp(36px, 4vw, 60px);
-      font-weight: 300;
-      color: var(--white);
-      line-height: 1.1;
-      letter-spacing: 0.01em;
-      margin-bottom: 56px;
-    }
-    .divider {
-      width: 40px;
-      height: 1px;
-      background: var(--gold-dim);
-      opacity: 0.4;
-      margin-bottom: 40px;
-    }
-    .profile-bio {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      margin-bottom: 64px;
-    }
-    .profile-bio p {
-      font-size: 17px;
-      color: var(--bone);
-      line-height: 1.85;
-      font-weight: 300;
-      letter-spacing: 0.02em;
-    }
-    .filmography-label {
-      font-family: var(--font-display);
-      font-size: 10px;
-      letter-spacing: 0.35em;
-      color: var(--gold-dim);
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 32px;
-    }
-    .filmography-label::before {
-      content: "";
-      width: 32px;
-      height: 1px;
-      background: var(--gold-dim);
-      opacity: 0.5;
-    }
-    .filmography-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      margin-bottom: 80px;
-    }
-    .filmography-list li {
-      border-top: 1px solid rgba(255,255,255,0.05);
-      padding: 20px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      transition: border-color 0.3s ease;
-    }
-    .filmography-list li:last-child { border-bottom: 1px solid rgba(255,255,255,0.05); }
-    .filmography-list li:hover { border-color: rgba(184, 151, 106, 0.2); }
-    .film-entry-title a {
-      font-family: var(--font-mono);
-      font-size: 18px;
-      color: var(--cream);
-      text-decoration: none;
-      letter-spacing: 0.02em;
-      transition: color 0.3s ease;
-    }
-    .film-entry-title a:hover { color: var(--gold); }
-    .film-entry-meta {
-      font-family: var(--font-display);
-      font-size: 9px;
-      letter-spacing: 0.25em;
-      color: var(--smoke);
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-    .profile-footer-nav {
-      display: flex;
-      gap: 32px;
-      padding-top: 40px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-    .profile-footer-nav a {
-      font-family: var(--font-display);
-      font-size: 10px;
-      letter-spacing: 0.3em;
-      color: var(--smoke);
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: color 0.3s ease;
-    }
-    .profile-footer-nav a:hover { color: var(--gold); }
-
-    @media (max-width: 900px) {
-      .page-nav { padding: 20px 24px; }
-      .profile-hero { grid-template-columns: 1fr; }
-      .profile-image-col {
-        position: relative;
-        top: auto;
-        height: 60vw;
-        max-height: 480px;
-      }
-      .profile-image-overlay {
-        background: linear-gradient(to bottom, transparent 60%, var(--black) 100%);
-      }
-      .profile-content { padding: 48px 24px 80px; }
-    }
-  </style>
-</head>
-<body>
-
-  <nav class="page-nav">
-    <a href="../../" class="nav-home">MOVIE</a>
-    <div class="nav-back-links">
-      <a href="../../">← Home</a>
-      <a href="../../#team">← Team</a>
-    </div>
-  </nav>
-
-  <main class="profile-hero">
-
-    <div class="profile-image-col">
-      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=900&q=85" alt="Iryna Bondar" />
-      <div class="profile-image-overlay"></div>
-    </div>
-
-    <div class="profile-content">
-      <div class="profile-index">03 / 03</div>
-      <div class="profile-role">Cinematographer</div>
-      <h1 class="profile-name">Iryna<br />Bondar</h1>
-
-      <div class="divider"></div>
-
-      <div class="profile-bio">
-        <p>Iryna Bondar learned to see before she learned to frame. Growing up in Lviv, she spent years photographing industrial landscapes before discovering that the camera could also hold time — not just space. Her work with light is inseparable from her understanding of loss.</p>
-        <p>She has shot five features and eleven shorts for MOVIE Studio, developing a signature approach: long exposures, minimal artificial light, and a refusal to aestheticize suffering. Her images are honest precisely because they are restrained.</p>
-        <p>Iryna studied cinematography at the Łódź Film School and was named one of Documentary Magazine's 25 New Faces of Independent Film in 2021.</p>
+    <main class="profile-hero">
+      <div class="profile-image-col">
+        <img
+          src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=900&q=85"
+          alt="Iryna Bondar"
+        />
+        <div class="profile-image-overlay"></div>
       </div>
 
-      <div class="filmography-label">Filmography</div>
-      <ul class="filmography-list">
-        <li>
-          <span class="film-entry-title"><a href="../../#productions">Iron Cartography</a></span>
-          <span class="film-entry-meta">2023 · Feature</span>
-        </li>
-        <li>
-          <span class="film-entry-title"><a href="../../#productions">Shadows of Kyiv</a></span>
-          <span class="film-entry-meta">2022 · Feature</span>
-        </li>
-        <li>
-          <span class="film-entry-title"><a href="../../#productions">The Last Witness</a></span>
-          <span class="film-entry-meta">2021 · Short</span>
-        </li>
-        <li>
-          <span class="film-entry-title"><a href="../../#productions">Silent Archive</a></span>
-          <span class="film-entry-meta">2019 · Short</span>
-        </li>
-      </ul>
+      <div class="profile-content">
+        <div class="profile-index">03 / 03</div>
+        <div class="profile-role">Cinematographer</div>
+        <h1 class="profile-name">Iryna<br />Bondar</h1>
 
-      <nav class="profile-footer-nav">
-        <a href="../../">Back to Home</a>
-        <a href="../../#team">Back to Team</a>
-      </nav>
-    </div>
+        <div class="divider"></div>
 
-  </main>
+        <div class="profile-bio">
+          <p>
+            Iryna Bondar learned to see before she learned to frame. Growing up
+            in Lviv, she spent years photographing industrial landscapes before
+            discovering that the camera could also hold time — not just space.
+            Her work with light is inseparable from her understanding of loss.
+          </p>
+          <p>
+            She has shot five features and eleven shorts for MOVIE Studio,
+            developing a signature approach: long exposures, minimal artificial
+            light, and a refusal to aestheticize suffering. Her images are
+            honest precisely because they are restrained.
+          </p>
+          <p>
+            Iryna studied cinematography at the Łódź Film School and was named
+            one of Documentary Magazine's 25 New Faces of Independent Film in
+            2021.
+          </p>
+        </div>
 
-</body>
+        <div class="filmography-label">Filmography</div>
+        <ul class="filmography-list">
+          <li>
+            <span class="film-entry-title"
+              ><a href="../../#productions">Iron Cartography</a></span
+            >
+            <span class="film-entry-meta">2023 · Feature</span>
+          </li>
+          <li>
+            <span class="film-entry-title"
+              ><a href="../../#productions">Shadows of Kyiv</a></span
+            >
+            <span class="film-entry-meta">2022 · Feature</span>
+          </li>
+          <li>
+            <span class="film-entry-title"
+              ><a href="../../#productions">The Last Witness</a></span
+            >
+            <span class="film-entry-meta">2021 · Short</span>
+          </li>
+          <li>
+            <span class="film-entry-title"
+              ><a href="../../#productions">Silent Archive</a></span
+            >
+            <span class="film-entry-meta">2019 · Short</span>
+          </li>
+        </ul>
+
+        <nav class="profile-footer-nav">
+          <a href="../../">Back to Home</a>
+          <a href="../../#team">Back to Team</a>
+        </nav>
+      </div>
+    </main>
+  </body>
 </html>
