@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Last Witness — MOVIE Documentary Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Syncopate:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      :root {
+        --black: #0a0906; --deep: #110f0c; --coal: #1a1714; --ash: #2c2825;
+        --dust: #4a4540; --smoke: #8a7f75; --bone: #d1cec9; --cream: #e8dfd2;
+        --gold: #b8976a; --gold-dim: #7a6148; --white: #f0e8dc;
+        --font-display: "Syncopate", sans-serif;
+        --font-body: "Cormorant Garamond", serif;
+        --font-mono: "Space Mono", monospace;
+      }
+      html { scroll-behavior: smooth; }
+      body { background: var(--black); color: var(--cream); font-family: var(--font-body); overflow-x: hidden; }
+      #grain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; opacity: 0.04; }
+
+      .film-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 28px 52px; display: flex; align-items: center; justify-content: space-between; background: linear-gradient(to bottom, rgba(10,9,6,0.9), transparent); transition: background 0.4s ease, padding 0.4s ease; }
+      .film-nav.scrolled { background: rgba(10,9,6,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(184,151,106,0.08); padding: 18px 52px; }
+      .nav-back { font-family: var(--font-display); font-size: 10px; letter-spacing: 0.3em; color: var(--smoke); text-decoration: none; text-transform: uppercase; display: flex; align-items: center; gap: 12px; transition: color 0.3s ease; }
+      .nav-back:hover { color: var(--gold); }
+      .nav-back::before { content: "←"; font-size: 14px; transition: transform 0.3s ease; }
+      .nav-back:hover::before { transform: translateX(-4px); }
+      .nav-logo { font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: 0.3em; color: var(--bone); text-decoration: none; transition: color 0.3s; }
+      .nav-logo:hover { color: var(--gold); }
+
+      .film-hero { min-height: 100vh; position: relative; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 52px 80px; overflow: hidden; }
+      .film-hero-bg { position: absolute; inset: 0; z-index: 0; background-image: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1600&q=85'); background-size: cover; background-position: center; filter: brightness(0.3) grayscale(15%); transform: scale(1.04); transition: transform 8s ease; }
+      .film-hero-bg.loaded { transform: scale(1); }
+      .film-hero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(10,9,6,1) 0%, rgba(10,9,6,0.45) 50%, rgba(10,9,6,0.15) 100%); }
+      .film-hero-content { position: relative; z-index: 2; max-width: 900px; }
+      .film-hero-meta { font-family: var(--font-display); font-size: 10px; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 28px; display: flex; align-items: center; gap: 16px; }
+      .film-hero-meta::before { content: ""; width: 32px; height: 1px; background: var(--gold); opacity: 0.5; }
+      .film-hero-title { font-family: var(--font-display); font-size: clamp(36px, 6.5vw, 90px); font-weight: 700; color: var(--white); line-height: 1.05; letter-spacing: 0.04em; margin-bottom: 32px; }
+      .film-hero-tagline { font-family: var(--font-body); font-size: clamp(18px, 2vw, 24px); font-weight: 300; font-style: italic; color: var(--bone); line-height: 1.6; max-width: 520px; }
+
+      .film-body { max-width: 1100px; margin: 0 auto; padding: 0 52px; }
+      .section { padding: 100px 0; border-top: 1px solid rgba(255,255,255,0.05); }
+      .section-label { font-family: var(--font-display); font-size: 9px; letter-spacing: 0.4em; color: var(--gold-dim); text-transform: uppercase; display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+      .section-label::before { content: ""; width: 28px; height: 1px; background: var(--gold-dim); opacity: 0.5; }
+
+      .stills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+      .stills-grid .still-wide { grid-column: span 2; }
+      .still { overflow: hidden; aspect-ratio: 16/9; background: var(--coal); }
+      .still img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(25%) brightness(0.8); transition: filter 0.6s ease, transform 0.7s cubic-bezier(0.23,1,0.32,1); }
+      .still:hover img { filter: grayscale(0%) brightness(0.9); transform: scale(1.04); }
+
+      .trailer-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: var(--coal); border: 1px solid rgba(255,255,255,0.05); }
+      .trailer-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+      .trailer-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; background: var(--coal); }
+      .trailer-placeholder-icon { width: 64px; height: 64px; border: 1px solid rgba(184,151,106,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+      .trailer-placeholder-icon svg { width: 22px; height: 22px; color: var(--gold); margin-left: 4px; }
+      .trailer-placeholder p { font-family: var(--font-display); font-size: 9px; letter-spacing: 0.3em; color: var(--smoke); text-transform: uppercase; }
+
+      .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+      .info-block h3 { font-family: var(--font-display); font-size: 9px; letter-spacing: 0.35em; color: var(--gold-dim); text-transform: uppercase; margin-bottom: 36px; }
+      .info-row { display: flex; justify-content: space-between; align-items: baseline; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+      .info-row:first-of-type { border-top: 1px solid rgba(255,255,255,0.05); }
+      .info-key { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; color: var(--smoke); }
+      .info-val { font-family: var(--font-body); font-size: 18px; color: var(--cream); font-weight: 300; }
+      .info-val a { color: var(--gold); text-decoration: none; transition: opacity 0.3s; }
+      .info-val a:hover { opacity: 0.7; }
+
+      .synopsis-text { font-family: var(--font-body); font-size: clamp(20px, 2.2vw, 28px); font-weight: 300; color: var(--cream); line-height: 1.75; letter-spacing: 0.01em; }
+      .synopsis-text + .synopsis-text { margin-top: 28px; color: var(--bone); font-size: clamp(17px, 1.8vw, 22px); }
+
+      .festivals-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+      .festival-item { padding: 28px 24px; background: var(--deep); border: 1px solid rgba(255,255,255,0.04); transition: border-color 0.3s, background 0.3s; }
+      .festival-item:hover { background: var(--coal); border-color: rgba(184,151,106,0.15); }
+      .festival-name { font-family: var(--font-display); font-size: 10px; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; }
+      .festival-award { font-family: var(--font-body); font-size: 17px; color: var(--cream); font-weight: 300; line-height: 1.4; margin-bottom: 6px; }
+      .festival-year { font-family: var(--font-mono); font-size: 11px; color: var(--smoke); letter-spacing: 0.1em; }
+
+      .broadcasters { margin-top: 48px; }
+      .broadcasters h4 { font-family: var(--font-display); font-size: 9px; letter-spacing: 0.35em; color: var(--gold-dim); text-transform: uppercase; margin-bottom: 24px; }
+      .broadcaster-logos { display: flex; flex-wrap: wrap; gap: 2px; }
+      .broadcaster-logo { padding: 16px 28px; background: var(--deep); border: 1px solid rgba(255,255,255,0.04); font-family: var(--font-display); font-size: 9px; letter-spacing: 0.25em; color: var(--smoke); text-transform: uppercase; transition: color 0.3s, border-color 0.3s; }
+      .broadcaster-logo:hover { color: var(--bone); border-color: rgba(184,151,106,0.15); }
+
+      .film-footer { padding: 80px 52px 48px; border-top: 1px solid rgba(255,255,255,0.04); display: flex; align-items: center; justify-content: space-between; }
+      .film-footer-back { font-family: var(--font-display); font-size: 9px; letter-spacing: 0.3em; color: var(--smoke); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
+      .film-footer-back:hover { color: var(--gold); }
+      .film-footer-copy { font-family: var(--font-mono); font-size: 12px; color: var(--dust); letter-spacing: 0.1em; }
+      .next-film { font-family: var(--font-display); font-size: 9px; letter-spacing: 0.3em; color: var(--smoke); text-decoration: none; text-transform: uppercase; display: flex; align-items: center; gap: 10px; transition: color 0.3s; }
+      .next-film:hover { color: var(--gold); }
+      .next-film::after { content: "→"; }
+
+      .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.8s cubic-bezier(0.23,1,0.32,1), transform 0.8s cubic-bezier(0.23,1,0.32,1); }
+      .reveal.visible { opacity: 1; transform: translateY(0); }
+      .reveal-delay-1 { transition-delay: 0.1s; }
+
+      @media (max-width: 768px) {
+        .film-nav, .film-nav.scrolled { padding: 20px 24px; }
+        .film-hero { padding: 0 24px 60px; }
+        .film-body { padding: 0 24px; }
+        .stills-grid { grid-template-columns: 1fr; }
+        .stills-grid .still-wide { grid-column: span 1; }
+        .info-grid { grid-template-columns: 1fr; gap: 32px; }
+        .festivals-grid { grid-template-columns: 1fr 1fr; }
+        .film-footer { padding: 48px 24px 32px; flex-direction: column; gap: 24px; text-align: center; }
+      }
+      @media (max-width: 480px) { .festivals-grid { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <canvas id="grain"></canvas>
+    <nav class="film-nav" id="filmNav">
+      <a href="/" class="nav-back">All Films</a>
+      <a href="/" class="nav-logo">MOVIE</a>
+    </nav>
+
+    <section class="film-hero">
+      <div class="film-hero-bg" id="heroBg"></div>
+      <div class="film-hero-content">
+        <div class="film-hero-meta">Short Film · 2021</div>
+        <h1 class="film-hero-title">The Last<br>Witness</h1>
+        <p class="film-hero-tagline">Three elderly witnesses to the 20th century's most pivotal moment — their memories as the final thread between past and oblivion.</p>
+      </div>
+    </section>
+
+    <div class="film-body">
+
+      <div class="section reveal">
+        <div class="section-label">Film Stills</div>
+        <div class="stills-grid">
+          <div class="still still-wide">
+            <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1400&q=85" alt="Still 1" loading="lazy" />
+          </div>
+          <div class="still">
+            <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=700&q=80" alt="Still 2" loading="lazy" />
+          </div>
+          <div class="still">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=80" alt="Still 3" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <div class="section reveal reveal-delay-1">
+        <div class="section-label">Trailer</div>
+        <div class="trailer-wrap">
+          <div class="trailer-placeholder">
+            <div class="trailer-placeholder-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+            <p>Official Trailer — Coming Soon</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section reveal">
+        <div class="section-label">Film Information</div>
+        <div class="info-grid">
+          <div class="info-block">
+            <h3>Credits</h3>
+            <div class="info-row"><span class="info-key">Director</span><span class="info-val"><a href="/#team">Vasyl Horenko</a></span></div>
+            <div class="info-row"><span class="info-key">Producer</span><span class="info-val"><a href="/#team">Olena Kovalenko</a></span></div>
+            <div class="info-row"><span class="info-key">Cinematography</span><span class="info-val">Andriy Lysenko</span></div>
+            <div class="info-row"><span class="info-key">Editor</span><span class="info-val">Sofia Tkach</span></div>
+            <div class="info-row"><span class="info-key">Music</span><span class="info-val">Roman Hrynkiv</span></div>
+          </div>
+          <div class="info-block">
+            <h3>Details</h3>
+            <div class="info-row"><span class="info-key">Year</span><span class="info-val">2021</span></div>
+            <div class="info-row"><span class="info-key">Country</span><span class="info-val">Ukraine</span></div>
+            <div class="info-row"><span class="info-key">Duration</span><span class="info-val">38 min</span></div>
+            <div class="info-row"><span class="info-key">Language</span><span class="info-val">Ukrainian / Russian</span></div>
+            <div class="info-row"><span class="info-key">Format</span><span class="info-val">HD / Short</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section reveal">
+        <div class="section-label">Synopsis</div>
+        <p class="synopsis-text">
+          They were children when it happened. Now, in their final decades, they carry the weight of memory no archive can replicate. <em>The Last Witness</em> follows three elderly Ukrainians — a retired schoolteacher, a former engineer, and a market vendor — each a living archive of events the world is still struggling to name.
+        </p>
+        <p class="synopsis-text">
+          Directed in a single, uninterrupted observational mode, the film asks what it means to remember alone. As their generation disappears, so does a particular texture of truth — intimate, unverifiable, irreplaceable.
+        </p>
+      </div>
+
+      <div class="section reveal">
+        <div class="section-label">Festivals & Awards</div>
+        <div class="festivals-grid">
+          <div class="festival-item">
+            <div class="festival-name">Docudays UA</div>
+            <div class="festival-award">Best Short Documentary</div>
+            <div class="festival-year">2021</div>
+          </div>
+          <div class="festival-item">
+            <div class="festival-name">Krakow Film Festival</div>
+            <div class="festival-award">Golden Horn — Short Competition</div>
+            <div class="festival-year">2021</div>
+          </div>
+          <div class="festival-item">
+            <div class="festival-name">RIDM Montreal</div>
+            <div class="festival-award">Official Selection</div>
+            <div class="festival-year">2021</div>
+          </div>
+          <div class="festival-item">
+            <div class="festival-name">Visions du Réel</div>
+            <div class="festival-award">Jury Special Mention</div>
+            <div class="festival-year">2022</div>
+          </div>
+        </div>
+        <div class="broadcasters">
+          <h4>Broadcasters & Partners</h4>
+          <div class="broadcaster-logos">
+            <div class="broadcaster-logo">ZDF / ARTE</div>
+            <div class="broadcaster-logo">Ukrainian Institute</div>
+            <div class="broadcaster-logo">Docudays Travelling</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="film-footer">
+      <a href="/" class="film-footer-back">← Back to All Films</a>
+      <span class="film-footer-copy">© 2026 MOVIE Studio</span>
+      <a href="/films/dust-and-memory/" class="next-film">Dust &amp; Memory</a>
+    </footer>
+
+    <script>
+      const canvas = document.getElementById('grain'); const ctx = canvas.getContext('2d');
+      function resizeGrain() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+      resizeGrain(); window.addEventListener('resize', resizeGrain);
+      function drawGrain() { const img = ctx.createImageData(canvas.width, canvas.height); for (let i = 0; i < img.data.length; i += 4) { const v = Math.random() * 255; img.data[i] = img.data[i+1] = img.data[i+2] = v; img.data[i+3] = Math.random() * 35; } ctx.putImageData(img, 0, 0); setTimeout(() => requestAnimationFrame(drawGrain), 60); }
+      drawGrain();
+      const nav = document.getElementById('filmNav');
+      window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
+      document.getElementById('heroBg').classList.add('loaded');
+      const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    </script>
+  </body>
+</html>
