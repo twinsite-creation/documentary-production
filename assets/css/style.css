@@ -74,7 +74,7 @@ body {
 }
 .nav-back {
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.3em;
   color: var(--smoke);
   text-decoration: none;
@@ -437,7 +437,7 @@ nav ul li a:hover {
 
 .hero-sub {
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.35em;
   color: var(--gold);
   margin-top: 40px;
@@ -501,7 +501,7 @@ section {
 }
 .section-label {
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.4em;
   color: var(--gold-dim);
   text-transform: uppercase;
@@ -1044,7 +1044,7 @@ section {
 }
 .stat-label {
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.25em;
   color: var(--bone);
 }
@@ -1124,7 +1124,7 @@ footer {
 }
 .footer-nav a {
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.25em;
   color: var(--bone);
   text-decoration: none;
@@ -1215,7 +1215,7 @@ footer {
   gap: 8px;
   margin-top: 16px;
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.3em;
   color: var(--gold-dim);
   text-decoration: none;
@@ -1461,7 +1461,7 @@ footer {
 }
 .team-role {
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.35em;
   color: var(--gold);
   text-transform: uppercase;
@@ -1481,7 +1481,7 @@ footer {
   gap: 10px;
   margin-top: 28px;
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.3em;
   color: var(--smoke);
   text-decoration: none;
@@ -1565,7 +1565,7 @@ footer {
 }
 .film-hero-meta {
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.4em;
   color: var(--gold);
   text-transform: uppercase;
@@ -1773,7 +1773,7 @@ footer {
 }
 .festival-name {
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.25em;
   color: var(--gold);
   text-transform: uppercase;
@@ -1942,7 +1942,7 @@ footer {
 }
 .nav-back-links a {
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.25em;
   color: var(--smoke);
   text-decoration: none;
@@ -1991,7 +1991,7 @@ footer {
 }
 .profile-role {
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.4em;
   color: var(--gold);
   text-transform: uppercase;
@@ -2038,7 +2038,7 @@ footer {
 }
 .filmography-label {
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.35em;
   color: var(--gold-dim);
   text-transform: uppercase;
@@ -2103,7 +2103,7 @@ footer {
 }
 .profile-footer-nav a {
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.3em;
   color: var(--smoke);
   text-decoration: none;
