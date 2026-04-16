@@ -21,11 +21,10 @@
   --smoke: #8a7f75;
   --bone: #d1cec9;
   --cream: #e8dfd2;
-  --gold: #b8976a;
-  --gold-dim: #7a6148;
+  --gold: #f3c88c;
+  --gold-dim: #dbb187;
   --white: #f0e8dc;
   --font-display: "Syncopate", sans-serif;
-  --font-body: "Cormorant Garamond", serif; /* delete */
   --font-mono: "Space Mono", monospace;
 }
 html {
@@ -74,7 +73,7 @@ body {
 }
 .nav-back {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.3em;
   color: var(--smoke);
   text-decoration: none;
@@ -437,7 +436,7 @@ nav ul li a:hover {
 
 .hero-sub {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.35em;
   color: var(--gold);
   margin-top: 40px;
@@ -501,7 +500,7 @@ section {
 }
 .section-label {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.4em;
   color: var(--gold-dim);
   text-transform: uppercase;
@@ -550,7 +549,7 @@ section {
 }
 .film-expand-genre {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.3em;
   color: var(--gold);
   text-transform: uppercase;
@@ -649,7 +648,7 @@ section {
     transparent 100%
   );
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.2em;
   color: var(--bone);
   opacity: 0;
@@ -1052,7 +1051,7 @@ section {
 }
 .stat-label {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.25em;
   color: var(--bone);
 }
@@ -1132,7 +1131,7 @@ footer {
 }
 .footer-nav a {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.25em;
   color: var(--bone);
   text-decoration: none;
@@ -1215,27 +1214,6 @@ footer {
   border: 1px solid var(--ash);
   border-radius: 1px;
   opacity: 0.3;
-}
-
-.prod-film-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 16px;
-  font-family: var(--font-display);
-  font-size: 12px;
-  letter-spacing: 0.3em;
-  color: var(--gold-dim);
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: bold;
-  transition:
-    color 0.3s ease,
-    gap 0.3s ease;
-}
-.prod-film-link:hover {
-  color: var(--gold);
-  gap: 12px;
 }
 
 /* ─── SCROLL ANIMATIONS ─── */
@@ -1454,7 +1432,7 @@ footer {
 }
 .team-index {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 0.2em;
   color: var(--gold-dim);
   margin-bottom: 16px;
@@ -1470,7 +1448,7 @@ footer {
 }
 .team-role {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.35em;
   color: var(--gold);
   text-transform: uppercase;
@@ -1490,7 +1468,7 @@ footer {
   gap: 10px;
   margin-top: 28px;
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.3em;
   color: var(--smoke);
   text-decoration: none;
@@ -1574,7 +1552,7 @@ footer {
 }
 .film-hero-meta {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.4em;
   color: var(--gold);
   text-transform: uppercase;
@@ -1620,7 +1598,7 @@ footer {
 }
 .section-label {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.4em;
   color: var(--gold-dim);
   text-transform: uppercase;
@@ -1699,7 +1677,7 @@ footer {
 }
 .trailer-placeholder p {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.3em;
   color: var(--smoke);
   text-transform: uppercase;
@@ -1712,7 +1690,7 @@ footer {
 }
 .info-block h3 {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.35em;
   color: var(--gold-dim);
   text-transform: uppercase;
@@ -1730,7 +1708,7 @@ footer {
 }
 .info-key {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 0.1em;
   color: var(--smoke);
 }
@@ -1782,7 +1760,7 @@ footer {
 }
 .festival-name {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.25em;
   color: var(--gold);
   text-transform: uppercase;
@@ -1798,7 +1776,7 @@ footer {
 }
 .festival-year {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 14px;
   color: var(--smoke);
   letter-spacing: 0.1em;
 }
@@ -1808,7 +1786,7 @@ footer {
 }
 .broadcasters h4 {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.35em;
   color: var(--gold-dim);
   text-transform: uppercase;
@@ -1824,7 +1802,7 @@ footer {
   background: var(--deep);
   border: 1px solid rgba(255, 255, 255, 0.04);
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.25em;
   color: var(--smoke);
   text-transform: uppercase;
@@ -1846,14 +1824,14 @@ footer {
 }
 .film-footer-copy {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 14px;
   color: var(--dust);
   letter-spacing: 0.1em;
 }
 .film-footer-back,
 .next-film {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.3em;
   color: var(--smoke);
   text-decoration: none;
@@ -1953,7 +1931,7 @@ footer {
 }
 .nav-back-links a {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.25em;
   color: var(--smoke);
   text-decoration: none;
@@ -1995,14 +1973,14 @@ footer {
 }
 .profile-index {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 0.2em;
   color: var(--gold-dim);
   margin-bottom: 20px;
 }
 .profile-role {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.4em;
   color: var(--gold);
   text-transform: uppercase;
@@ -2049,7 +2027,7 @@ footer {
 }
 .filmography-label {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.35em;
   color: var(--gold-dim);
   text-transform: uppercase;
@@ -2100,7 +2078,7 @@ footer {
 }
 .film-entry-meta {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.25em;
   color: var(--smoke);
   text-transform: uppercase;
@@ -2114,7 +2092,7 @@ footer {
 }
 .profile-footer-nav a {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.3em;
   color: var(--smoke);
   text-decoration: none;
@@ -2170,7 +2148,7 @@ footer {
   --gold-dim: #7a6148;
   --white: #f0e8dc;
   --font-display: "Syncopate", sans-serif;
-  --font-body: "Cormorant Garamond", serif;
+  --font-mono: "Cormorant Garamond", serif;
   --font-mono: "Space Mono", monospace;
 }
 html {
@@ -2516,7 +2494,7 @@ nav ul li a:hover {
 }
 .hero-sub {
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.35em;
   color: var(--gold);
   margin-top: 40px;
@@ -2579,7 +2557,7 @@ section {
 }
 .section-label {
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.4em;
   color: var(--gold-dim);
   text-transform: uppercase;
@@ -2670,7 +2648,7 @@ section {
     transparent 100%
   );
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.2em;
   color: var(--bone);
   opacity: 0;
@@ -2880,7 +2858,8 @@ section {
   gap: 8px;
   margin-top: 16px;
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 14px;
+  font-weight: 700;
   letter-spacing: 0.3em;
   color: var(--gold-dim);
   text-decoration: none;
@@ -3080,7 +3059,7 @@ section {
 }
 .team-index {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 0.2em;
   color: var(--gold-dim);
   margin-bottom: 16px;
@@ -3096,7 +3075,7 @@ section {
 }
 .team-role {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.35em;
   color: var(--gold);
   text-transform: uppercase;
@@ -3116,7 +3095,8 @@ section {
   gap: 10px;
   margin-top: 28px;
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 700;
   letter-spacing: 0.3em;
   color: var(--smoke);
   text-decoration: none;
@@ -3200,7 +3180,7 @@ section {
 }
 .stat-label {
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.25em;
   color: var(--bone);
 }
@@ -3279,7 +3259,7 @@ footer#footer {
 }
 .footer-nav a {
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.25em;
   color: var(--bone);
   text-decoration: none;
@@ -3446,7 +3426,7 @@ footer#footer {
   cursor: pointer;
   color: var(--smoke);
   font-family: var(--font-display);
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   transition: color 0.3s ease;
@@ -3520,7 +3500,7 @@ footer#footer {
 }
 .film-overlay-meta {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.4em;
   color: var(--gold);
   text-transform: uppercase;
@@ -3546,7 +3526,7 @@ footer#footer {
   margin-bottom: 32px;
 }
 .film-overlay-tagline {
-  font-family: var(--font-body);
+  font-family: var(--font-mono);
   font-size: clamp(18px, 2vw, 24px);
   font-weight: 300;
   font-style: italic;
@@ -3566,7 +3546,7 @@ footer#footer {
 }
 .fob-label {
   font-family: var(--font-display);
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 0.4em;
   color: var(--gold-dim);
   text-transform: uppercase;
@@ -3599,7 +3579,7 @@ footer#footer {
 }
 .fds-label {
   font-family: var(--font-display);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.3em;
   color: var(--gold-dim);
   text-transform: uppercase;
@@ -3623,7 +3603,7 @@ footer#footer {
 
 /* Synopsis */
 .film-synopsis-lead {
-  font-family: var(--font-body);
+  font-family: var(--font-mono);
   font-size: clamp(22px, 2.5vw, 32px);
   font-style: italic;
   color: var(--cream);
@@ -3642,7 +3622,7 @@ footer#footer {
   margin-bottom: 24px;
 }
 .film-pull-quote {
-  font-family: var(--font-body);
+  font-family: var(--font-mono);
   font-size: clamp(20px, 2.2vw, 28px);
   font-style: italic;
   color: var(--cream);
@@ -3688,7 +3668,7 @@ footer#footer {
 .film-still figcaption {
   padding: 10px 0;
   font-family: var(--font-display);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.25em;
   color: var(--smoke);
   text-transform: uppercase;
@@ -3737,7 +3717,7 @@ footer#footer {
 }
 .film-trailer-placeholder p {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.3em;
   color: var(--smoke);
   text-transform: uppercase;
@@ -3756,7 +3736,7 @@ footer#footer {
 }
 .fest-col-title {
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.35em;
   color: var(--gold-dim);
   text-transform: uppercase;
@@ -3777,7 +3757,7 @@ footer#footer {
 }
 .fest-year {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 14px;
   color: var(--gold-dim);
   flex-shrink: 0;
   padding-top: 2px;
@@ -3791,7 +3771,7 @@ footer#footer {
 }
 .fest-note {
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.2em;
   color: var(--smoke);
 }
@@ -3806,7 +3786,7 @@ footer#footer {
   background: var(--deep);
   border: 1px solid rgba(255, 255, 255, 0.06);
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.2em;
   color: var(--smoke);
   text-transform: uppercase;
@@ -3822,7 +3802,7 @@ footer#footer {
 }
 .fof-link {
   font-family: var(--font-display);
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 0.3em;
   color: var(--smoke);
   text-decoration: none;
@@ -3854,7 +3834,7 @@ footer#footer {
 }
 .fof-mark {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.2em;
   color: var(--dust);
 }
@@ -3892,14 +3872,14 @@ footer#footer {
 }
 .profile-index {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 0.2em;
   color: var(--gold-dim);
   margin-bottom: 20px;
 }
 .profile-role-tag {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.4em;
   color: var(--gold);
   text-transform: uppercase;
@@ -3946,7 +3926,7 @@ footer#footer {
 }
 .filmography-label {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.35em;
   color: var(--gold-dim);
   text-transform: uppercase;
@@ -3996,7 +3976,7 @@ footer#footer {
 }
 .film-entry-meta {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.25em;
   color: var(--smoke);
   text-transform: uppercase;
