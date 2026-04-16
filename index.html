@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Syncopate:wght@400;700&family=Space+Mono:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Syncopate:wght@400;700&family=Space+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
@@ -34,8 +34,8 @@
       </ul>
       <div class="mobile-menu-footer">
         <div class="social-icons">
-          <a href="#" aria-label="Instagram">
-            <svg
+          <a href="#" aria-label="Instagram"
+            ><svg
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -49,11 +49,10 @@
                 r="0.5"
                 fill="currentColor"
                 stroke="none"
-              />
-            </svg>
-          </a>
-          <a href="#" aria-label="Vimeo">
-            <svg
+              /></svg
+          ></a>
+          <a href="#" aria-label="Vimeo"
+            ><svg
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -61,11 +60,10 @@
             >
               <path
                 d="M22 7c-.1 2.2-1.6 5.3-4.5 9.2C14.5 20.4 11.9 22 9.7 22c-1.4 0-2.5-1.3-3.5-3.8L4.6 12C3.9 9.5 3.1 8.2 2.2 8.2c-.2 0-.9.4-2.2 1.3L0 8.2C1.4 7 2.8 5.8 4.1 4.7c1.8-1.5 3.1-2.3 4-2.4 2.1-.2 3.4 1.2 3.9 4.2.5 3.2.9 5.2 1.1 6 .6 2.7 1.3 4 2 4 .6 0 1.4-.9 2.6-2.6 1.1-1.7 1.7-3 1.8-3.9.2-1.5-.4-2.2-1.8-2.2-.6 0-1.3.1-2 .4 1.3-4.3 3.8-6.4 7.5-6.2"
-              />
-            </svg>
-          </a>
-          <a href="#" aria-label="YouTube">
-            <svg
+              /></svg
+          ></a>
+          <a href="#" aria-label="YouTube"
+            ><svg
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -76,9 +74,8 @@
                 points="10,9 10,15 16,12"
                 fill="currentColor"
                 stroke="none"
-              />
-            </svg>
-          </a>
+              /></svg
+          ></a>
         </div>
         <div class="lang-switch">
           <button class="active" onclick="setLang('EN')">EN</button>
@@ -90,7 +87,9 @@
 
     <!-- Header -->
     <header id="header">
-      <a href="#hero" class="header-logo" id="headerLogo">MOVIE</a>
+      <span class="header-logo" id="headerLogo" onclick="closeOverlay()"
+        >MOVIE</span
+      >
       <div class="header-right">
         <nav>
           <ul>
@@ -101,9 +100,8 @@
           </ul>
         </nav>
         <div class="social-icons">
-          <!-- Instagram -->
-          <a href="#" aria-label="Instagram">
-            <svg
+          <a href="#" aria-label="Instagram"
+            ><svg
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -117,12 +115,10 @@
                 r="0.5"
                 fill="currentColor"
                 stroke="none"
-              />
-            </svg>
-          </a>
-          <!-- Vimeo -->
-          <a href="#" aria-label="Vimeo">
-            <svg
+              /></svg
+          ></a>
+          <a href="#" aria-label="Vimeo"
+            ><svg
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -130,12 +126,10 @@
             >
               <path
                 d="M22 7c-.1 2.2-1.6 5.3-4.5 9.2C14.5 20.4 11.9 22 9.7 22c-1.4 0-2.5-1.3-3.5-3.8L4.6 12C3.9 9.5 3.1 8.2 2.2 8.2c-.2 0-.9.4-2.2 1.3L0 8.2C1.4 7 2.8 5.8 4.1 4.7c1.8-1.5 3.1-2.3 4-2.4 2.1-.2 3.4 1.2 3.9 4.2.5 3.2.9 5.2 1.1 6 .6 2.7 1.3 4 2 4 .6 0 1.4-.9 2.6-2.6 1.1-1.7 1.7-3 1.8-3.9.2-1.5-.4-2.2-1.8-2.2-.6 0-1.3.1-2 .4 1.3-4.3 3.8-6.4 7.5-6.2"
-              />
-            </svg>
-          </a>
-          <!-- YouTube -->
-          <a href="#" aria-label="YouTube">
-            <svg
+              /></svg
+          ></a>
+          <a href="#" aria-label="YouTube"
+            ><svg
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -146,9 +140,8 @@
                 points="10,9 10,15 16,12"
                 fill="currentColor"
                 stroke="none"
-              />
-            </svg>
-          </a>
+              /></svg
+          ></a>
         </div>
         <div class="lang-switch" id="langSwitch">
           <button class="active" onclick="setLang('EN')">EN</button>
@@ -166,7 +159,6 @@
       <div class="hero-beam"></div>
       <div class="hero-beam"></div>
       <div class="hero-beam"></div>
-
       <div class="hero-content" id="heroContent">
         <div class="hero-sub">Est. 2015</div>
         <h1 class="hero-logo-main">MOVIE</h1>
@@ -174,163 +166,61 @@
           Where forgotten truths<br />find their voice on screen
         </p>
       </div>
-
       <div class="scroll-indicator">
         <div class="scroll-label">Scroll</div>
         <div class="scroll-line"></div>
       </div>
     </section>
 
-    <!-- Popular Films 
+    <!-- Films (orbit) -->
     <section id="films">
-      <div class="section-label reveal">
-        <span>Selected Works</span>
-      </div>
+      <div class="section-label reveal"><span>Selected Works</span></div>
       <div class="films-header">
         <h2 class="films-title reveal">
           The films that<br />changed perspectives
         </h2>
         <div class="films-count reveal reveal-delay-1">— 18 productions</div>
       </div>
-
-      <div class="films-orbit" id="filmsOrbit">
-        <div class="film-card">
-          <img
-            src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600&q=80"
-            alt="Film 1"
-          />
-          <div class="film-card-label">Shadows of Kyiv — 2022</div>
-        </div>
-        <div class="film-card">
-          <img
-            src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=700&q=80"
-            alt="Film 2"
-          />
-          <div class="film-card-label">The Last Witness — 2021</div>
-        </div>
-        <div class="film-card">
-          <img
-            src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=500&q=80"
-            alt="Film 3"
-          />
-          <div class="film-card-label">Dust & Memory — 2020</div>
-        </div>
-        <div class="film-card">
-          <img
-            src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=600&q=80"
-            alt="Film 4"
-          />
-          <div class="film-card-label">Iron Cartography — 2023</div>
-        </div>
-        <div class="film-card">
-          <img
-            src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=500&q=80"
-            alt="Film 5"
-          />
-          <div class="film-card-label">Silent Archive — 2019</div>
-        </div>
-      </div>
-    </section>-->
-
-    <!-- Popular Films -->
-    <section id="films">
-      <div class="section-label reveal">
-        <span>Selected Works</span>
-      </div>
-      <div class="films-header">
-        <h2 class="films-title reveal">
-          The films that<br />changed perspectives
-        </h2>
-        <div class="films-count reveal reveal-delay-1">— 18 productions</div>
-      </div>
-
       <div class="films-orbit" id="filmsOrbit">
         <div class="film-card" data-film="shadows-of-kyiv">
           <img
             src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600&q=80"
-            alt="Film 1"
+            alt="Shadows of Kyiv"
           />
           <div class="film-card-label">Shadows of Kyiv — 2022</div>
-          <div class="film-expand">
-            <div class="film-expand-inner">
-              <span class="film-expand-genre">Feature · 2022</span>
-              <p class="film-expand-desc">
-                An intimate portrait of a city's transformation during times of
-                radical change, told through the voices of those who stayed.
-              </p>
-            </div>
-          </div>
         </div>
         <div class="film-card" data-film="the-last-witness">
           <img
             src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=700&q=80"
-            alt="Film 2"
+            alt="The Last Witness"
           />
           <div class="film-card-label">The Last Witness — 2021</div>
-          <div class="film-expand">
-            <div class="film-expand-inner">
-              <span class="film-expand-genre">Short · 2021</span>
-              <p class="film-expand-desc">
-                Three elderly witnesses to the 20th century's most pivotal
-                moment — their memories as the final thread between past and
-                oblivion.
-              </p>
-            </div>
-          </div>
         </div>
         <div class="film-card" data-film="dust-and-memory">
           <img
             src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=500&q=80"
-            alt="Film 3"
+            alt="Dust & Memory"
           />
           <div class="film-card-label">Dust & Memory — 2020</div>
-          <div class="film-expand">
-            <div class="film-expand-inner">
-              <span class="film-expand-genre">Feature · 2020</span>
-              <p class="film-expand-desc">
-                A meditation on what we choose to remember and what time erases.
-                Shot across five Eastern European cities over two years.
-              </p>
-            </div>
-          </div>
         </div>
         <div class="film-card" data-film="iron-cartography">
           <img
             src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=600&q=80"
-            alt="Film 4"
+            alt="Iron Cartography"
           />
           <div class="film-card-label">Iron Cartography — 2023</div>
-          <div class="film-expand">
-            <div class="film-expand-inner">
-              <span class="film-expand-genre">Feature · 2023</span>
-              <p class="film-expand-desc">
-                Mapping the invisible borders drawn by conflict — a visual essay
-                on how war reshapes geography and identity simultaneously.
-              </p>
-            </div>
-          </div>
         </div>
         <div class="film-card" data-film="silent-archive">
           <img
             src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=500&q=80"
-            alt="Film 5"
+            alt="Silent Archive"
           />
           <div class="film-card-label">Silent Archive — 2019</div>
-          <div class="film-expand">
-            <div class="film-expand-inner">
-              <span class="film-expand-genre">Short · 2019</span>
-              <p class="film-expand-desc">
-                A journey through the forgotten footage of Ukrainian cinema from
-                the 1960s and what it reveals about a suppressed artistic
-                identity.
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- Productions List -->
+    <!-- Productions list -->
     <section id="productions">
       <div class="productions-header">
         <h2 class="productions-title reveal">All<br />Productions</h2>
@@ -340,30 +230,22 @@
           the unknown.
         </p>
       </div>
-
       <div id="productionsList">
-        <!-- Visible items -->
-        <div class="production-item reveal">
+        <div class="production-item reveal" data-film="shadows-of-kyiv">
           <div class="prod-image">
-            <a href="films/shadows-of-kyiv/">
-              <img
-                src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&q=80"
-                alt="Shadows of Kyiv"
-              />
-            </a>
+            <img
+              src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&q=80"
+              alt="Shadows of Kyiv"
+            />
           </div>
           <div class="prod-info">
             <div class="prod-year">2022 — FEATURE</div>
-            <h3 class="prod-title">
-              <a href="films/shadows-of-kyiv/">Shadows of Kyiv</a>
-            </h3>
+            <h3 class="prod-title">Shadows of Kyiv</h3>
             <p class="prod-desc">
               An intimate portrait of a city's transformation during times of
               radical change, told through the voices of those who stayed.
             </p>
-            <a href="films/shadows-of-kyiv/" class="prod-film-link"
-              >View Film →</a
-            >
+            <span class="prod-film-link">View Film →</span>
           </div>
           <div class="prod-rating">
             <div class="rating-score">9.1</div>
@@ -377,28 +259,24 @@
             <div class="rating-label">IMDb Score</div>
           </div>
         </div>
-
-        <div class="production-item reveal reveal-delay-1">
+        <div
+          class="production-item reveal reveal-delay-1"
+          data-film="the-last-witness"
+        >
           <div class="prod-image">
-            <a href="films/the-last-witness/">
-              <img
-                src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=400&q=80"
-                alt="The Last Witness"
-              />
-            </a>
+            <img
+              src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=400&q=80"
+              alt="The Last Witness"
+            />
           </div>
           <div class="prod-info">
             <div class="prod-year">2021 — SHORT</div>
-            <h3 class="prod-title">
-              <a href="films/the-last-witness/">The Last Witness</a>
-            </h3>
+            <h3 class="prod-title">The Last Witness</h3>
             <p class="prod-desc">
               Three elderly witnesses to the 20th century's most pivotal moment
               — their memories as the final thread between past and oblivion.
             </p>
-            <a href="films/the-last-witness/" class="prod-film-link"
-              >View Film →</a
-            >
+            <span class="prod-film-link">View Film →</span>
           </div>
           <div class="prod-rating">
             <div class="rating-score">8.7</div>
@@ -412,28 +290,24 @@
             <div class="rating-label">IMDb Score</div>
           </div>
         </div>
-
-        <div class="production-item reveal reveal-delay-2">
+        <div
+          class="production-item reveal reveal-delay-2"
+          data-film="dust-and-memory"
+        >
           <div class="prod-image">
-            <a href="films/dust-and-memory/">
-              <img
-                src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=400&q=80"
-                alt="Dust & Memory"
-              />
-            </a>
+            <img
+              src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=400&q=80"
+              alt="Dust & Memory"
+            />
           </div>
           <div class="prod-info">
             <div class="prod-year">2020 — FEATURE</div>
-            <h3 class="prod-title">
-              <a href="films/dust-and-memory/">Dust & Memory</a>
-            </h3>
+            <h3 class="prod-title">Dust & Memory</h3>
             <p class="prod-desc">
               A meditation on what we choose to remember and what time erases.
               Shot across five Eastern European cities over two years.
             </p>
-            <a href="films/dust-and-memory/" class="prod-film-link"
-              >View Film →</a
-            >
+            <span class="prod-film-link">View Film →</span>
           </div>
           <div class="prod-rating">
             <div class="rating-score">8.4</div>
@@ -447,29 +321,21 @@
             <div class="rating-label">IMDb Score</div>
           </div>
         </div>
-
-        <!-- Hidden items -->
-        <div class="production-item hidden-item">
+        <div class="production-item hidden-item" data-film="iron-cartography">
           <div class="prod-image">
-            <a href="films/iron-cartography/">
-              <img
-                src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=400&q=80"
-                alt="Iron Cartography"
-              />
-            </a>
+            <img
+              src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=400&q=80"
+              alt="Iron Cartography"
+            />
           </div>
           <div class="prod-info">
             <div class="prod-year">2023 — FEATURE</div>
-            <h3 class="prod-title">
-              <a href="films/iron-cartography/">Iron Cartography</a>
-            </h3>
+            <h3 class="prod-title">Iron Cartography</h3>
             <p class="prod-desc">
               Mapping the invisible borders drawn by conflict — a visual essay
               on how war reshapes geography and identity simultaneously.
             </p>
-            <a href="films/iron-cartography/" class="prod-film-link"
-              >View Film →</a
-            >
+            <span class="prod-film-link">View Film →</span>
           </div>
           <div class="prod-rating">
             <div class="rating-score">9.3</div>
@@ -483,29 +349,22 @@
             <div class="rating-label">IMDb Score</div>
           </div>
         </div>
-
-        <div class="production-item hidden-item">
+        <div class="production-item hidden-item" data-film="silent-archive">
           <div class="prod-image">
-            <a href="films/silent-archive/">
-              <img
-                src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=400&q=80"
-                alt="Silent Archive"
-              />
-            </a>
+            <img
+              src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=400&q=80"
+              alt="Silent Archive"
+            />
           </div>
           <div class="prod-info">
             <div class="prod-year">2019 — SHORT</div>
-            <h3 class="prod-title">
-              <a href="films/silent-archive/">Silent Archive</a>
-            </h3>
+            <h3 class="prod-title">Silent Archive</h3>
             <p class="prod-desc">
               A journey through the forgotten footage of Ukrainian cinema from
               the 1960s and what it reveals about a suppressed artistic
               identity.
             </p>
-            <a href="films/silent-archive/" class="prod-film-link"
-              >View Film →</a
-            >
+            <span class="prod-film-link">View Film →</span>
           </div>
           <div class="prod-rating">
             <div class="rating-score">7.9</div>
@@ -520,7 +379,6 @@
           </div>
         </div>
       </div>
-
       <button
         class="see-more-btn"
         id="seeMoreBtn"
@@ -543,71 +401,67 @@
     <!-- Team -->
     <section id="team">
       <div class="team-header">
-        <h2 class="team-title reveal">The<br />People<br />Behind It</h2>
+        <h2 class="team-title reveal">The People<br />Behind the Frame</h2>
         <p class="team-desc reveal reveal-delay-1">
-          A small, deliberate team of filmmakers who believe in the weight of a
-          single frame. We do not hire — we find each other.
+          A tight-knit collective of filmmakers, editors, and producers united
+          by a single conviction: that the most important stories are the ones
+          that haven't been told yet.
         </p>
       </div>
       <div class="team-grid">
-        <div class="team-member reveal">
-          <a href="team/marta-koval/">
-            <div class="team-photo">
-              <img
-                src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80"
-                alt="Marta Koval"
-              />
-              <div class="team-photo-overlay"></div>
-            </div>
-          </a>
-          <div class="team-index">01</div>
-          <div class="team-name">Marta Koval</div>
+        <div class="team-member" data-team="marta-hryhorenko">
+          <div class="team-photo">
+            <img
+              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80"
+              alt="Marta Hryhorenko"
+            />
+            <div class="team-photo-overlay"></div>
+          </div>
+          <div class="team-index">01 / 03</div>
+          <div class="team-name">Marta Hryhorenko</div>
           <div class="team-role">Director</div>
           <p class="team-bio">
-            Marta's lens finds stillness in turbulent histories. Twelve years
-            shaping documentary form across four continents.
+            Award-winning documentary director with a decade of work across
+            Eastern Europe. Her films ask difficult questions of history — and
+            refuse easy answers.
           </p>
-          <a href="team/marta-koval/" class="team-link">View Profile →</a>
+          <span class="team-link">View Profile →</span>
         </div>
-
-        <div class="team-member reveal reveal-delay-1">
-          <a href="team/dmytro-savchenko/">
-            <div class="team-photo">
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
-                alt="Dmytro Savchenko"
-              />
-              <div class="team-photo-overlay"></div>
-            </div>
-          </a>
-          <div class="team-index">02</div>
+        <div class="team-member" data-team="dmytro-savchenko">
+          <div class="team-photo">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
+              alt="Dmytro Savchenko"
+            />
+            <div class="team-photo-overlay"></div>
+          </div>
+          <div class="team-index">02 / 03</div>
           <div class="team-name">Dmytro Savchenko</div>
           <div class="team-role">Producer</div>
           <p class="team-bio">
-            Dmytro builds the architecture that lets stories breathe — from
-            first pitch to festival premiere, every detail considered.
+            Fourteen features, twenty shorts, an MA from London Film School.
+            Dmytro's producing philosophy: radical trust in the director's
+            instinct and the audience's intelligence.
           </p>
-          <a href="team/dmytro-savchenko/" class="team-link">View Profile →</a>
+          <span class="team-link">View Profile →</span>
         </div>
-
-        <div class="team-member reveal reveal-delay-2">
-          <a href="team/iryna-bondar/">
-            <div class="team-photo">
-              <img
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80"
-                alt="Iryna Bondar"
-              />
-              <div class="team-photo-overlay"></div>
-            </div>
-          </a>
-          <div class="team-index">03</div>
-          <div class="team-name">Iryna Bondar</div>
-          <div class="team-role">Cinematographer</div>
+        <div class="team-member" data-team="olena-bondar">
+          <div class="team-photo">
+            <img
+              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80"
+              alt="Olena Bondar"
+            />
+            <div class="team-photo-overlay"></div>
+          </div>
+          <div class="team-index">03 / 03</div>
+          <div class="team-name">Olena Bondar</div>
+          <div class="team-role">Editor</div>
           <p class="team-bio">
-            Iryna sculpts light the way a poet chooses silence — knowing when to
-            withdraw is her most powerful tool.
+            Olena assembles silence as much as image. Her editing transforms raw
+            footage into essays of light and time, shaping the rhythm that makes
+            each film breathe.
           </p>
-          <a href="team/iryna-bondar/" class="team-link">View Profile →</a>
+          <span class="team-link">View Profile →</span>
         </div>
       </div>
     </section>
@@ -621,9 +475,7 @@
           history leaves behind
         </div>
         <div class="about-right">
-          <div class="section-label reveal">
-            <span>Who We Are</span>
-          </div>
+          <div class="section-label reveal"><span>Who We Are</span></div>
           <p class="about-text reveal reveal-delay-1">
             MOVIE is an independent documentary production studio founded on the
             belief that truth is the most radical form of storytelling. We work
@@ -656,16 +508,14 @@
           <a
             href="mailto:hello@MOVIE.studio"
             class="cta-collaborate reveal reveal-delay-2"
+            >Let's create together <span class="cta-arrow">→</span></a
           >
-            Let's create together
-            <span class="cta-arrow">→</span>
-          </a>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer id="footer">
       <div class="footer-inner">
         <div class="footer-left reveal">
           <p class="footer-tagline">
@@ -674,6 +524,7 @@
           <nav class="footer-nav">
             <a href="#films">Selected Works</a>
             <a href="#productions">Productions</a>
+            <a href="#team">The Team</a>
             <a href="#about">About the Studio</a>
             <a href="mailto:hello@MOVIE.studio">Collaborate</a>
           </nav>
@@ -684,8 +535,8 @@
         </div>
         <div class="footer-right reveal reveal-delay-1">
           <div class="footer-social">
-            <a href="#" aria-label="Instagram">
-              <svg
+            <a href="#" aria-label="Instagram"
+              ><svg
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -699,11 +550,10 @@
                   r="0.5"
                   fill="currentColor"
                   stroke="none"
-                />
-              </svg>
-            </a>
-            <a href="#" aria-label="Vimeo">
-              <svg
+                /></svg
+            ></a>
+            <a href="#" aria-label="Vimeo"
+              ><svg
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -711,11 +561,10 @@
               >
                 <path
                   d="M22 7c-.1 2.2-1.6 5.3-4.5 9.2C14.5 20.4 11.9 22 9.7 22c-1.4 0-2.5-1.3-3.5-3.8L4.6 12C3.9 9.5 3.1 8.2 2.2 8.2c-.2 0-.9.4-2.2 1.3L0 8.2C1.4 7 2.8 5.8 4.1 4.7c1.8-1.5 3.1-2.3 4-2.4 2.1-.2 3.4 1.2 3.9 4.2.5 3.2.9 5.2 1.1 6 .6 2.7 1.3 4 2 4 .6 0 1.4-.9 2.6-2.6 1.1-1.7 1.7-3 1.8-3.9.2-1.5-.4-2.2-1.8-2.2-.6 0-1.3.1-2 .4 1.3-4.3 3.8-6.4 7.5-6.2"
-                />
-              </svg>
-            </a>
-            <a href="#" aria-label="YouTube">
-              <svg
+                /></svg
+            ></a>
+            <a href="#" aria-label="YouTube"
+              ><svg
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -726,13 +575,11 @@
                   points="10,9 10,15 16,12"
                   fill="currentColor"
                   stroke="none"
-                />
-              </svg>
-            </a>
+                /></svg
+            ></a>
           </div>
         </div>
       </div>
-
       <div class="footer-bottom">
         <div class="footer-copy">© 2026 MOVIE Studio. All rights reserved.</div>
         <div class="footer-strip">
@@ -747,6 +594,53 @@
         </div>
       </div>
     </footer>
+
+    <!-- ═══════════════════════════════════════════
+         FILM OVERLAY
+         ═══════════════════════════════════════════ -->
+    <div
+      class="overlay-panel"
+      id="filmOverlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Film detail"
+    >
+      <div class="overlay-close-bar">
+        <span class="bar-logo" onclick="closeOverlay()">MOVIE</span>
+        <button
+          class="overlay-close-btn"
+          onclick="closeOverlay()"
+          aria-label="Close"
+        >
+          Close <span class="overlay-close-x"></span>
+        </button>
+      </div>
+      <div id="filmOverlayContent"></div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         TEAM OVERLAY
+         ═══════════════════════════════════════════ -->
+    <div
+      class="overlay-panel"
+      id="teamOverlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Team member profile"
+    >
+      <div class="overlay-close-bar">
+        <span class="bar-logo" onclick="closeOverlay()">MOVIE</span>
+        <button
+          class="overlay-close-btn"
+          onclick="closeOverlay()"
+          aria-label="Close"
+        >
+          Close <span class="overlay-close-x"></span>
+        </button>
+      </div>
+      <div id="teamOverlayContent"></div>
+    </div>
+
     <script src="assets/js/script.js"></script>
   </body>
 </html>
