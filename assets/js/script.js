@@ -8,16 +8,29 @@ const TEAM = {
     name: "Marta Hryhorenko",
     role: "Director",
     index: "01 / 03",
-    photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80",
+    photo:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80",
     bio: [
       "Marta Hryhorenko is an award-winning documentary director whose work spans a decade of filmmaking in Eastern Europe. Her films have screened at IDFA, Berlinale, Venice, and Sundance — and have been broadcast in over forty countries.",
       'She studied directing at the Kyiv National I.K. Karpenko-Kary Theatre, Cinema and Television University and later completed a fellowship at the Berlinale Talents programme. Her approach is rooted in what she calls "patient cinema" — long-form observation that refuses to arrive at conclusions before the subject is ready.',
       "Marta currently divides her time between Kyiv and Warsaw, where she is in development on a new feature examining the post-war reconstruction of identity in southern Ukraine.",
     ],
     films: [
-      { id: "iron-cartography", title: "Iron Cartography", meta: "2023 · Feature" },
-      { id: "shadows-of-kyiv", title: "Shadows of Kyiv", meta: "2022 · Feature" },
-      { id: "the-last-witness", title: "The Last Witness", meta: "2021 · Short" },
+      {
+        id: "iron-cartography",
+        title: "Iron Cartography",
+        meta: "2023 · Feature",
+      },
+      {
+        id: "shadows-of-kyiv",
+        title: "Shadows of Kyiv",
+        meta: "2022 · Feature",
+      },
+      {
+        id: "the-last-witness",
+        title: "The Last Witness",
+        meta: "2021 · Short",
+      },
       { id: "dust-and-memory", title: "Dust & Memory", meta: "2020 · Feature" },
       { id: "silent-archive", title: "Silent Archive", meta: "2019 · Short" },
     ],
@@ -28,16 +41,29 @@ const TEAM = {
     name: "Dmytro Savchenko",
     role: "Producer",
     index: "02 / 03",
-    photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=85",
+    photo:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=85",
     bio: [
       "Dmytro Savchenko has produced fourteen documentary features and over twenty shorts across Europe and the Middle East. He entered the industry as a fixer in conflict zones and carries that discipline into every production — calm under pressure, precise in everything.",
       "His producing philosophy is one of radical trust: in the director's instinct, in the subject's time, and in the audience's intelligence. He does not rush stories to their conclusions.",
       "Dmytro holds an MA in International Film Business from the London Film School and serves on the advisory board of DocuDays UA International Human Rights Documentary Film Festival.",
     ],
     films: [
-      { id: "iron-cartography", title: "Iron Cartography", meta: "2023 · Feature" },
-      { id: "shadows-of-kyiv", title: "Shadows of Kyiv", meta: "2022 · Feature" },
-      { id: "the-last-witness", title: "The Last Witness", meta: "2021 · Short" },
+      {
+        id: "iron-cartography",
+        title: "Iron Cartography",
+        meta: "2023 · Feature",
+      },
+      {
+        id: "shadows-of-kyiv",
+        title: "Shadows of Kyiv",
+        meta: "2022 · Feature",
+      },
+      {
+        id: "the-last-witness",
+        title: "The Last Witness",
+        meta: "2021 · Short",
+      },
       { id: "dust-and-memory", title: "Dust & Memory", meta: "2020 · Feature" },
     ],
     prev: "marta-hryhorenko",
@@ -47,15 +73,24 @@ const TEAM = {
     name: "Olena Bondar",
     role: "Editor",
     index: "03 / 03",
-    photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=900&q=85",
+    photo:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=900&q=85",
     bio: [
       "Olena Bondar assembles silence as much as image. Her editorial approach — developed across twelve years and over thirty projects — treats each cut not as a break but as a breath: the space between where meaning lives.",
       "Trained at the National Film School of Łódź, Olena has collaborated with directors across Ukraine, Poland, Germany, and Georgia. She brings to each project an acute sensitivity to pacing, an architectural eye for structure, and an unwillingness to let beauty override truth.",
       'Her work on Dust & Memory was cited by DOK Leipzig\'s jury for "an editorial intelligence that transforms documentation into poetry." She is currently editing two features simultaneously — a practice she describes as "the best way to stay honest about both."',
     ],
     films: [
-      { id: "iron-cartography", title: "Iron Cartography", meta: "2023 · Feature" },
-      { id: "shadows-of-kyiv", title: "Shadows of Kyiv", meta: "2022 · Feature" },
+      {
+        id: "iron-cartography",
+        title: "Iron Cartography",
+        meta: "2023 · Feature",
+      },
+      {
+        id: "shadows-of-kyiv",
+        title: "Shadows of Kyiv",
+        meta: "2022 · Feature",
+      },
       { id: "dust-and-memory", title: "Dust & Memory", meta: "2020 · Feature" },
       { id: "silent-archive", title: "Silent Archive", meta: "2019 · Short" },
     ],
@@ -94,13 +129,17 @@ function openFilmCard(id) {
   if (info) {
     info.setAttribute("aria-hidden", "false");
     /* Stagger content reveal */
-    info.querySelectorAll(".fsi-meta, .fsi-title, .fsi-year-large, .fsi-tagline, .fsi-synopsis, .fsi-credits, .fsi-awards, .fsi-actions").forEach((el, i) => {
-      el.style.transitionDelay = (0.18 + i * 0.055) + "s";
-    });
+    info
+      .querySelectorAll(
+        ".fsi-meta, .fsi-title, .fsi-year-large, .fsi-tagline, .fsi-synopsis, .fsi-credits, .fsi-awards, .fsi-actions",
+      )
+      .forEach((el, i) => {
+        el.style.transitionDelay = 0.18 + i * 0.055 + "s";
+      });
   }
 
   /* Dim all other strips */
-  stage.querySelectorAll(".film-strip:not(.strip-active)").forEach(s => {
+  stage.querySelectorAll(".film-strip:not(.strip-active)").forEach((s) => {
     s.classList.add("strip-dim");
   });
 
@@ -116,16 +155,21 @@ function _closeStripInternal(strip) {
   if (info) {
     info.setAttribute("aria-hidden", "true");
     /* Reset delays */
-    info.querySelectorAll("[style]").forEach(el => el.style.transitionDelay = "");
+    info
+      .querySelectorAll("[style]")
+      .forEach((el) => (el.style.transitionDelay = ""));
   }
-  stage.querySelectorAll(".film-strip").forEach(s => s.classList.remove("strip-dim"));
+  stage
+    .querySelectorAll(".film-strip")
+    .forEach((s) => s.classList.remove("strip-dim"));
   stage.classList.remove("has-active");
 }
 
 function closeFilmCard(stripOrId, updateHash = true) {
-  const strip = typeof stripOrId === "string"
-    ? document.getElementById("film-" + stripOrId)
-    : stripOrId;
+  const strip =
+    typeof stripOrId === "string"
+      ? document.getElementById("film-" + stripOrId)
+      : stripOrId;
   if (!strip) return;
 
   _closeStripInternal(strip);
@@ -134,31 +178,34 @@ function closeFilmCard(stripOrId, updateHash = true) {
 }
 
 /* Click handlers for film strips */
-document.getElementById("filmsOrbit").querySelectorAll(".film-strip[data-film]").forEach((strip) => {
-  strip.addEventListener("click", (e) => {
-    if (e.target.closest(".fsi-close")) return;
-    if (e.target.closest(".fsi-cta")) return; /* let link work */
+document
+  .getElementById("filmsOrbit")
+  .querySelectorAll(".film-strip[data-film]")
+  .forEach((strip) => {
+    strip.addEventListener("click", (e) => {
+      if (e.target.closest(".fsi-close")) return;
+      if (e.target.closest(".fsi-cta")) return; /* let link work */
 
-    const id = strip.dataset.film;
-    if (strip.classList.contains("strip-active")) {
-      closeFilmCard(strip);
-    } else {
-      openFilmCard(id);
-    }
-  });
-
-  strip.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
       const id = strip.dataset.film;
       if (strip.classList.contains("strip-active")) {
         closeFilmCard(strip);
       } else {
         openFilmCard(id);
       }
-    }
+    });
+
+    strip.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        const id = strip.dataset.film;
+        if (strip.classList.contains("strip-active")) {
+          closeFilmCard(strip);
+        } else {
+          openFilmCard(id);
+        }
+      }
+    });
   });
-});
 
 /* Close buttons inside strips */
 document.querySelectorAll(".fstrip-info .fsi-close").forEach((btn) => {
@@ -219,7 +266,8 @@ document.querySelectorAll(".production-item[data-film]").forEach((item) => {
   const expandBtn = item.querySelector(".prod-expand-btn");
 
   function handleProdToggle(e) {
-    if (e.target.closest(".pdp-close") || e.target.closest(".film-acc-trigger")) return;
+    if (e.target.closest(".pdp-close") || e.target.closest(".film-acc-trigger"))
+      return;
     if (item.classList.contains("prod-open")) {
       closeProdDetail(item);
     } else {
@@ -228,10 +276,11 @@ document.querySelectorAll(".production-item[data-film]").forEach((item) => {
   }
 
   if (row) row.addEventListener("click", handleProdToggle);
-  if (expandBtn) expandBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    handleProdToggle(e);
-  });
+  if (expandBtn)
+    expandBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      handleProdToggle(e);
+    });
 });
 
 /* Production close button */
@@ -269,14 +318,22 @@ function handleFilmHash(id) {
   const card = document.getElementById("film-" + id);
   if (card) {
     openFilmCard(id);
-    setTimeout(() => card.scrollIntoView({ behavior: "smooth", block: "center" }), 200);
+    setTimeout(
+      () => card.scrollIntoView({ behavior: "smooth", block: "center" }),
+      200,
+    );
     return;
   }
   /* Try production item */
-  const prodItem = document.querySelector(`.production-item[data-film="${id}"]`);
+  const prodItem = document.querySelector(
+    `.production-item[data-film="${id}"]`,
+  );
   if (prodItem) {
     /* Reveal hidden items first if needed */
-    if (prodItem.classList.contains("hidden-item") && !prodItem.classList.contains("revealed")) {
+    if (
+      prodItem.classList.contains("hidden-item") &&
+      !prodItem.classList.contains("revealed")
+    ) {
       toggleProductions();
     }
     openProdDetail(prodItem);
@@ -360,7 +417,10 @@ function openTeamMember(id) {
   const item = document.querySelector(`.team-item[data-team="${id}"]`);
   if (item) {
     openTeamItem(item);
-    setTimeout(() => item.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
+    setTimeout(
+      () => item.scrollIntoView({ behavior: "smooth", block: "start" }),
+      100,
+    );
   }
 }
 
@@ -408,7 +468,10 @@ function openTeamItem(item) {
   }
   const id = item.dataset.team;
   if (id) history.pushState({ team: id }, "", `#team-${id}`);
-  setTimeout(() => item.scrollIntoView({ behavior: "smooth", block: "nearest" }), 80);
+  setTimeout(
+    () => item.scrollIntoView({ behavior: "smooth", block: "nearest" }),
+    80,
+  );
 }
 
 function closeTeamItem(item, updateHash = true) {
@@ -558,11 +621,9 @@ const gatherObs = new IntersectionObserver(
   (entries) =>
     entries.forEach((e) => {
       if (e.isIntersecting) {
-        orbitEl
-          .querySelectorAll(".film-strip")
-          .forEach((c, i) => {
-            setTimeout(() => c.classList.add("strip-visible"), i * 90);
-          });
+        orbitEl.querySelectorAll(".film-strip").forEach((c, i) => {
+          setTimeout(() => c.classList.add("strip-visible"), i * 90);
+        });
         gatherObs.disconnect();
       }
     }),
@@ -615,3 +676,8 @@ function setLang(lang) {
     btn.classList.toggle("active", btn.textContent === lang);
   });
 }
+
+const btt = document.querySelector(".back-to-top");
+window.addEventListener("scroll", () => {
+  btt.classList.toggle("visible", window.scrollY > 600);
+});
