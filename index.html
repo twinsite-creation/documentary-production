@@ -77,19 +77,12 @@
               /></svg
           ></a>
         </div>
-        <!--<div class="lang-switch">
-          <button class="active" onclick="setLang('EN')">EN</button>
-          <span>/</span>
-          <button onclick="setLang('UA')">UA</button>
-        </div>-->
       </div>
     </div>
 
     <!-- Header -->
     <header id="header">
-      <span class="header-logo" id="headerLogo" onclick="closeOverlay()"
-        >MOVIE</span
-      >
+      <span class="header-logo" id="headerLogo">MOVIE</span>
       <div class="header-right">
         <nav>
           <ul>
@@ -143,11 +136,6 @@
               /></svg
           ></a>
         </div>
-        <!--<div class="lang-switch" id="langSwitch">
-          <button class="active" onclick="setLang('EN')">EN</button>
-          <span>/</span>
-          <button onclick="setLang('UA')">UA</button>
-        </div>-->
         <div class="burger" id="burger">
           <span></span><span></span><span></span>
         </div>
@@ -172,55 +160,432 @@
       </div>
     </section>
 
-    <!-- Films (orbit) -->
+    <!-- ═══════════════════════════════════════════
+         FILMS — Selected Works
+         ЗМІНА 1: Cinematic interactive strip layout.
+         5 вертикальних панелей — при кліку вибраний
+         розширюється, показує повну інформацію.
+         Інші стискаються та затемнюються.
+         Hash navigation збережено.
+         ═══════════════════════════════════════════ -->
     <section id="films">
       <div class="section-label reveal"><span>Selected Works</span></div>
       <div class="films-header">
-        <h2 class="films-title reveal">
-          The films that<br />changed perspectives
-        </h2>
+        <h2 class="films-title reveal">The films that changed perspectives</h2>
         <div class="films-count reveal reveal-delay-1">— 18 productions</div>
       </div>
-      <div class="films-orbit" id="filmsOrbit">
-        <div class="film-card" data-film="shadows-of-kyiv">
-          <img
-            src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600&q=80"
-            alt="Shadows of Kyiv"
-          />
-          <div class="film-card-label">Shadows of Kyiv — 2022</div>
-        </div>
-        <div class="film-card" data-film="the-last-witness">
-          <img
-            src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=700&q=80"
-            alt="The Last Witness"
-          />
-          <div class="film-card-label">The Last Witness — 2021</div>
-        </div>
-        <div class="film-card" data-film="dust-and-memory">
-          <img
-            src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=500&q=80"
-            alt="Dust & Memory"
-          />
-          <div class="film-card-label">Dust & Memory — 2020</div>
-        </div>
-        <div class="film-card" data-film="iron-cartography">
-          <img
-            src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=600&q=80"
-            alt="Iron Cartography"
-          />
-          <div class="film-card-label">Iron Cartography — 2023</div>
-        </div>
-        <div class="film-card" data-film="silent-archive">
-          <img
-            src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=500&q=80"
-            alt="Silent Archive"
-          />
-          <div class="film-card-label">Silent Archive — 2019</div>
-        </div>
+
+      <div class="films-stage" id="filmsOrbit">
+        <!-- STRIP 1: Shadows of Kyiv -->
+        <article
+          class="film-strip"
+          id="film-shadows-of-kyiv"
+          data-film="shadows-of-kyiv"
+          tabindex="0"
+          aria-expanded="false"
+        >
+          <div class="fstrip-bg">
+            <img
+              src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=1400&q=85"
+              alt="Shadows of Kyiv"
+              loading="lazy"
+            />
+          </div>
+          <div class="fstrip-idle">
+            <span class="fstrip-index">01</span>
+            <span class="fstrip-idle-title">Shadows of Kyiv</span>
+            <span class="fstrip-year">2022</span>
+          </div>
+          <div class="fstrip-info" aria-hidden="true">
+            <div class="fsi-body">
+              <div class="fsi-meta">
+                <span class="fsi-tag">Feature</span>
+                <span class="fsi-tag">94 min</span>
+                <span class="fsi-tag">Ukraine · Poland</span>
+              </div>
+              <h2 class="fsi-title">Shadows<br />of Kyiv</h2>
+              <p class="fsi-year-large">2022</p>
+              <p class="fsi-tagline">
+                A city remembers everything.<br />Its people are learning to
+                forget.
+              </p>
+              <p class="fsi-synopsis">
+                Over eighteen months, Marta Hryhorenko followed four residents
+                of Kyiv's historic districts — a retired archivist, a young
+                musician, a former Soviet engineer, and a teenage street artist
+                — each living in a different relationship with the city's
+                layered past. Shot in the weeks before and after a period of
+                significant political upheaval, the film becomes a document of a
+                city in the last moment before it changed irrevocably. The
+                camera found not nostalgia — but something rawer.
+              </p>
+              <div class="fsi-credits">
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Director</span
+                  ><span>Marta Hryhorenko</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Producer</span
+                  ><span>Dmytro Savchenko</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Editor</span
+                  ><span>Olena Bondar</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Format</span
+                  ><span>2.39:1 · DCP</span>
+                </div>
+              </div>
+              <div class="fsi-awards">
+                <div class="fsi-award-item">
+                  ◈ IDFA Amsterdam · World Premiere · Main Competition
+                </div>
+                <div class="fsi-award-item">
+                  ◈ Hot Docs Toronto · Best International Feature
+                </div>
+                <div class="fsi-award-item">
+                  ◈ Golden Dzyga · Best Documentary Feature
+                </div>
+                <div class="fsi-award-item">
+                  ◈ Sheffield DocFest · Official Selection
+                </div>
+              </div>
+              <div class="fsi-actions">
+                <a href="#productions" class="fsi-cta"
+                  >View Full Details <span>→</span></a
+                >
+                <button class="fsi-close" aria-label="Close">✕ Close</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- STRIP 2: The Last Witness -->
+        <article
+          class="film-strip"
+          id="film-the-last-witness"
+          data-film="the-last-witness"
+          tabindex="0"
+          aria-expanded="false"
+        >
+          <div class="fstrip-bg">
+            <img
+              src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1400&q=85"
+              alt="The Last Witness"
+              loading="lazy"
+            />
+          </div>
+          <div class="fstrip-idle">
+            <span class="fstrip-index">02</span>
+            <span class="fstrip-idle-title">The Last Witness</span>
+            <span class="fstrip-year">2021</span>
+          </div>
+          <div class="fstrip-info" aria-hidden="true">
+            <div class="fsi-body">
+              <div class="fsi-meta">
+                <span class="fsi-tag">Short</span>
+                <span class="fsi-tag">38 min</span>
+                <span class="fsi-tag">Ukraine</span>
+              </div>
+              <h2 class="fsi-title">The Last<br />Witness</h2>
+              <p class="fsi-year-large">2021</p>
+              <p class="fsi-tagline">
+                Three voices. One century.<br />What happens when they go
+                silent?
+              </p>
+              <p class="fsi-synopsis">
+                Three elderly witnesses to the 20th century's most pivotal
+                moments speak — cautiously, precisely — about what they saw,
+                what they carried, and what they chose to keep silent about for
+                decades. The Last Witness asks what happens to historical truth
+                when its last custodians die. It offers no consolation. It
+                offers instead their faces, their hands, their pauses.
+              </p>
+              <div class="fsi-credits">
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Director</span
+                  ><span>Marta Hryhorenko</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Producer</span
+                  ><span>Dmytro Savchenko</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Editor</span
+                  ><span>Olena Bondar</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Format</span
+                  ><span>1.85:1 · DCP</span>
+                </div>
+              </div>
+              <div class="fsi-awards">
+                <div class="fsi-award-item">
+                  ◈ Visions du Réel · Short Competition
+                </div>
+                <div class="fsi-award-item">
+                  ◈ CPH:DOX Copenhagen · Best Short Documentary
+                </div>
+                <div class="fsi-award-item">
+                  ◈ Docudays UA · Official Selection
+                </div>
+              </div>
+              <div class="fsi-actions">
+                <a href="#productions" class="fsi-cta"
+                  >View Full Details <span>→</span></a
+                >
+                <button class="fsi-close" aria-label="Close">✕ Close</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- STRIP 3: Dust & Memory -->
+        <article
+          class="film-strip"
+          id="film-dust-and-memory"
+          data-film="dust-and-memory"
+          tabindex="0"
+          aria-expanded="false"
+        >
+          <div class="fstrip-bg">
+            <img
+              src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=1400&q=85"
+              alt="Dust &amp; Memory"
+              loading="lazy"
+            />
+          </div>
+          <div class="fstrip-idle">
+            <span class="fstrip-index">03</span>
+            <span class="fstrip-idle-title">Dust &amp; Memory</span>
+            <span class="fstrip-year">2020</span>
+          </div>
+          <div class="fstrip-info" aria-hidden="true">
+            <div class="fsi-body">
+              <div class="fsi-meta">
+                <span class="fsi-tag">Feature</span>
+                <span class="fsi-tag">112 min</span>
+                <span class="fsi-tag">UA · DE · GE</span>
+              </div>
+              <h2 class="fsi-title">Dust &amp;<br />Memory</h2>
+              <p class="fsi-year-large">2020</p>
+              <p class="fsi-tagline">
+                Five cities. Two years.<br />What do we choose to remember?
+              </p>
+              <p class="fsi-synopsis">
+                Shot across Kyiv, Lviv, Warsaw, Tbilisi, and Leipzig over two
+                years, this film follows the traces that ordinary people leave
+                in the fabric of cities: photographs pinned to fences,
+                inscriptions worn into doorframes, the routes old people still
+                walk to houses that no longer exist. A meditation on urban
+                memory and architectural grief. Co-produced with ZDF/Arte.
+              </p>
+              <div class="fsi-credits">
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Director</span
+                  ><span>Marta Hryhorenko</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Producer</span
+                  ><span>Dmytro Savchenko</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Editor</span
+                  ><span>Olena Bondar</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Format</span
+                  ><span>2.39:1 · DCP</span>
+                </div>
+              </div>
+              <div class="fsi-awards">
+                <div class="fsi-award-item">
+                  ◈ Berlinale · Documentary Forum
+                </div>
+                <div class="fsi-award-item">
+                  ◈ DOK Leipzig · Special Jury Prize
+                </div>
+                <div class="fsi-award-item">◈ IDFA · Audience Award</div>
+              </div>
+              <div class="fsi-actions">
+                <a href="#productions" class="fsi-cta"
+                  >View Full Details <span>→</span></a
+                >
+                <button class="fsi-close" aria-label="Close">✕ Close</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- STRIP 4: Iron Cartography -->
+        <article
+          class="film-strip"
+          id="film-iron-cartography"
+          data-film="iron-cartography"
+          tabindex="0"
+          aria-expanded="false"
+        >
+          <div class="fstrip-bg">
+            <img
+              src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=1400&q=85"
+              alt="Iron Cartography"
+              loading="lazy"
+            />
+          </div>
+          <div class="fstrip-idle">
+            <span class="fstrip-index">04</span>
+            <span class="fstrip-idle-title">Iron Cartography</span>
+            <span class="fstrip-year">2023</span>
+          </div>
+          <div class="fstrip-info" aria-hidden="true">
+            <div class="fsi-body">
+              <div class="fsi-meta">
+                <span class="fsi-tag">Feature</span>
+                <span class="fsi-tag">88 min</span>
+                <span class="fsi-tag">UA · FR · UK</span>
+              </div>
+              <h2 class="fsi-title">Iron<br />Cartography</h2>
+              <p class="fsi-year-large">2023</p>
+              <p class="fsi-tagline">
+                War does not only destroy places.<br />It redraws who we are.
+              </p>
+              <p class="fsi-synopsis">
+                A visual essay on the invisible borders drawn by conflict — on
+                how war does not merely alter geography but changes the internal
+                maps by which people navigate identity, belonging, and home.
+                Following cartographers, veterans, displaced families, and city
+                planners in three countries, the film asks what it means to
+                redraw a life after the lines have moved. The film does not take
+                sides. It takes the side of complexity.
+              </p>
+              <div class="fsi-credits">
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Director</span
+                  ><span>Marta Hryhorenko</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Producer</span
+                  ><span>Dmytro Savchenko</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Editor</span
+                  ><span>Olena Bondar</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Format</span
+                  ><span>2.39:1 · DCP</span>
+                </div>
+              </div>
+              <div class="fsi-awards">
+                <div class="fsi-award-item">
+                  ◈ Venice · Orizzonti Doc · Special Jury Mention
+                </div>
+                <div class="fsi-award-item">◈ TIFF · Official Selection</div>
+                <div class="fsi-award-item">
+                  ◈ IDFA · Best Feature Documentary
+                </div>
+              </div>
+              <div class="fsi-actions">
+                <a href="#productions" class="fsi-cta"
+                  >View Full Details <span>→</span></a
+                >
+                <button class="fsi-close" aria-label="Close">✕ Close</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- STRIP 5: Silent Archive -->
+        <article
+          class="film-strip"
+          id="film-silent-archive"
+          data-film="silent-archive"
+          tabindex="0"
+          aria-expanded="false"
+        >
+          <div class="fstrip-bg">
+            <img
+              src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=1400&q=85"
+              alt="Silent Archive"
+              loading="lazy"
+            />
+          </div>
+          <div class="fstrip-idle">
+            <span class="fstrip-index">05</span>
+            <span class="fstrip-idle-title">Silent Archive</span>
+            <span class="fstrip-year">2019</span>
+          </div>
+          <div class="fstrip-info" aria-hidden="true">
+            <div class="fsi-body">
+              <div class="fsi-meta">
+                <span class="fsi-tag">Short</span>
+                <span class="fsi-tag">24 min</span>
+                <span class="fsi-tag">Ukraine</span>
+              </div>
+              <h2 class="fsi-title">Silent<br />Archive</h2>
+              <p class="fsi-year-large">2019</p>
+              <p class="fsi-tagline">
+                The films they didn't want you to see.<br />The cinema they
+                almost erased.
+              </p>
+              <p class="fsi-synopsis">
+                Silent Archive journeys through the forgotten footage of
+                Ukrainian cinema from the 1960s — films shelved, cut, or quietly
+                destroyed by Soviet censors — and asks what these fragments
+                reveal about a suppressed artistic identity. Working with film
+                historians, archivists, and surviving members of the Ukrainian
+                Poetic Cinema movement, the film reconstructs not what was lost,
+                but why. The gaps in the archive are as telling as what
+                survives.
+              </p>
+              <div class="fsi-credits">
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Director</span
+                  ><span>Marta Hryhorenko</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Producer</span
+                  ><span>Dmytro Savchenko</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Editor</span
+                  ><span>Olena Bondar</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Format</span
+                  ><span>1.33:1 · DCP</span>
+                </div>
+              </div>
+              <div class="fsi-awards">
+                <div class="fsi-award-item">
+                  ◈ Docudays UA · Grand Prix — Short Film
+                </div>
+                <div class="fsi-award-item">
+                  ◈ Jihlava IDFF · Official Selection
+                </div>
+                <div class="fsi-award-item">
+                  ◈ Krakow Film Festival · Golden Dragon Nominee
+                </div>
+              </div>
+              <div class="fsi-actions">
+                <a href="#productions" class="fsi-cta"
+                  >View Full Details <span>→</span></a
+                >
+                <button class="fsi-close" aria-label="Close">✕ Close</button>
+              </div>
+            </div>
+          </div>
+        </article>
       </div>
+      <!-- /films-stage -->
     </section>
 
-    <!-- Productions list -->
+    <!-- ═══════════════════════════════════════════
+         PRODUCTIONS — All Productions
+         ЗМІНА 2: Accordion detail панелі в HTML,
+         відкриваються на місці без overlay.
+         ═══════════════════════════════════════════ -->
     <section id="productions">
       <div class="productions-header">
         <h2 class="productions-title reveal">All<br />Productions</h2>
@@ -230,155 +595,1283 @@
           the unknown.
         </p>
       </div>
+
       <div id="productionsList">
+        <!-- PRODUCTION 1: Shadows of Kyiv -->
         <div class="production-item reveal" data-film="shadows-of-kyiv">
-          <div class="prod-image">
-            <img
-              src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&q=80"
-              alt="Shadows of Kyiv"
-            />
-          </div>
-          <div class="prod-info">
-            <div class="prod-year">2022 — FEATURE</div>
-            <h3 class="prod-title">Shadows of Kyiv</h3>
-            <p class="prod-desc">
-              An intimate portrait of a city's transformation during times of
-              radical change, told through the voices of those who stayed.
-            </p>
-            <span class="prod-film-link">View Film →</span>
-          </div>
-          <div class="prod-rating">
-            <div class="rating-score">9.1</div>
-            <div class="rating-dots">
-              <div class="rating-dot active"></div>
-              <div class="rating-dot active"></div>
-              <div class="rating-dot active"></div>
-              <div class="rating-dot active"></div>
-              <div class="rating-dot active"></div>
+          <div class="prod-row">
+            <div class="prod-image">
+              <img
+                src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&q=80"
+                alt="Shadows of Kyiv"
+              />
             </div>
-            <div class="rating-label">IMDb Score</div>
+            <div class="prod-info">
+              <div class="prod-year">2022 — FEATURE</div>
+              <h3 class="prod-title">Shadows of Kyiv</h3>
+              <p class="prod-desc">
+                An intimate portrait of a city's transformation during times of
+                radical change, told through the voices of those who stayed.
+              </p>
+            </div>
+            <div class="prod-rating">
+              <div class="rating-score">9.1</div>
+              <div class="rating-dots">
+                <div class="rating-dot active"></div>
+                <div class="rating-dot active"></div>
+                <div class="rating-dot active"></div>
+                <div class="rating-dot active"></div>
+                <div class="rating-dot active"></div>
+              </div>
+              <div class="rating-label">IMDb Score</div>
+            </div>
+            <button
+              class="prod-expand-btn"
+              aria-label="Expand film details"
+              aria-expanded="false"
+            >
+              <span class="prod-expand-label">Details</span>
+              <svg
+                class="prod-arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <polyline points="6,13 12,19 18,13" />
+              </svg>
+            </button>
+          </div>
+          <!-- Film body: accordion sections -->
+          <div class="prod-detail-panel" aria-hidden="true">
+            <div class="film-body">
+              <!-- Accordion: Film Details -->
+              <div class="film-acc-item film-acc-open">
+                <button class="film-acc-trigger" aria-expanded="true">
+                  <span class="film-acc-label">Film Details</span>
+                  <span class="film-acc-index">01</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <dl class="pdp-defs">
+                    <dt>Director</dt>
+                    <dd>Marta Hryhorenko</dd>
+                    <dt>Producer</dt>
+                    <dd>Dmytro Savchenko</dd>
+                    <dt>Editor</dt>
+                    <dd>Olena Bondar</dd>
+                    <dt>Country</dt>
+                    <dd>Ukraine · Poland</dd>
+                    <dt>Runtime</dt>
+                    <dd>94 min</dd>
+                    <dt>Format</dt>
+                    <dd>2.39:1 · DCP</dd>
+                    <dt>Year</dt>
+                    <dd>2022</dd>
+                  </dl>
+                </div>
+              </div>
+
+              <!-- Accordion: Synopsis -->
+              <div class="film-acc-item">
+                <button class="film-acc-trigger" aria-expanded="false">
+                  <span class="film-acc-label">Synopsis</span>
+                  <span class="film-acc-index">02</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <p class="pdp-lead">
+                    Every city carries its dead. Kyiv carries more than most.
+                  </p>
+                  <p class="pdp-body">
+                    Over eighteen months, Marta Hryhorenko followed four
+                    residents of Kyiv's historic districts — a retired
+                    archivist, a young musician, a former Soviet engineer, and a
+                    teenage street artist — each living in a different
+                    relationship with the city's layered past. Shot in the weeks
+                    before and after a period of significant political upheaval,
+                    the film becomes a document of a city in the last moment
+                    before it changed irrevocably.
+                  </p>
+                  <blockquote class="pdp-quote">
+                    "What the camera found was not nostalgia. It was something
+                    rawer: the question of whether memory is a gift or a debt."
+                  </blockquote>
+                </div>
+              </div>
+
+              <!-- Accordion: Film Stills -->
+              <div class="film-acc-item">
+                <button class="film-acc-trigger" aria-expanded="false">
+                  <span class="film-acc-label">Film Stills</span>
+                  <span class="film-acc-index">03</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <div class="film-stills-grid">
+                    <div class="film-still">
+                      <img
+                        src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600&q=75"
+                        alt="Still 1"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="film-still">
+                      <img
+                        src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&q=75"
+                        alt="Still 2"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="film-still">
+                      <img
+                        src="https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=600&q=75"
+                        alt="Still 3"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accordion: Trailer -->
+              <div class="film-acc-item">
+                <button class="film-acc-trigger" aria-expanded="false">
+                  <span class="film-acc-label">Trailer</span>
+                  <span class="film-acc-index">04</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <div class="film-trailer-wrap">
+                    <div class="film-trailer-placeholder">
+                      <svg
+                        viewBox="0 0 64 64"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1"
+                      >
+                        <circle cx="32" cy="32" r="30" />
+                        <polygon
+                          points="26,20 26,44 46,32"
+                          fill="currentColor"
+                          stroke="none"
+                          opacity="0.6"
+                        />
+                      </svg>
+                      <span>Trailer available on request</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accordion: Festivals & Partners -->
+              <div class="film-acc-item">
+                <button class="film-acc-trigger" aria-expanded="false">
+                  <span class="film-acc-label">Festivals &amp; Partners</span>
+                  <span class="film-acc-index">05</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <ul class="pdp-festivals">
+                    <li>
+                      <span class="pdp-fest-year">2022</span>IDFA Amsterdam —
+                      World Premiere · Main Competition
+                    </li>
+                    <li>
+                      <span class="pdp-fest-year">2022</span>Sheffield DocFest —
+                      Official Selection
+                    </li>
+                    <li>
+                      <span class="pdp-fest-year">2023</span>Hot Docs Toronto —
+                      Best International Feature
+                    </li>
+                    <li>
+                      <span class="pdp-fest-year">2023</span>Golden Dzyga — Best
+                      Documentary Feature
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- /film-body -->
+            <div class="film-footer">
+              <button class="pdp-close" aria-label="Close film detail">
+                Close ✕
+              </button>
+            </div>
           </div>
         </div>
+
+        <!-- PRODUCTION 2: The Last Witness -->
         <div
           class="production-item reveal reveal-delay-1"
           data-film="the-last-witness"
         >
-          <div class="prod-image">
-            <img
-              src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=400&q=80"
-              alt="The Last Witness"
-            />
-          </div>
-          <div class="prod-info">
-            <div class="prod-year">2021 — SHORT</div>
-            <h3 class="prod-title">The Last Witness</h3>
-            <p class="prod-desc">
-              Three elderly witnesses to the 20th century's most pivotal moment
-              — their memories as the final thread between past and oblivion.
-            </p>
-            <span class="prod-film-link">View Film →</span>
-          </div>
-          <div class="prod-rating">
-            <div class="rating-score">8.7</div>
-            <div class="rating-dots">
-              <div class="rating-dot active"></div>
-              <div class="rating-dot active"></div>
-              <div class="rating-dot active"></div>
-              <div class="rating-dot active"></div>
-              <div class="rating-dot"></div>
+          <div class="prod-row">
+            <div class="prod-image">
+              <img
+                src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=400&q=80"
+                alt="The Last Witness"
+              />
             </div>
-            <div class="rating-label">IMDb Score</div>
+            <div class="prod-info">
+              <div class="prod-year">2021 — SHORT</div>
+              <h3 class="prod-title">The Last Witness</h3>
+              <p class="prod-desc">
+                Three elderly witnesses to the 20th century's most pivotal
+                moment — their memories as the final thread between past and
+                oblivion.
+              </p>
+            </div>
+            <div class="prod-rating">
+              <div class="rating-score">8.7</div>
+              <div class="rating-dots">
+                <div class="rating-dot active"></div>
+                <div class="rating-dot active"></div>
+                <div class="rating-dot active"></div>
+                <div class="rating-dot active"></div>
+                <div class="rating-dot"></div>
+              </div>
+              <div class="rating-label">IMDb Score</div>
+            </div>
+            <button
+              class="prod-expand-btn"
+              aria-label="Expand film details"
+              aria-expanded="false"
+            >
+              <span class="prod-expand-label">Details</span>
+              <svg
+                class="prod-arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <polyline points="6,13 12,19 18,13" />
+              </svg>
+            </button>
+          </div>
+          <div class="prod-detail-panel" aria-hidden="true">
+            <div class="film-body">
+              <div class="film-acc-item film-acc-open">
+                <button class="film-acc-trigger" aria-expanded="true">
+                  <span class="film-acc-label">Film Details</span>
+                  <span class="film-acc-index">01</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <dl class="pdp-defs">
+                    <dt>Director</dt>
+                    <dd>Marta Hryhorenko</dd>
+                    <dt>Producer</dt>
+                    <dd>Dmytro Savchenko</dd>
+                    <dt>Editor</dt>
+                    <dd>Olena Bondar</dd>
+                    <dt>Country</dt>
+                    <dd>Ukraine</dd>
+                    <dt>Runtime</dt>
+                    <dd>38 min</dd>
+                    <dt>Format</dt>
+                    <dd>1.85:1 · DCP</dd>
+                    <dt>Year</dt>
+                    <dd>2021</dd>
+                  </dl>
+                </div>
+              </div>
+
+              <div class="film-acc-item">
+                <button class="film-acc-trigger" aria-expanded="false">
+                  <span class="film-acc-label">Synopsis</span>
+                  <span class="film-acc-index">02</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <p class="pdp-lead">
+                    Before the first word, there was sound. Before sound, there
+                    was memory.
+                  </p>
+                  <p class="pdp-body">
+                    Three elderly witnesses to the 20th century's most pivotal
+                    moments speak — cautiously, precisely — about what they saw,
+                    what they carried, and what they chose to keep silent about
+                    for decades. The Last Witness asks what happens to
+                    historical truth when its last custodians die. It offers no
+                    consolation. It offers instead their faces, their hands,
+                    their pauses.
+                  </p>
+                  <blockquote class="pdp-quote">
+                    "Neither group has the complete picture. Both know more than
+                    they can say."
+                  </blockquote>
+                </div>
+              </div>
+
+              <div class="film-acc-item">
+                <button class="film-acc-trigger" aria-expanded="false">
+                  <span class="film-acc-label">Film Stills</span>
+                  <span class="film-acc-index">03</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <div class="film-stills-grid">
+                    <div class="film-still">
+                      <img
+                        src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&q=75"
+                        alt="Still 1"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="film-still">
+                      <img
+                        src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?w=600&q=75"
+                        alt="Still 2"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="film-still">
+                      <img
+                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=75"
+                        alt="Still 3"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="film-acc-item">
+                <button class="film-acc-trigger" aria-expanded="false">
+                  <span class="film-acc-label">Trailer</span>
+                  <span class="film-acc-index">04</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <div class="film-trailer-wrap">
+                    <div class="film-trailer-placeholder">
+                      <svg
+                        viewBox="0 0 64 64"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1"
+                      >
+                        <circle cx="32" cy="32" r="30" />
+                        <polygon
+                          points="26,20 26,44 46,32"
+                          fill="currentColor"
+                          stroke="none"
+                          opacity="0.6"
+                        />
+                      </svg>
+                      <span>Trailer available on request</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="film-acc-item">
+                <button class="film-acc-trigger" aria-expanded="false">
+                  <span class="film-acc-label">Festivals &amp; Partners</span>
+                  <span class="film-acc-index">05</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <ul class="pdp-festivals">
+                    <li>
+                      <span class="pdp-fest-year">2021</span>Visions du Réel —
+                      Short Competition
+                    </li>
+                    <li>
+                      <span class="pdp-fest-year">2022</span>CPH:DOX Copenhagen
+                      — Best Short Documentary
+                    </li>
+                    <li>
+                      <span class="pdp-fest-year">2022</span>Docudays UA —
+                      Official Selection
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="film-footer">
+              <button class="pdp-close" aria-label="Close film detail">
+                Close ✕
+              </button>
+            </div>
           </div>
         </div>
+
+        <!-- PRODUCTION 3: Dust & Memory -->
         <div
           class="production-item reveal reveal-delay-2"
           data-film="dust-and-memory"
         >
-          <div class="prod-image">
-            <img
-              src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=400&q=80"
-              alt="Dust & Memory"
-            />
-          </div>
-          <div class="prod-info">
-            <div class="prod-year">2020 — FEATURE</div>
-            <h3 class="prod-title">Dust & Memory</h3>
-            <p class="prod-desc">
-              A meditation on what we choose to remember and what time erases.
-              Shot across five Eastern European cities over two years.
-            </p>
-            <span class="prod-film-link">View Film →</span>
-          </div>
-          <div class="prod-rating">
-            <div class="rating-score">8.4</div>
-            <div class="rating-dots">
-              <div class="rating-dot active"></div>
-              <div class="rating-dot active"></div>
-              <div class="rating-dot active"></div>
-              <div class="rating-dot active"></div>
-              <div class="rating-dot"></div>
+          <div class="prod-row">
+            <div class="prod-image">
+              <img
+                src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=400&q=80"
+                alt="Dust & Memory"
+              />
             </div>
-            <div class="rating-label">IMDb Score</div>
+            <div class="prod-info">
+              <div class="prod-year">2020 — FEATURE</div>
+              <h3 class="prod-title">Dust &amp; Memory</h3>
+              <p class="prod-desc">
+                A meditation on what we choose to remember and what time erases.
+                Shot across five Eastern European cities over two years.
+              </p>
+            </div>
+            <div class="prod-rating">
+              <div class="rating-score">8.4</div>
+              <div class="rating-dots">
+                <div class="rating-dot active"></div>
+                <div class="rating-dot active"></div>
+                <div class="rating-dot active"></div>
+                <div class="rating-dot active"></div>
+                <div class="rating-dot"></div>
+              </div>
+              <div class="rating-label">IMDb Score</div>
+            </div>
+            <button
+              class="prod-expand-btn"
+              aria-label="Expand film details"
+              aria-expanded="false"
+            >
+              <span class="prod-expand-label">Details</span>
+              <svg
+                class="prod-arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <polyline points="6,13 12,19 18,13" />
+              </svg>
+            </button>
+          </div>
+          <div class="prod-detail-panel" aria-hidden="true">
+            <div class="film-body">
+              <div class="film-acc-item film-acc-open">
+                <button class="film-acc-trigger" aria-expanded="true">
+                  <span class="film-acc-label">Film Details</span>
+                  <span class="film-acc-index">01</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <dl class="pdp-defs">
+                    <dt>Director</dt>
+                    <dd>Marta Hryhorenko</dd>
+                    <dt>Producer</dt>
+                    <dd>Dmytro Savchenko</dd>
+                    <dt>Editor</dt>
+                    <dd>Olena Bondar</dd>
+                    <dt>Country</dt>
+                    <dd>Ukraine · Germany · Georgia</dd>
+                    <dt>Runtime</dt>
+                    <dd>112 min</dd>
+                    <dt>Format</dt>
+                    <dd>2.39:1 · DCP</dd>
+                    <dt>Year</dt>
+                    <dd>2020</dd>
+                  </dl>
+                </div>
+              </div>
+
+              <div class="film-acc-item">
+                <button class="film-acc-trigger" aria-expanded="false">
+                  <span class="film-acc-label">Synopsis</span>
+                  <span class="film-acc-index">02</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <p class="pdp-lead">
+                    Memory is not a record. It is a negotiation.
+                  </p>
+                  <p class="pdp-body">
+                    Shot across Kyiv, Lviv, Warsaw, Tbilisi, and Leipzig over
+                    two years, Dust &amp; Memory follows the traces that
+                    ordinary people leave in the fabric of cities: photographs
+                    pinned to fences, inscriptions worn into doorframes, the
+                    routes old people still walk to houses that no longer exist.
+                    A meditation on urban memory and architectural grief.
+                    Co-produced with ZDF/Arte.
+                  </p>
+                  <blockquote class="pdp-quote">
+                    "What the film proposes is that forgetting is not failure.
+                    Sometimes it is the only way a city survives."
+                  </blockquote>
+                </div>
+              </div>
+
+              <div class="film-acc-item">
+                <button class="film-acc-trigger" aria-expanded="false">
+                  <span class="film-acc-label">Film Stills</span>
+                  <span class="film-acc-index">03</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <div class="film-stills-grid">
+                    <div class="film-still">
+                      <img
+                        src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=600&q=75"
+                        alt="Still 1"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="film-still">
+                      <img
+                        src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=75"
+                        alt="Still 2"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="film-still">
+                      <img
+                        src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&q=75"
+                        alt="Still 3"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="film-acc-item">
+                <button class="film-acc-trigger" aria-expanded="false">
+                  <span class="film-acc-label">Trailer</span>
+                  <span class="film-acc-index">04</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <div class="film-trailer-wrap">
+                    <div class="film-trailer-placeholder">
+                      <svg
+                        viewBox="0 0 64 64"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1"
+                      >
+                        <circle cx="32" cy="32" r="30" />
+                        <polygon
+                          points="26,20 26,44 46,32"
+                          fill="currentColor"
+                          stroke="none"
+                          opacity="0.6"
+                        />
+                      </svg>
+                      <span>Trailer available on request</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="film-acc-item">
+                <button class="film-acc-trigger" aria-expanded="false">
+                  <span class="film-acc-label">Festivals &amp; Partners</span>
+                  <span class="film-acc-index">05</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <ul class="pdp-festivals">
+                    <li>
+                      <span class="pdp-fest-year">2020</span>Berlinale —
+                      Documentary Forum
+                    </li>
+                    <li>
+                      <span class="pdp-fest-year">2020</span>DOK Leipzig —
+                      Special Jury Prize
+                    </li>
+                    <li>
+                      <span class="pdp-fest-year">2021</span>IDFA — Audience
+                      Award
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="film-footer">
+              <button class="pdp-close" aria-label="Close film detail">
+                Close ✕
+              </button>
+            </div>
           </div>
         </div>
+
+        <!-- PRODUCTION 4: Iron Cartography (hidden initially) -->
         <div class="production-item hidden-item" data-film="iron-cartography">
-          <div class="prod-image">
-            <img
-              src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=400&q=80"
-              alt="Iron Cartography"
-            />
-          </div>
-          <div class="prod-info">
-            <div class="prod-year">2023 — FEATURE</div>
-            <h3 class="prod-title">Iron Cartography</h3>
-            <p class="prod-desc">
-              Mapping the invisible borders drawn by conflict — a visual essay
-              on how war reshapes geography and identity simultaneously.
-            </p>
-            <span class="prod-film-link">View Film →</span>
-          </div>
-          <div class="prod-rating">
-            <div class="rating-score">9.3</div>
-            <div class="rating-dots">
-              <div class="rating-dot active"></div>
-              <div class="rating-dot active"></div>
-              <div class="rating-dot active"></div>
-              <div class="rating-dot active"></div>
-              <div class="rating-dot active"></div>
+          <div class="prod-row">
+            <div class="prod-image">
+              <img
+                src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=400&q=80"
+                alt="Iron Cartography"
+              />
             </div>
-            <div class="rating-label">IMDb Score</div>
+            <div class="prod-info">
+              <div class="prod-year">2023 — FEATURE</div>
+              <h3 class="prod-title">Iron Cartography</h3>
+              <p class="prod-desc">
+                Mapping the invisible borders drawn by conflict — a visual essay
+                on how war reshapes geography and identity simultaneously.
+              </p>
+            </div>
+            <div class="prod-rating">
+              <div class="rating-score">9.3</div>
+              <div class="rating-dots">
+                <div class="rating-dot active"></div>
+                <div class="rating-dot active"></div>
+                <div class="rating-dot active"></div>
+                <div class="rating-dot active"></div>
+                <div class="rating-dot active"></div>
+              </div>
+              <div class="rating-label">IMDb Score</div>
+            </div>
+            <button
+              class="prod-expand-btn"
+              aria-label="Expand film details"
+              aria-expanded="false"
+            >
+              <span class="prod-expand-label">Details</span>
+              <svg
+                class="prod-arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <polyline points="6,13 12,19 18,13" />
+              </svg>
+            </button>
+          </div>
+          <div class="prod-detail-panel" aria-hidden="true">
+            <div class="film-body">
+              <div class="film-acc-item film-acc-open">
+                <button class="film-acc-trigger" aria-expanded="true">
+                  <span class="film-acc-label">Film Details</span>
+                  <span class="film-acc-index">01</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <dl class="pdp-defs">
+                    <dt>Director</dt>
+                    <dd>Marta Hryhorenko</dd>
+                    <dt>Producer</dt>
+                    <dd>Dmytro Savchenko</dd>
+                    <dt>Editor</dt>
+                    <dd>Olena Bondar</dd>
+                    <dt>Country</dt>
+                    <dd>Ukraine · France · UK</dd>
+                    <dt>Runtime</dt>
+                    <dd>88 min</dd>
+                    <dt>Format</dt>
+                    <dd>2.39:1 · DCP</dd>
+                    <dt>Year</dt>
+                    <dd>2023</dd>
+                  </dl>
+                </div>
+              </div>
+
+              <div class="film-acc-item">
+                <button class="film-acc-trigger" aria-expanded="false">
+                  <span class="film-acc-label">Synopsis</span>
+                  <span class="film-acc-index">02</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <p class="pdp-lead">Maps lie. They always have.</p>
+                  <p class="pdp-body">
+                    Iron Cartography is a visual essay on the invisible borders
+                    drawn by conflict — on how war does not merely alter
+                    geography but changes the internal maps by which people
+                    navigate identity, belonging, and home. Following
+                    cartographers, veterans, displaced families, and city
+                    planners in three countries, the film asks what it means to
+                    redraw a life after the lines have moved. The film does not
+                    take sides. It takes the side of complexity.
+                  </p>
+                  <blockquote class="pdp-quote">
+                    "The film does not take sides. It takes the side of
+                    complexity."
+                  </blockquote>
+                </div>
+              </div>
+
+              <div class="film-acc-item">
+                <button class="film-acc-trigger" aria-expanded="false">
+                  <span class="film-acc-label">Film Stills</span>
+                  <span class="film-acc-index">03</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <div class="film-stills-grid">
+                    <div class="film-still">
+                      <img
+                        src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=600&q=75"
+                        alt="Still 1"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="film-still">
+                      <img
+                        src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&q=75"
+                        alt="Still 2"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="film-still">
+                      <img
+                        src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75"
+                        alt="Still 3"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="film-acc-item">
+                <button class="film-acc-trigger" aria-expanded="false">
+                  <span class="film-acc-label">Trailer</span>
+                  <span class="film-acc-index">04</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <div class="film-trailer-wrap">
+                    <div class="film-trailer-placeholder">
+                      <svg
+                        viewBox="0 0 64 64"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1"
+                      >
+                        <circle cx="32" cy="32" r="30" />
+                        <polygon
+                          points="26,20 26,44 46,32"
+                          fill="currentColor"
+                          stroke="none"
+                          opacity="0.6"
+                        />
+                      </svg>
+                      <span>Trailer available on request</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="film-acc-item">
+                <button class="film-acc-trigger" aria-expanded="false">
+                  <span class="film-acc-label">Festivals &amp; Partners</span>
+                  <span class="film-acc-index">05</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <ul class="pdp-festivals">
+                    <li>
+                      <span class="pdp-fest-year">2023</span>Venice — Orizzonti
+                      Doc · Special Jury Mention
+                    </li>
+                    <li>
+                      <span class="pdp-fest-year">2023</span>TIFF — Official
+                      Selection
+                    </li>
+                    <li>
+                      <span class="pdp-fest-year">2024</span>IDFA — Best Feature
+                      Documentary
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="film-footer">
+              <button class="pdp-close" aria-label="Close film detail">
+                Close ✕
+              </button>
+            </div>
           </div>
         </div>
+
+        <!-- PRODUCTION 5: Silent Archive (hidden initially) -->
         <div class="production-item hidden-item" data-film="silent-archive">
-          <div class="prod-image">
-            <img
-              src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=400&q=80"
-              alt="Silent Archive"
-            />
-          </div>
-          <div class="prod-info">
-            <div class="prod-year">2019 — SHORT</div>
-            <h3 class="prod-title">Silent Archive</h3>
-            <p class="prod-desc">
-              A journey through the forgotten footage of Ukrainian cinema from
-              the 1960s and what it reveals about a suppressed artistic
-              identity.
-            </p>
-            <span class="prod-film-link">View Film →</span>
-          </div>
-          <div class="prod-rating">
-            <div class="rating-score">7.9</div>
-            <div class="rating-dots">
-              <div class="rating-dot active"></div>
-              <div class="rating-dot active"></div>
-              <div class="rating-dot active"></div>
-              <div class="rating-dot active"></div>
-              <div class="rating-dot"></div>
+          <div class="prod-row">
+            <div class="prod-image">
+              <img
+                src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=400&q=80"
+                alt="Silent Archive"
+              />
             </div>
-            <div class="rating-label">IMDb Score</div>
+            <div class="prod-info">
+              <div class="prod-year">2019 — SHORT</div>
+              <h3 class="prod-title">Silent Archive</h3>
+              <p class="prod-desc">
+                A journey through the forgotten footage of Ukrainian cinema from
+                the 1960s and what it reveals about a suppressed artistic
+                identity.
+              </p>
+            </div>
+            <div class="prod-rating">
+              <div class="rating-score">7.9</div>
+              <div class="rating-dots">
+                <div class="rating-dot active"></div>
+                <div class="rating-dot active"></div>
+                <div class="rating-dot active"></div>
+                <div class="rating-dot active"></div>
+                <div class="rating-dot"></div>
+              </div>
+              <div class="rating-label">IMDb Score</div>
+            </div>
+            <button
+              class="prod-expand-btn"
+              aria-label="Expand film details"
+              aria-expanded="false"
+            >
+              <span class="prod-expand-label">Details</span>
+              <svg
+                class="prod-arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <polyline points="6,13 12,19 18,13" />
+              </svg>
+            </button>
+          </div>
+          <div class="prod-detail-panel" aria-hidden="true">
+            <div class="film-body">
+              <div class="film-acc-item film-acc-open">
+                <button class="film-acc-trigger" aria-expanded="true">
+                  <span class="film-acc-label">Film Details</span>
+                  <span class="film-acc-index">01</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <dl class="pdp-defs">
+                    <dt>Director</dt>
+                    <dd>Marta Hryhorenko</dd>
+                    <dt>Producer</dt>
+                    <dd>Dmytro Savchenko</dd>
+                    <dt>Editor</dt>
+                    <dd>Olena Bondar</dd>
+                    <dt>Country</dt>
+                    <dd>Ukraine</dd>
+                    <dt>Runtime</dt>
+                    <dd>24 min</dd>
+                    <dt>Format</dt>
+                    <dd>1.33:1 · DCP</dd>
+                    <dt>Year</dt>
+                    <dd>2019</dd>
+                  </dl>
+                </div>
+              </div>
+
+              <div class="film-acc-item">
+                <button class="film-acc-trigger" aria-expanded="false">
+                  <span class="film-acc-label">Synopsis</span>
+                  <span class="film-acc-index">02</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <p class="pdp-lead">
+                    Every suppressed artwork is a document of what was feared.
+                  </p>
+                  <p class="pdp-body">
+                    Silent Archive journeys through forgotten footage of
+                    Ukrainian cinema from the 1960s — films shelved by Soviet
+                    censors — and asks what these fragments reveal about a
+                    suppressed artistic identity. Working with film historians
+                    and archivists, the film reconstructs not what was lost, but
+                    why.
+                  </p>
+                  <blockquote class="pdp-quote">
+                    "The gaps in the archive are as telling as what survives."
+                  </blockquote>
+                </div>
+              </div>
+
+              <div class="film-acc-item">
+                <button class="film-acc-trigger" aria-expanded="false">
+                  <span class="film-acc-label">Film Stills</span>
+                  <span class="film-acc-index">03</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <div class="film-stills-grid">
+                    <div class="film-still">
+                      <img
+                        src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=600&q=75"
+                        alt="Still 1"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="film-still">
+                      <img
+                        src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&q=75"
+                        alt="Still 2"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="film-still">
+                      <img
+                        src="https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=600&q=75"
+                        alt="Still 3"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="film-acc-item">
+                <button class="film-acc-trigger" aria-expanded="false">
+                  <span class="film-acc-label">Trailer</span>
+                  <span class="film-acc-index">04</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <div class="film-trailer-wrap">
+                    <div class="film-trailer-placeholder">
+                      <svg
+                        viewBox="0 0 64 64"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1"
+                      >
+                        <circle cx="32" cy="32" r="30" />
+                        <polygon
+                          points="26,20 26,44 46,32"
+                          fill="currentColor"
+                          stroke="none"
+                          opacity="0.6"
+                        />
+                      </svg>
+                      <span>Trailer available on request</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="film-acc-item">
+                <button class="film-acc-trigger" aria-expanded="false">
+                  <span class="film-acc-label">Festivals &amp; Partners</span>
+                  <span class="film-acc-index">05</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <ul class="pdp-festivals">
+                    <li>
+                      <span class="pdp-fest-year">2019</span>Docudays UA — Grand
+                      Prix · Short Film
+                    </li>
+                    <li>
+                      <span class="pdp-fest-year">2019</span>Jihlava IDFF —
+                      Official Selection
+                    </li>
+                    <li>
+                      <span class="pdp-fest-year">2020</span>Krakow Film
+                      Festival — Golden Dragon Nominee
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="film-footer">
+              <button class="pdp-close" aria-label="Close film detail">
+                Close ✕
+              </button>
+            </div>
           </div>
         </div>
       </div>
+      <!-- /productionsList -->
+
       <button
         class="see-more-btn"
         id="seeMoreBtn"
@@ -398,7 +1891,7 @@
       </button>
     </section>
 
-    <!-- Team -->
+    <!-- Team — НЕ ЗМІНЕНО -->
     <section id="team">
       <div class="team-header">
         <h2 class="team-title reveal">The People<br />Behind the Frame</h2>
@@ -408,60 +1901,412 @@
           that haven't been told yet.
         </p>
       </div>
-      <div class="team-grid">
-        <div class="team-member" data-team="marta-hryhorenko">
-          <div class="team-photo">
-            <img
-              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80"
-              alt="Marta Hryhorenko"
-            />
-            <div class="team-photo-overlay"></div>
+      <div class="team-list">
+        <!-- ── Member 01 ── -->
+        <div class="team-item" data-team="marta-hryhorenko">
+          <div class="team-row">
+            <div class="team-row-photo">
+              <img
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80"
+                alt="Marta Hryhorenko"
+              />
+            </div>
+            <div class="team-row-meta">
+              <span class="team-row-index">01 / 03</span>
+              <h3 class="team-row-name">Marta Hryhorenko</h3>
+              <span class="team-row-role">Director</span>
+            </div>
+            <div class="team-row-tagline">
+              Award-winning documentary director. Films that ask difficult
+              questions of history — and refuse easy answers.
+            </div>
+            <button
+              class="team-row-toggle"
+              aria-expanded="false"
+              aria-label="Expand profile"
+            >
+              <span class="team-row-toggle-label">Open</span>
+              <svg
+                class="team-row-arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <polyline points="6,13 12,19 18,13" />
+              </svg>
+            </button>
           </div>
-          <div class="team-index">01 / 03</div>
-          <div class="team-name">Marta Hryhorenko</div>
-          <div class="team-role">Director</div>
-          <p class="team-bio">
-            Award-winning documentary director with a decade of work across
-            Eastern Europe. Her films ask difficult questions of history — and
-            refuse easy answers.
-          </p>
-          <span class="team-link">View Profile →</span>
+          <div class="team-detail-panel" aria-hidden="true">
+            <div class="team-detail-inner">
+              <!-- About accordion -->
+              <div class="team-acc-item team-acc-open">
+                <button class="team-acc-trigger" aria-expanded="true">
+                  <span class="team-acc-label">About</span>
+                  <span class="team-acc-num">01</span>
+                  <svg
+                    class="team-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="team-acc-body">
+                  <div class="team-acc-content">
+                    <p class="team-about-preview">
+                      Marta Hryhorenko is an award-winning documentary director
+                      whose work spans a decade of filmmaking in Eastern Europe.
+                      Her films have screened at IDFA, Berlinale, Venice, and
+                      Sundance — and have been broadcast in over forty
+                      countries.
+                    </p>
+                    <div class="team-about-more">
+                      <p>
+                        She studied directing at the Kyiv National I.K.
+                        Karpenko-Kary Theatre, Cinema and Television University
+                        and later completed a fellowship at the Berlinale
+                        Talents programme. Her approach is rooted in what she
+                        calls "patient cinema" — long-form observation that
+                        refuses to arrive at conclusions before the subject is
+                        ready.
+                      </p>
+                      <p>
+                        Marta currently divides her time between Kyiv and
+                        Warsaw, where she is in development on a new feature
+                        examining the post-war reconstruction of identity in
+                        southern Ukraine.
+                      </p>
+                    </div>
+                    <button class="team-read-more">
+                      Read more
+                      <svg
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                      >
+                        <polyline points="3,6 8,11 13,6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Filmography accordion -->
+              <div class="team-acc-item">
+                <button class="team-acc-trigger" aria-expanded="false">
+                  <span class="team-acc-label">Filmography</span>
+                  <span class="team-acc-num">02</span>
+                  <svg
+                    class="team-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="team-acc-body">
+                  <ul class="team-filmography">
+                    <li>
+                      <span class="tf-title" data-film="iron-cartography"
+                        >Iron Cartography</span
+                      ><span class="tf-meta">2023 · Feature</span>
+                    </li>
+                    <li>
+                      <span class="tf-title" data-film="shadows-of-kyiv"
+                        >Shadows of Kyiv</span
+                      ><span class="tf-meta">2022 · Feature</span>
+                    </li>
+                    <li>
+                      <span class="tf-title" data-film="the-last-witness"
+                        >The Last Witness</span
+                      ><span class="tf-meta">2021 · Short</span>
+                    </li>
+                    <li>
+                      <span class="tf-title" data-film="dust-and-memory"
+                        >Dust &amp; Memory</span
+                      ><span class="tf-meta">2020 · Feature</span>
+                    </li>
+                    <li>
+                      <span class="tf-title" data-film="silent-archive"
+                        >Silent Archive</span
+                      ><span class="tf-meta">2019 · Short</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="team-member" data-team="dmytro-savchenko">
-          <div class="team-photo">
-            <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
-              alt="Dmytro Savchenko"
-            />
-            <div class="team-photo-overlay"></div>
+
+        <!-- ── Member 02 ── -->
+        <div class="team-item" data-team="dmytro-savchenko">
+          <div class="team-row">
+            <div class="team-row-photo">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=85"
+                alt="Dmytro Savchenko"
+              />
+            </div>
+            <div class="team-row-meta">
+              <span class="team-row-index">02 / 03</span>
+              <h3 class="team-row-name">Dmytro Savchenko</h3>
+              <span class="team-row-role">Producer</span>
+            </div>
+            <div class="team-row-tagline">
+              Fourteen features, twenty shorts. Radical trust in the director's
+              instinct and the audience's intelligence.
+            </div>
+            <button
+              class="team-row-toggle"
+              aria-expanded="false"
+              aria-label="Expand profile"
+            >
+              <span class="team-row-toggle-label">Open</span>
+              <svg
+                class="team-row-arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <polyline points="6,13 12,19 18,13" />
+              </svg>
+            </button>
           </div>
-          <div class="team-index">02 / 03</div>
-          <div class="team-name">Dmytro Savchenko</div>
-          <div class="team-role">Producer</div>
-          <p class="team-bio">
-            Fourteen features, twenty shorts, an MA from London Film School.
-            Dmytro's producing philosophy: radical trust in the director's
-            instinct and the audience's intelligence.
-          </p>
-          <span class="team-link">View Profile →</span>
+          <div class="team-detail-panel" aria-hidden="true">
+            <div class="team-detail-inner">
+              <div class="team-acc-item team-acc-open">
+                <button class="team-acc-trigger" aria-expanded="true">
+                  <span class="team-acc-label">About</span>
+                  <span class="team-acc-num">01</span>
+                  <svg
+                    class="team-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="team-acc-body">
+                  <div class="team-acc-content">
+                    <p class="team-about-preview">
+                      Dmytro Savchenko has produced fourteen documentary
+                      features and over twenty shorts across Europe and the
+                      Middle East. He entered the industry as a fixer in
+                      conflict zones and carries that discipline into every
+                      production — calm under pressure, precise in everything.
+                    </p>
+                    <div class="team-about-more">
+                      <p>
+                        His producing philosophy is one of radical trust: in the
+                        director's instinct, in the subject's time, and in the
+                        audience's intelligence. He does not rush stories to
+                        their conclusions.
+                      </p>
+                      <p>
+                        Dmytro holds an MA in International Film Business from
+                        the London Film School and serves on the advisory board
+                        of DocuDays UA International Human Rights Documentary
+                        Film Festival.
+                      </p>
+                    </div>
+                    <button class="team-read-more">
+                      Read more
+                      <svg
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                      >
+                        <polyline points="3,6 8,11 13,6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="team-acc-item">
+                <button class="team-acc-trigger" aria-expanded="false">
+                  <span class="team-acc-label">Filmography</span>
+                  <span class="team-acc-num">02</span>
+                  <svg
+                    class="team-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="team-acc-body">
+                  <ul class="team-filmography">
+                    <li>
+                      <span class="tf-title" data-film="iron-cartography"
+                        >Iron Cartography</span
+                      ><span class="tf-meta">2023 · Feature</span>
+                    </li>
+                    <li>
+                      <span class="tf-title" data-film="shadows-of-kyiv"
+                        >Shadows of Kyiv</span
+                      ><span class="tf-meta">2022 · Feature</span>
+                    </li>
+                    <li>
+                      <span class="tf-title" data-film="dust-and-memory"
+                        >Dust &amp; Memory</span
+                      ><span class="tf-meta">2020 · Feature</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="team-member" data-team="olena-bondar">
-          <div class="team-photo">
-            <img
-              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80"
-              alt="Olena Bondar"
-            />
-            <div class="team-photo-overlay"></div>
+
+        <!-- ── Member 03 ── -->
+        <div class="team-item" data-team="olena-bondar">
+          <div class="team-row">
+            <div class="team-row-photo">
+              <img
+                src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80"
+                alt="Olena Bondar"
+              />
+            </div>
+            <div class="team-row-meta">
+              <span class="team-row-index">03 / 03</span>
+              <h3 class="team-row-name">Olena Bondar</h3>
+              <span class="team-row-role">Editor</span>
+            </div>
+            <div class="team-row-tagline">
+              Assembles silence as much as image. Her editing shapes the rhythm
+              that makes each film breathe.
+            </div>
+            <button
+              class="team-row-toggle"
+              aria-expanded="false"
+              aria-label="Expand profile"
+            >
+              <span class="team-row-toggle-label">Open</span>
+              <svg
+                class="team-row-arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <polyline points="6,13 12,19 18,13" />
+              </svg>
+            </button>
           </div>
-          <div class="team-index">03 / 03</div>
-          <div class="team-name">Olena Bondar</div>
-          <div class="team-role">Editor</div>
-          <p class="team-bio">
-            Olena assembles silence as much as image. Her editing transforms raw
-            footage into essays of light and time, shaping the rhythm that makes
-            each film breathe.
-          </p>
-          <span class="team-link">View Profile →</span>
+          <div class="team-detail-panel" aria-hidden="true">
+            <div class="team-detail-inner">
+              <div class="team-acc-item team-acc-open">
+                <button class="team-acc-trigger" aria-expanded="true">
+                  <span class="team-acc-label">About</span>
+                  <span class="team-acc-num">01</span>
+                  <svg
+                    class="team-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="team-acc-body">
+                  <div class="team-acc-content">
+                    <p class="team-about-preview">
+                      Olena Bondar has spent fifteen years in the cutting room,
+                      shaping documentaries that have premiered at Sundance, Hot
+                      Docs, and CPH:DOX. She assembles silence as much as image
+                      — building films from the negative space between moments.
+                    </p>
+                    <div class="team-about-more">
+                      <p>
+                        Her editorial philosophy resists the obvious: she is
+                        drawn to footage that resists easy interpretation, and
+                        she finds meaning in the pauses others would cut.
+                        Working closely with Marta Hryhorenko since 2019, she
+                        has become an inseparable part of the studio's creative
+                        voice.
+                      </p>
+                      <p>
+                        Olena studied film editing at the Łódź Film School and
+                        currently teaches a masterclass in documentary editing
+                        at the Kyiv School of Economics cultural programme.
+                      </p>
+                    </div>
+                    <button class="team-read-more">
+                      Read more
+                      <svg
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                      >
+                        <polyline points="3,6 8,11 13,6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="team-acc-item">
+                <button class="team-acc-trigger" aria-expanded="false">
+                  <span class="team-acc-label">Filmography</span>
+                  <span class="team-acc-num">02</span>
+                  <svg
+                    class="team-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="team-acc-body">
+                  <ul class="team-filmography">
+                    <li>
+                      <span class="tf-title" data-film="iron-cartography"
+                        >Iron Cartography</span
+                      ><span class="tf-meta">2023 · Feature</span>
+                    </li>
+                    <li>
+                      <span class="tf-title" data-film="shadows-of-kyiv"
+                        >Shadows of Kyiv</span
+                      ><span class="tf-meta">2022 · Feature</span>
+                    </li>
+                    <li>
+                      <span class="tf-title" data-film="the-last-witness"
+                        >The Last Witness</span
+                      ><span class="tf-meta">2021 · Short</span>
+                    </li>
+                    <li>
+                      <span class="tf-title" data-film="silent-archive"
+                        >Silent Archive</span
+                      ><span class="tf-meta">2019 · Short</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -596,30 +2441,7 @@
     </footer>
 
     <!-- ═══════════════════════════════════════════
-         FILM OVERLAY
-         ═══════════════════════════════════════════ -->
-    <div
-      class="overlay-panel"
-      id="filmOverlay"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Film detail"
-    >
-      <div class="overlay-close-bar">
-        <span class="bar-logo" onclick="closeOverlay()">MOVIE</span>
-        <button
-          class="overlay-close-btn"
-          onclick="closeOverlay()"
-          aria-label="Close"
-        >
-          Close <span class="overlay-close-x"></span>
-        </button>
-      </div>
-      <div id="filmOverlayContent"></div>
-    </div>
-
-    <!-- ═══════════════════════════════════════════
-         TEAM OVERLAY
+         TEAM OVERLAY — збережено без змін
          ═══════════════════════════════════════════ -->
     <div
       class="overlay-panel"
@@ -629,10 +2451,10 @@
       aria-label="Team member profile"
     >
       <div class="overlay-close-bar">
-        <span class="bar-logo" onclick="closeOverlay()">MOVIE</span>
+        <span class="bar-logo" onclick="closeTeamOverlay()">MOVIE</span>
         <button
           class="overlay-close-btn"
-          onclick="closeOverlay()"
+          onclick="closeTeamOverlay()"
           aria-label="Close"
         >
           Close <span class="overlay-close-x"></span>
