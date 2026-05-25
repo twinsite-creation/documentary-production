@@ -9,19 +9,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Google Fonts fallback while Fixel loads -->
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- PPGrafier-Black font -->
     <style>
       @font-face {
-        font-family: 'PPGrafier';
-        src: url('assets/fonts/PPGrafier-Black.otf') format('opentype');
+        font-family: "PPGrafier";
+        src: url("assets/fonts/PPGrafier-Black.otf") format("opentype");
         font-weight: 900;
         font-style: normal;
         font-display: swap;
       }
       /* Fixel via CDN */
-      @import url('https://fonts.cdnfonts.com/css/fixel-display');
+      @import url("https://fonts.cdnfonts.com/css/fixel-display");
     </style>
 
     <link rel="stylesheet" href="assets/css/style.css" />
@@ -41,37 +44,59 @@
     <!-- ═══════════════════════════════════════════
          MOBILE MENU OVERLAY
          ═══════════════════════════════════════════ -->
-    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation">
-      <!-- House shape clip -->
-      <div class="mobile-menu-shape">
-        <ul class="mobile-menu-links">
-          <li><a href="#films">films</a></li>
-          <li><a href="#productions">productions</a></li>
-          <li><a href="#team">team</a></li>
-          <li><a href="#about">collaborate</a></li>
-        </ul>
+    <div
+      class="mobile-menu"
+      id="mobileMenu"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Navigation"
+    >
+      <!-- Top bar: logo + close -->
+      <div class="mm-topbar">
+        <a class="mm-logo" href="#" id="mmLogoLink">
+          phalanstery<br />films
+        </a>
+        <button class="mm-close" id="mmClose" aria-label="Close menu">×</button>
       </div>
-      <div class="mobile-menu-footer">
-        <div class="social-icons">
-          <a href="#" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-            </svg>
-          </a>
-          <a href="#" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-              <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
-            </svg>
-          </a>
-          <a href="#" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5"/>
-              <circle cx="12" cy="12" r="4"/>
-              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
-            </svg>
-          </a>
+
+      <!-- House/pentagon shape with nav links -->
+      <div class="mm-shape-wrap">
+        <div class="mm-shape">
+          <ul class="mm-links">
+            <li><a href="#films">films</a></li>
+            <li><a href="#productions">productions</a></li>
+            <li><a href="#team">team</a></li>
+            <li><a href="#about">collaborate</a></li>
+          </ul>
         </div>
+      </div>
+
+      <!-- Bottom-left social icons -->
+      <div class="mm-social">
+        <a href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Twitter">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.7 5.5 4.3 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
       </div>
     </div>
 
@@ -82,25 +107,14 @@
       <div class="header-logo-wrap">
         <a class="header-logo" id="headerLogo" href="#">
           <span class="logo-mark">
-            <!-- 3D house logo matching brand reference -->
-            <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
-              <!-- Front wall -->
-              <rect x="6" y="24" width="26" height="22" stroke="currentColor" stroke-width="1.3" fill="none"/>
-              <!-- Front roof -->
-              <path d="M6 24L19 12L32 24" stroke="currentColor" stroke-width="1.3" fill="none"/>
-              <!-- Right side wall -->
-              <path d="M32 24L42 18L42 40L32 46" stroke="currentColor" stroke-width="1.3" fill="none"/>
-              <!-- Right roof slope -->
-              <path d="M19 12L29 6L42 18" stroke="currentColor" stroke-width="1.3" fill="none"/>
-              <!-- Bottom right -->
-              <line x1="6" y1="46" x2="32" y2="46" stroke="currentColor" stroke-width="1.3"/>
-              <!-- Door -->
-              <rect x="14" y="33" width="8" height="13" stroke="currentColor" stroke-width="1" fill="none"/>
-              <!-- Window -->
-              <rect x="24" y="27" width="7" height="6" stroke="currentColor" stroke-width="1" fill="none"/>
-            </svg>
+            <img
+              src="assets/images/logo-phalanstery.svg"
+              alt="Phalanstery Films logo"
+              width="36"
+              height="36"
+            />
           </span>
-          <span class="logo-text">phalanstery<br>films</span>
+          <span class="logo-text">phalanstery<br />films</span>
         </a>
       </div>
       <div class="header-right">
@@ -114,7 +128,13 @@
         </nav>
         <!-- desktop-social тимчасово прихований, div залишено для JS-сумісності -->
         <div class="social-icons desktop-social"></div>
-        <div class="burger" id="burger" aria-label="Open menu" role="button" tabindex="0">
+        <div
+          class="burger"
+          id="burger"
+          aria-label="Open menu"
+          role="button"
+          tabindex="0"
+        >
           <span></span><span></span>
         </div>
       </div>
@@ -126,30 +146,103 @@
     <section id="hero">
       <div class="hero-bg-shape">
         <!-- The house shape / geometric brand element -->
-        <svg viewBox="0 0 800 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-          <path d="M400 60L740 240V780L400 960L60 780V240L400 60Z" fill="#C62E00"/>
+        <svg
+          viewBox="0 0 800 900"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <path
+            d="M400 60L740 240V780L400 960L60 780V240L400 60Z"
+            fill="#C62E00"
+          />
           <!-- Inner house wireframe -->
-          <rect x="290" y="500" width="220" height="240" stroke="white" stroke-width="2" fill="none"/>
-          <path d="M290 500L400 390L510 500" stroke="white" stroke-width="2" fill="none"/>
-          <rect x="330" y="580" width="60" height="80" stroke="white" stroke-width="1.5" fill="none"/>
-          <rect x="410" y="540" width="50" height="50" stroke="white" stroke-width="1.5" fill="none"/>
+          <rect
+            x="290"
+            y="500"
+            width="220"
+            height="240"
+            stroke="white"
+            stroke-width="2"
+            fill="none"
+          />
+          <path
+            d="M290 500L400 390L510 500"
+            stroke="white"
+            stroke-width="2"
+            fill="none"
+          />
+          <rect
+            x="330"
+            y="580"
+            width="60"
+            height="80"
+            stroke="white"
+            stroke-width="1.5"
+            fill="none"
+          />
+          <rect
+            x="410"
+            y="540"
+            width="50"
+            height="50"
+            stroke="white"
+            stroke-width="1.5"
+            fill="none"
+          />
           <!-- 3D depth lines -->
-          <line x1="510" y1="500" x2="560" y2="460" stroke="white" stroke-width="1.5"/>
-          <line x1="560" y1="460" x2="510" y2="390" stroke="white" stroke-width="1.5"/>
-          <line x1="510" y1="390" x2="400" y2="390" stroke="white" stroke-width="1.5" stroke-dasharray="4,3"/>
-          <line x1="560" y1="460" x2="560" y2="740" stroke="white" stroke-width="1.5"/>
-          <line x1="560" y1="740" x2="510" y2="740" stroke="white" stroke-width="1.5"/>
+          <line
+            x1="510"
+            y1="500"
+            x2="560"
+            y2="460"
+            stroke="white"
+            stroke-width="1.5"
+          />
+          <line
+            x1="560"
+            y1="460"
+            x2="510"
+            y2="390"
+            stroke="white"
+            stroke-width="1.5"
+          />
+          <line
+            x1="510"
+            y1="390"
+            x2="400"
+            y2="390"
+            stroke="white"
+            stroke-width="1.5"
+            stroke-dasharray="4,3"
+          />
+          <line
+            x1="560"
+            y1="460"
+            x2="560"
+            y2="740"
+            stroke="white"
+            stroke-width="1.5"
+          />
+          <line
+            x1="560"
+            y1="740"
+            x2="510"
+            y2="740"
+            stroke="white"
+            stroke-width="1.5"
+          />
         </svg>
       </div>
 
       <!-- Hero beams (JS compatibility — hidden via CSS) -->
-    <div class="hero-beam"></div>
-    <div class="hero-beam"></div>
-    <div class="hero-beam"></div>
+      <div class="hero-beam"></div>
+      <div class="hero-beam"></div>
+      <div class="hero-beam"></div>
 
-    <div class="hero-content" id="heroContent">
+      <div class="hero-content" id="heroContent">
         <div class="hero-eyebrow">every frame matters</div>
-        <h1 class="hero-logo-main">phalanstery<br>films</h1>
+        <h1 class="hero-logo-main">phalanstery<br />films</h1>
         <p class="hero-tagline">
           Documentary production.<br />Kyiv — Warsaw — Tbilisi
         </p>
@@ -177,9 +270,19 @@
 
       <div class="films-stage" id="filmsOrbit">
         <!-- STRIP 1: Shadows of Kyiv -->
-        <article class="film-strip" id="film-shadows-of-kyiv" data-film="shadows-of-kyiv" tabindex="0" aria-expanded="false">
+        <article
+          class="film-strip"
+          id="film-shadows-of-kyiv"
+          data-film="shadows-of-kyiv"
+          tabindex="0"
+          aria-expanded="false"
+        >
           <div class="fstrip-bg">
-            <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=1400&q=85" alt="Shadows of Kyiv" loading="lazy" />
+            <img
+              src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=1400&q=85"
+              alt="Shadows of Kyiv"
+              loading="lazy"
+            />
           </div>
           <div class="fstrip-idle">
             <span class="fstrip-index">01</span>
@@ -192,25 +295,56 @@
                 <span class="fsi-tag">Feature</span>
                 <span class="fsi-tag">94 min</span>
                 <span class="fsi-tag">Ukraine · Poland</span>
-                <span class="fsi-tag fsi-tag--stage fsi-tag--released">Released</span>
+                <span class="fsi-tag fsi-tag--stage fsi-tag--released"
+                  >Released</span
+                >
               </div>
               <h2 class="fsi-title">Shadows<br />of Kyiv</h2>
               <p class="fsi-year-large">2022</p>
-              <p class="fsi-tagline">A city remembers everything.<br />Its people are learning to forget.</p>
-              <p class="fsi-synopsis">Over eighteen months, Marta Hryhorenko followed four residents of Kyiv's historic districts — a retired archivist, a young musician, a former Soviet engineer, and a teenage street artist — each living in a different relationship with the city's layered past.</p>
+              <p class="fsi-tagline">
+                A city remembers everything.<br />Its people are learning to
+                forget.
+              </p>
+              <p class="fsi-synopsis">
+                Over eighteen months, Marta Hryhorenko followed four residents
+                of Kyiv's historic districts — a retired archivist, a young
+                musician, a former Soviet engineer, and a teenage street artist
+                — each living in a different relationship with the city's
+                layered past.
+              </p>
               <div class="fsi-credits">
-                <div class="fsi-credit"><span class="fsi-credit-label">Director</span><span>Marta Hryhorenko</span></div>
-                <div class="fsi-credit"><span class="fsi-credit-label">Producer</span><span>Dmytro Savchenko</span></div>
-                <div class="fsi-credit"><span class="fsi-credit-label">Editor</span><span>Olena Bondar</span></div>
-                <div class="fsi-credit"><span class="fsi-credit-label">Format</span><span>2.39:1 · DCP</span></div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Director</span
+                  ><span>Marta Hryhorenko</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Producer</span
+                  ><span>Dmytro Savchenko</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Editor</span
+                  ><span>Olena Bondar</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Format</span
+                  ><span>2.39:1 · DCP</span>
+                </div>
               </div>
               <div class="fsi-awards">
-                <div class="fsi-award-item">◈ IDFA Amsterdam · World Premiere · Main Competition</div>
-                <div class="fsi-award-item">◈ Hot Docs Toronto · Best International Feature</div>
-                <div class="fsi-award-item">◈ Golden Dzyga · Best Documentary Feature</div>
+                <div class="fsi-award-item">
+                  ◈ IDFA Amsterdam · World Premiere · Main Competition
+                </div>
+                <div class="fsi-award-item">
+                  ◈ Hot Docs Toronto · Best International Feature
+                </div>
+                <div class="fsi-award-item">
+                  ◈ Golden Dzyga · Best Documentary Feature
+                </div>
               </div>
               <div class="fsi-actions">
-                <a href="#productions" class="fsi-cta">View Full Details <span>→</span></a>
+                <a href="#productions" class="fsi-cta"
+                  >View Full Details <span>→</span></a
+                >
                 <button class="fsi-close" aria-label="Close">✕ Close</button>
               </div>
             </div>
@@ -218,9 +352,19 @@
         </article>
 
         <!-- STRIP 2: The Last Witness -->
-        <article class="film-strip" id="film-the-last-witness" data-film="the-last-witness" tabindex="0" aria-expanded="false">
+        <article
+          class="film-strip"
+          id="film-the-last-witness"
+          data-film="the-last-witness"
+          tabindex="0"
+          aria-expanded="false"
+        >
           <div class="fstrip-bg">
-            <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1400&q=85" alt="The Last Witness" loading="lazy" />
+            <img
+              src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1400&q=85"
+              alt="The Last Witness"
+              loading="lazy"
+            />
           </div>
           <div class="fstrip-idle">
             <span class="fstrip-index">02</span>
@@ -233,25 +377,55 @@
                 <span class="fsi-tag">Short</span>
                 <span class="fsi-tag">38 min</span>
                 <span class="fsi-tag">Ukraine</span>
-                <span class="fsi-tag fsi-tag--stage fsi-tag--released">Released</span>
+                <span class="fsi-tag fsi-tag--stage fsi-tag--released"
+                  >Released</span
+                >
               </div>
               <h2 class="fsi-title">The Last<br />Witness</h2>
               <p class="fsi-year-large">2021</p>
-              <p class="fsi-tagline">Three voices. One century.<br />What happens when they go silent?</p>
-              <p class="fsi-synopsis">Three elderly witnesses to the 20th century's most pivotal moments speak — cautiously, precisely — about what they saw, what they carried, and what they chose to keep silent about for decades.</p>
+              <p class="fsi-tagline">
+                Three voices. One century.<br />What happens when they go
+                silent?
+              </p>
+              <p class="fsi-synopsis">
+                Three elderly witnesses to the 20th century's most pivotal
+                moments speak — cautiously, precisely — about what they saw,
+                what they carried, and what they chose to keep silent about for
+                decades.
+              </p>
               <div class="fsi-credits">
-                <div class="fsi-credit"><span class="fsi-credit-label">Director</span><span>Marta Hryhorenko</span></div>
-                <div class="fsi-credit"><span class="fsi-credit-label">Producer</span><span>Dmytro Savchenko</span></div>
-                <div class="fsi-credit"><span class="fsi-credit-label">Editor</span><span>Olena Bondar</span></div>
-                <div class="fsi-credit"><span class="fsi-credit-label">Format</span><span>1.85:1 · DCP</span></div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Director</span
+                  ><span>Marta Hryhorenko</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Producer</span
+                  ><span>Dmytro Savchenko</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Editor</span
+                  ><span>Olena Bondar</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Format</span
+                  ><span>1.85:1 · DCP</span>
+                </div>
               </div>
               <div class="fsi-awards">
-                <div class="fsi-award-item">◈ Visions du Réel · Short Competition</div>
-                <div class="fsi-award-item">◈ CPH:DOX Copenhagen · Best Short Documentary</div>
-                <div class="fsi-award-item">◈ Docudays UA · Official Selection</div>
+                <div class="fsi-award-item">
+                  ◈ Visions du Réel · Short Competition
+                </div>
+                <div class="fsi-award-item">
+                  ◈ CPH:DOX Copenhagen · Best Short Documentary
+                </div>
+                <div class="fsi-award-item">
+                  ◈ Docudays UA · Official Selection
+                </div>
               </div>
               <div class="fsi-actions">
-                <a href="#productions" class="fsi-cta">View Full Details <span>→</span></a>
+                <a href="#productions" class="fsi-cta"
+                  >View Full Details <span>→</span></a
+                >
                 <button class="fsi-close" aria-label="Close">✕ Close</button>
               </div>
             </div>
@@ -259,9 +433,19 @@
         </article>
 
         <!-- STRIP 3: Dust & Memory -->
-        <article class="film-strip" id="film-dust-and-memory" data-film="dust-and-memory" tabindex="0" aria-expanded="false">
+        <article
+          class="film-strip"
+          id="film-dust-and-memory"
+          data-film="dust-and-memory"
+          tabindex="0"
+          aria-expanded="false"
+        >
           <div class="fstrip-bg">
-            <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=1400&q=85" alt="Dust & Memory" loading="lazy" />
+            <img
+              src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=1400&q=85"
+              alt="Dust & Memory"
+              loading="lazy"
+            />
           </div>
           <div class="fstrip-idle">
             <span class="fstrip-index">03</span>
@@ -274,25 +458,52 @@
                 <span class="fsi-tag">Feature</span>
                 <span class="fsi-tag">112 min</span>
                 <span class="fsi-tag">UA · DE · GE</span>
-                <span class="fsi-tag fsi-tag--stage fsi-tag--released">Released</span>
+                <span class="fsi-tag fsi-tag--stage fsi-tag--released"
+                  >Released</span
+                >
               </div>
               <h2 class="fsi-title">Dust &amp;<br />Memory</h2>
               <p class="fsi-year-large">2020</p>
-              <p class="fsi-tagline">Five cities. Two years.<br />What do we choose to remember?</p>
-              <p class="fsi-synopsis">Shot across Kyiv, Lviv, Warsaw, Tbilisi, and Leipzig over two years, this film follows the traces that ordinary people leave in the fabric of cities. A meditation on urban memory and architectural grief.</p>
+              <p class="fsi-tagline">
+                Five cities. Two years.<br />What do we choose to remember?
+              </p>
+              <p class="fsi-synopsis">
+                Shot across Kyiv, Lviv, Warsaw, Tbilisi, and Leipzig over two
+                years, this film follows the traces that ordinary people leave
+                in the fabric of cities. A meditation on urban memory and
+                architectural grief.
+              </p>
               <div class="fsi-credits">
-                <div class="fsi-credit"><span class="fsi-credit-label">Director</span><span>Marta Hryhorenko</span></div>
-                <div class="fsi-credit"><span class="fsi-credit-label">Producer</span><span>Dmytro Savchenko</span></div>
-                <div class="fsi-credit"><span class="fsi-credit-label">Editor</span><span>Olena Bondar</span></div>
-                <div class="fsi-credit"><span class="fsi-credit-label">Format</span><span>2.39:1 · DCP</span></div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Director</span
+                  ><span>Marta Hryhorenko</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Producer</span
+                  ><span>Dmytro Savchenko</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Editor</span
+                  ><span>Olena Bondar</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Format</span
+                  ><span>2.39:1 · DCP</span>
+                </div>
               </div>
               <div class="fsi-awards">
-                <div class="fsi-award-item">◈ Berlinale · Documentary Forum</div>
-                <div class="fsi-award-item">◈ DOK Leipzig · Special Jury Prize</div>
+                <div class="fsi-award-item">
+                  ◈ Berlinale · Documentary Forum
+                </div>
+                <div class="fsi-award-item">
+                  ◈ DOK Leipzig · Special Jury Prize
+                </div>
                 <div class="fsi-award-item">◈ IDFA · Audience Award</div>
               </div>
               <div class="fsi-actions">
-                <a href="#productions" class="fsi-cta">View Full Details <span>→</span></a>
+                <a href="#productions" class="fsi-cta"
+                  >View Full Details <span>→</span></a
+                >
                 <button class="fsi-close" aria-label="Close">✕ Close</button>
               </div>
             </div>
@@ -300,9 +511,19 @@
         </article>
 
         <!-- STRIP 4: Iron Cartography -->
-        <article class="film-strip" id="film-iron-cartography" data-film="iron-cartography" tabindex="0" aria-expanded="false">
+        <article
+          class="film-strip"
+          id="film-iron-cartography"
+          data-film="iron-cartography"
+          tabindex="0"
+          aria-expanded="false"
+        >
           <div class="fstrip-bg">
-            <img src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=1400&q=85" alt="Iron Cartography" loading="lazy" />
+            <img
+              src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=1400&q=85"
+              alt="Iron Cartography"
+              loading="lazy"
+            />
           </div>
           <div class="fstrip-idle">
             <span class="fstrip-index">04</span>
@@ -315,25 +536,51 @@
                 <span class="fsi-tag">Feature</span>
                 <span class="fsi-tag">88 min</span>
                 <span class="fsi-tag">UA · FR · UK</span>
-                <span class="fsi-tag fsi-tag--stage fsi-tag--postproduction">Post-production</span>
+                <span class="fsi-tag fsi-tag--stage fsi-tag--postproduction"
+                  >Post-production</span
+                >
               </div>
               <h2 class="fsi-title">Iron<br />Cartography</h2>
               <p class="fsi-year-large">2023</p>
-              <p class="fsi-tagline">War does not only destroy places.<br />It redraws who we are.</p>
-              <p class="fsi-synopsis">A visual essay on the invisible borders drawn by conflict — on how war does not merely alter geography but changes the internal maps by which people navigate identity, belonging, and home.</p>
+              <p class="fsi-tagline">
+                War does not only destroy places.<br />It redraws who we are.
+              </p>
+              <p class="fsi-synopsis">
+                A visual essay on the invisible borders drawn by conflict — on
+                how war does not merely alter geography but changes the internal
+                maps by which people navigate identity, belonging, and home.
+              </p>
               <div class="fsi-credits">
-                <div class="fsi-credit"><span class="fsi-credit-label">Director</span><span>Marta Hryhorenko</span></div>
-                <div class="fsi-credit"><span class="fsi-credit-label">Producer</span><span>Dmytro Savchenko</span></div>
-                <div class="fsi-credit"><span class="fsi-credit-label">Editor</span><span>Olena Bondar</span></div>
-                <div class="fsi-credit"><span class="fsi-credit-label">Format</span><span>2.39:1 · DCP</span></div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Director</span
+                  ><span>Marta Hryhorenko</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Producer</span
+                  ><span>Dmytro Savchenko</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Editor</span
+                  ><span>Olena Bondar</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Format</span
+                  ><span>2.39:1 · DCP</span>
+                </div>
               </div>
               <div class="fsi-awards">
-                <div class="fsi-award-item">◈ Venice · Orizzonti Doc · Special Jury Mention</div>
+                <div class="fsi-award-item">
+                  ◈ Venice · Orizzonti Doc · Special Jury Mention
+                </div>
                 <div class="fsi-award-item">◈ TIFF · Official Selection</div>
-                <div class="fsi-award-item">◈ IDFA · Best Feature Documentary</div>
+                <div class="fsi-award-item">
+                  ◈ IDFA · Best Feature Documentary
+                </div>
               </div>
               <div class="fsi-actions">
-                <a href="#productions" class="fsi-cta">View Full Details <span>→</span></a>
+                <a href="#productions" class="fsi-cta"
+                  >View Full Details <span>→</span></a
+                >
                 <button class="fsi-close" aria-label="Close">✕ Close</button>
               </div>
             </div>
@@ -341,9 +588,19 @@
         </article>
 
         <!-- STRIP 5: Silent Archive -->
-        <article class="film-strip" id="film-silent-archive" data-film="silent-archive" tabindex="0" aria-expanded="false">
+        <article
+          class="film-strip"
+          id="film-silent-archive"
+          data-film="silent-archive"
+          tabindex="0"
+          aria-expanded="false"
+        >
           <div class="fstrip-bg">
-            <img src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=1400&q=85" alt="Silent Archive" loading="lazy" />
+            <img
+              src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=1400&q=85"
+              alt="Silent Archive"
+              loading="lazy"
+            />
           </div>
           <div class="fstrip-idle">
             <span class="fstrip-index">05</span>
@@ -356,25 +613,55 @@
                 <span class="fsi-tag">Short</span>
                 <span class="fsi-tag">24 min</span>
                 <span class="fsi-tag">Ukraine</span>
-                <span class="fsi-tag fsi-tag--stage fsi-tag--released">Released</span>
+                <span class="fsi-tag fsi-tag--stage fsi-tag--released"
+                  >Released</span
+                >
               </div>
               <h2 class="fsi-title">Silent<br />Archive</h2>
               <p class="fsi-year-large">2019</p>
-              <p class="fsi-tagline">The films they didn't want you to see.<br />The cinema they almost erased.</p>
-              <p class="fsi-synopsis">Silent Archive journeys through the forgotten footage of Ukrainian cinema from the 1960s — films shelved, cut, or quietly destroyed by Soviet censors — and asks what these fragments reveal about a suppressed artistic identity.</p>
+              <p class="fsi-tagline">
+                The films they didn't want you to see.<br />The cinema they
+                almost erased.
+              </p>
+              <p class="fsi-synopsis">
+                Silent Archive journeys through the forgotten footage of
+                Ukrainian cinema from the 1960s — films shelved, cut, or quietly
+                destroyed by Soviet censors — and asks what these fragments
+                reveal about a suppressed artistic identity.
+              </p>
               <div class="fsi-credits">
-                <div class="fsi-credit"><span class="fsi-credit-label">Director</span><span>Marta Hryhorenko</span></div>
-                <div class="fsi-credit"><span class="fsi-credit-label">Producer</span><span>Dmytro Savchenko</span></div>
-                <div class="fsi-credit"><span class="fsi-credit-label">Editor</span><span>Olena Bondar</span></div>
-                <div class="fsi-credit"><span class="fsi-credit-label">Format</span><span>1.33:1 · DCP</span></div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Director</span
+                  ><span>Marta Hryhorenko</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Producer</span
+                  ><span>Dmytro Savchenko</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Editor</span
+                  ><span>Olena Bondar</span>
+                </div>
+                <div class="fsi-credit">
+                  <span class="fsi-credit-label">Format</span
+                  ><span>1.33:1 · DCP</span>
+                </div>
               </div>
               <div class="fsi-awards">
-                <div class="fsi-award-item">◈ Docudays UA · Grand Prix — Short Film</div>
-                <div class="fsi-award-item">◈ Jihlava IDFF · Official Selection</div>
-                <div class="fsi-award-item">◈ Krakow Film Festival · Golden Dragon Nominee</div>
+                <div class="fsi-award-item">
+                  ◈ Docudays UA · Grand Prix — Short Film
+                </div>
+                <div class="fsi-award-item">
+                  ◈ Jihlava IDFF · Official Selection
+                </div>
+                <div class="fsi-award-item">
+                  ◈ Krakow Film Festival · Golden Dragon Nominee
+                </div>
               </div>
               <div class="fsi-actions">
-                <a href="#productions" class="fsi-cta">View Full Details <span>→</span></a>
+                <a href="#productions" class="fsi-cta"
+                  >View Full Details <span>→</span></a
+                >
                 <button class="fsi-close" aria-label="Close">✕ Close</button>
               </div>
             </div>
@@ -390,7 +677,11 @@
     <section id="productions">
       <div class="productions-header">
         <h2 class="productions-title reveal">All<br />Productions</h2>
-        <p class="productions-desc reveal reveal-delay-1">A collection of documentary films that navigate the boundary between memory, history, and human experience. Each project is a journey into the unknown.</p>
+        <p class="productions-desc reveal reveal-delay-1">
+          A collection of documentary films that navigate the boundary between
+          memory, history, and human experience. Each project is a journey into
+          the unknown.
+        </p>
       </div>
 
       <div id="productionsList">
@@ -398,12 +689,18 @@
         <div class="production-item reveal" data-film="shadows-of-kyiv">
           <div class="prod-row">
             <div class="prod-image">
-              <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&q=80" alt="Shadows of Kyiv" />
+              <img
+                src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&q=80"
+                alt="Shadows of Kyiv"
+              />
             </div>
             <div class="prod-info">
               <div class="prod-year">2022 — FEATURE</div>
               <h3 class="prod-title">Shadows of Kyiv</h3>
-              <p class="prod-desc">An intimate portrait of a city's transformation during times of radical change, told through the voices of those who stayed.</p>
+              <p class="prod-desc">
+                An intimate portrait of a city's transformation during times of
+                radical change, told through the voices of those who stayed.
+              </p>
             </div>
             <div class="prod-rating">
               <div class="rating-score">9.1</div>
@@ -416,10 +713,23 @@
               </div>
               <div class="rating-label">IMDb Score</div>
             </div>
-            <button class="prod-expand-btn" aria-label="Expand film details" aria-expanded="false">
+            <button
+              class="prod-expand-btn"
+              aria-label="Expand film details"
+              aria-expanded="false"
+            >
               <span class="prod-expand-label">Details</span>
-              <svg class="prod-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/>
+              <svg
+                class="prod-arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <polyline points="6,13 12,19 18,13" />
               </svg>
             </button>
           </div>
@@ -429,51 +739,139 @@
                 <button class="film-acc-trigger" aria-expanded="true">
                   <span class="film-acc-label">Film Details</span>
                   <span class="film-acc-index">01</span>
-                  <svg class="film-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
                 </button>
                 <div class="film-acc-body">
                   <dl class="pdp-defs">
-                    <dt>Director</dt><dd>Marta Hryhorenko</dd>
-                    <dt>Producer</dt><dd>Dmytro Savchenko</dd>
-                    <dt>Editor</dt><dd>Olena Bondar</dd>
-                    <dt>Country</dt><dd>Ukraine · Poland</dd>
-                    <dt>Runtime</dt><dd>94 min</dd>
-                    <dt>Format</dt><dd>2.39:1 · DCP</dd>
-                    <dt>Year</dt><dd>2022</dd>
-                    <dt>Stage</dt><dd><span class="stage-badge stage-released">Released</span></dd>
-                    <dt>Release date</dt><dd>October 2022</dd>
+                    <dt>Director</dt>
+                    <dd>Marta Hryhorenko</dd>
+                    <dt>Producer</dt>
+                    <dd>Dmytro Savchenko</dd>
+                    <dt>Editor</dt>
+                    <dd>Olena Bondar</dd>
+                    <dt>Country</dt>
+                    <dd>Ukraine · Poland</dd>
+                    <dt>Runtime</dt>
+                    <dd>94 min</dd>
+                    <dt>Format</dt>
+                    <dd>2.39:1 · DCP</dd>
+                    <dt>Year</dt>
+                    <dd>2022</dd>
+                    <dt>Stage</dt>
+                    <dd>
+                      <span class="stage-badge stage-released">Released</span>
+                    </dd>
+                    <dt>Release date</dt>
+                    <dd>October 2022</dd>
                   </dl>
                 </div>
               </div>
-<div class="film-acc-item">
+              <div class="film-acc-item">
                 <button class="film-acc-trigger" aria-expanded="false">
                   <span class="film-acc-label">Watch the Film</span>
                   <span class="film-acc-index" data-next="true"></span>
-                  <svg class="film-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
-                </button>
-                <div class="film-acc-body">
-                  <div class="watch-section">
-                    <div class="watch-embed"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Shadows of Kyiv" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                    <div class="watch-platforms"><p class="watch-label">Available on</p><div class="platform-links"><a href="#" class="platform-link">YouTube</a><a href="#" class="platform-link">Vimeo</a><a href="#" class="platform-link">MUBI</a></div></div>
-                  </div>
-                </div>
-              </div>
-                            <div class="film-acc-item">
-                <button class="film-acc-trigger" aria-expanded="false">
-                  <span class="film-acc-label">Watch the Film</span>
-                  <span class="film-acc-index">02</span>
-                  <svg class="film-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
                 </button>
                 <div class="film-acc-body">
                   <div class="watch-section">
                     <div class="watch-embed">
-                      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Shadows of Kyiv — Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      <iframe
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                        title="Shadows of Kyiv"
+                        frameborder="0"
+                        allow="
+                          accelerometer;
+                          autoplay;
+                          clipboard-write;
+                          encrypted-media;
+                          gyroscope;
+                          picture-in-picture;
+                        "
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                    <div class="watch-platforms">
+                      <p class="watch-label">Available on</p>
+                      <div class="platform-links">
+                        <a href="#" class="platform-link">YouTube</a
+                        ><a href="#" class="platform-link">Vimeo</a
+                        ><a href="#" class="platform-link">MUBI</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="film-acc-item">
+                <button class="film-acc-trigger" aria-expanded="false">
+                  <span class="film-acc-label">Watch the Film</span>
+                  <span class="film-acc-index">02</span>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
+                </button>
+                <div class="film-acc-body">
+                  <div class="watch-section">
+                    <div class="watch-embed">
+                      <iframe
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                        title="Shadows of Kyiv — Trailer"
+                        frameborder="0"
+                        allow="
+                          accelerometer;
+                          autoplay;
+                          clipboard-write;
+                          encrypted-media;
+                          gyroscope;
+                          picture-in-picture;
+                        "
+                        allowfullscreen
+                      ></iframe>
                     </div>
                     <div class="watch-platforms">
                       <p class="watch-label">Available on</p>
                       <div class="platform-links">
                         <a href="#" class="platform-link">
-                          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            width="16"
+                            height="16"
+                          >
+                            <path
+                              d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                            />
+                          </svg>
                           YouTube
                         </a>
                         <a href="#" class="platform-link">Vimeo</a>
@@ -487,25 +885,76 @@
                 <button class="film-acc-trigger" aria-expanded="false">
                   <span class="film-acc-label">Synopsis</span>
                   <span class="film-acc-index">03</span>
-                  <svg class="film-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
                 </button>
                 <div class="film-acc-body">
-                  <p class="pdp-lead">Every city carries its dead. Kyiv carries more than most.</p>
-                  <p class="pdp-body">Over eighteen months, Marta Hryhorenko followed four residents of Kyiv's historic districts — a retired archivist, a young musician, a former Soviet engineer, and a teenage street artist — each living in a different relationship with the city's layered past.</p>
-                  <blockquote class="pdp-quote">"What the camera found was not nostalgia. It was something rawer: the question of whether memory is a gift or a debt."</blockquote>
+                  <p class="pdp-lead">
+                    Every city carries its dead. Kyiv carries more than most.
+                  </p>
+                  <p class="pdp-body">
+                    Over eighteen months, Marta Hryhorenko followed four
+                    residents of Kyiv's historic districts — a retired
+                    archivist, a young musician, a former Soviet engineer, and a
+                    teenage street artist — each living in a different
+                    relationship with the city's layered past.
+                  </p>
+                  <blockquote class="pdp-quote">
+                    "What the camera found was not nostalgia. It was something
+                    rawer: the question of whether memory is a gift or a debt."
+                  </blockquote>
                 </div>
               </div>
               <div class="film-acc-item">
                 <button class="film-acc-trigger" aria-expanded="false">
                   <span class="film-acc-label">Film Stills</span>
                   <span class="film-acc-index">04</span>
-                  <svg class="film-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
                 </button>
                 <div class="film-acc-body">
                   <div class="film-stills-grid">
-                    <div class="film-still"><img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600&q=75" alt="Still 1" loading="lazy"/></div>
-                    <div class="film-still"><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&q=75" alt="Still 2" loading="lazy"/></div>
-                    <div class="film-still"><img src="https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=600&q=75" alt="Still 3" loading="lazy"/></div>
+                    <div class="film-still">
+                      <img
+                        src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600&q=75"
+                        alt="Still 1"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="film-still">
+                      <img
+                        src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&q=75"
+                        alt="Still 2"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="film-still">
+                      <img
+                        src="https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=600&q=75"
+                        alt="Still 3"
+                        loading="lazy"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -513,12 +962,36 @@
                 <button class="film-acc-trigger" aria-expanded="false">
                   <span class="film-acc-label">Trailer</span>
                   <span class="film-acc-index">05</span>
-                  <svg class="film-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
                 </button>
                 <div class="film-acc-body">
                   <div class="film-trailer-wrap">
                     <div class="film-trailer-placeholder">
-                      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1"><circle cx="32" cy="32" r="30"/><polygon points="26,20 26,44 46,32" fill="currentColor" stroke="none" opacity="0.6"/></svg>
+                      <svg
+                        viewBox="0 0 64 64"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1"
+                      >
+                        <circle cx="32" cy="32" r="30" />
+                        <polygon
+                          points="26,20 26,44 46,32"
+                          fill="currentColor"
+                          stroke="none"
+                          opacity="0.6"
+                        />
+                      </svg>
                       <span>Trailer available on request</span>
                     </div>
                   </div>
@@ -528,34 +1001,68 @@
                 <button class="film-acc-trigger" aria-expanded="false">
                   <span class="film-acc-label">Festivals &amp; Partners</span>
                   <span class="film-acc-index">06</span>
-                  <svg class="film-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
                 </button>
                 <div class="film-acc-body">
                   <ul class="pdp-festivals">
-                    <li><span class="pdp-fest-year">2022</span>IDFA Amsterdam — World Premiere · Main Competition</li>
-                    <li><span class="pdp-fest-year">2022</span>Hot Docs Toronto — Best International Feature</li>
-                    <li><span class="pdp-fest-year">2023</span>Golden Dzyga — Best Documentary Feature</li>
-                    <li><span class="pdp-fest-year">2023</span>Sheffield DocFest — Official Selection</li>
+                    <li>
+                      <span class="pdp-fest-year">2022</span>IDFA Amsterdam —
+                      World Premiere · Main Competition
+                    </li>
+                    <li>
+                      <span class="pdp-fest-year">2022</span>Hot Docs Toronto —
+                      Best International Feature
+                    </li>
+                    <li>
+                      <span class="pdp-fest-year">2023</span>Golden Dzyga — Best
+                      Documentary Feature
+                    </li>
+                    <li>
+                      <span class="pdp-fest-year">2023</span>Sheffield DocFest —
+                      Official Selection
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="film-footer">
-              <button class="pdp-close" aria-label="Close film detail">Close ✕</button>
+              <button class="pdp-close" aria-label="Close film detail">
+                Close ✕
+              </button>
             </div>
           </div>
         </div>
 
         <!-- PRODUCTION 2 -->
-        <div class="production-item reveal reveal-delay-1" data-film="the-last-witness">
+        <div
+          class="production-item reveal reveal-delay-1"
+          data-film="the-last-witness"
+        >
           <div class="prod-row">
             <div class="prod-image">
-              <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=400&q=80" alt="The Last Witness" />
+              <img
+                src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=400&q=80"
+                alt="The Last Witness"
+              />
             </div>
             <div class="prod-info">
               <div class="prod-year">2021 — SHORT</div>
               <h3 class="prod-title">The Last Witness</h3>
-              <p class="prod-desc">Three elderly witnesses speak about what they saw, what they carried, and what they chose to keep silent about for decades.</p>
+              <p class="prod-desc">
+                Three elderly witnesses speak about what they saw, what they
+                carried, and what they chose to keep silent about for decades.
+              </p>
             </div>
             <div class="prod-rating">
               <div class="rating-score">8.7</div>
@@ -568,9 +1075,24 @@
               </div>
               <div class="rating-label">IMDb Score</div>
             </div>
-            <button class="prod-expand-btn" aria-label="Expand film details" aria-expanded="false">
+            <button
+              class="prod-expand-btn"
+              aria-label="Expand film details"
+              aria-expanded="false"
+            >
               <span class="prod-expand-label">Details</span>
-              <svg class="prod-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+              <svg
+                class="prod-arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <polyline points="6,13 12,19 18,13" />
+              </svg>
             </button>
           </div>
           <div class="prod-detail-panel" aria-hidden="true">
@@ -579,57 +1101,160 @@
                 <button class="film-acc-trigger" aria-expanded="true">
                   <span class="film-acc-label">Film Details</span>
                   <span class="film-acc-index">01</span>
-                  <svg class="film-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
                 </button>
                 <div class="film-acc-body">
                   <dl class="pdp-defs">
-                    <dt>Director</dt><dd>Marta Hryhorenko</dd>
-                    <dt>Producer</dt><dd>Dmytro Savchenko</dd>
-                    <dt>Editor</dt><dd>Olena Bondar</dd>
-                    <dt>Country</dt><dd>Ukraine</dd>
-                    <dt>Runtime</dt><dd>38 min</dd>
-                    <dt>Format</dt><dd>1.85:1 · DCP</dd>
-                    <dt>Year</dt><dd>2021</dd>
-                    <dt>Stage</dt><dd><span class="stage-badge stage-released">Released</span></dd>
-                    <dt>Release date</dt><dd>March 2021</dd>
+                    <dt>Director</dt>
+                    <dd>Marta Hryhorenko</dd>
+                    <dt>Producer</dt>
+                    <dd>Dmytro Savchenko</dd>
+                    <dt>Editor</dt>
+                    <dd>Olena Bondar</dd>
+                    <dt>Country</dt>
+                    <dd>Ukraine</dd>
+                    <dt>Runtime</dt>
+                    <dd>38 min</dd>
+                    <dt>Format</dt>
+                    <dd>1.85:1 · DCP</dd>
+                    <dt>Year</dt>
+                    <dd>2021</dd>
+                    <dt>Stage</dt>
+                    <dd>
+                      <span class="stage-badge stage-released">Released</span>
+                    </dd>
+                    <dt>Release date</dt>
+                    <dd>March 2021</dd>
                   </dl>
                 </div>
               </div>
-<div class="film-acc-item">
+              <div class="film-acc-item">
                 <button class="film-acc-trigger" aria-expanded="false">
                   <span class="film-acc-label">Watch the Film</span>
                   <span class="film-acc-index" data-next="true"></span>
-                  <svg class="film-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
                 </button>
                 <div class="film-acc-body">
                   <div class="watch-section">
-                    <div class="watch-embed"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="The Last Witness" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                    <div class="watch-platforms"><p class="watch-label">Available on</p><div class="platform-links"><a href="#" class="platform-link">YouTube</a><a href="#" class="platform-link">Vimeo</a></div></div>
+                    <div class="watch-embed">
+                      <iframe
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                        title="The Last Witness"
+                        frameborder="0"
+                        allow="
+                          accelerometer;
+                          autoplay;
+                          clipboard-write;
+                          encrypted-media;
+                          gyroscope;
+                          picture-in-picture;
+                        "
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                    <div class="watch-platforms">
+                      <p class="watch-label">Available on</p>
+                      <div class="platform-links">
+                        <a href="#" class="platform-link">YouTube</a
+                        ><a href="#" class="platform-link">Vimeo</a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-                            <div class="film-acc-item">
+              <div class="film-acc-item">
                 <button class="film-acc-trigger" aria-expanded="false">
                   <span class="film-acc-label">Synopsis</span>
                   <span class="film-acc-index">02</span>
-                  <svg class="film-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
                 </button>
                 <div class="film-acc-body">
-                  <p class="pdp-lead">What happens to historical truth when its last custodians die?</p>
-                  <p class="pdp-body">Three elderly witnesses to the 20th century's most pivotal moments speak — cautiously, precisely — about what they saw and chose to keep silent about for decades. The Last Witness offers no consolation. It offers instead their faces, their hands, their pauses.</p>
+                  <p class="pdp-lead">
+                    What happens to historical truth when its last custodians
+                    die?
+                  </p>
+                  <p class="pdp-body">
+                    Three elderly witnesses to the 20th century's most pivotal
+                    moments speak — cautiously, precisely — about what they saw
+                    and chose to keep silent about for decades. The Last Witness
+                    offers no consolation. It offers instead their faces, their
+                    hands, their pauses.
+                  </p>
                 </div>
               </div>
               <div class="film-acc-item">
                 <button class="film-acc-trigger" aria-expanded="false">
                   <span class="film-acc-label">Film Stills</span>
                   <span class="film-acc-index">03</span>
-                  <svg class="film-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
                 </button>
                 <div class="film-acc-body">
                   <div class="film-stills-grid">
-                    <div class="film-still"><img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&q=75" alt="Still 1" loading="lazy"/></div>
-                    <div class="film-still"><img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?w=600&q=75" alt="Still 2" loading="lazy"/></div>
-                    <div class="film-still"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=75" alt="Still 3" loading="lazy"/></div>
+                    <div class="film-still">
+                      <img
+                        src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&q=75"
+                        alt="Still 1"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="film-still">
+                      <img
+                        src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?w=600&q=75"
+                        alt="Still 2"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="film-still">
+                      <img
+                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=75"
+                        alt="Still 3"
+                        loading="lazy"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -637,33 +1262,64 @@
                 <button class="film-acc-trigger" aria-expanded="false">
                   <span class="film-acc-label">Festivals &amp; Partners</span>
                   <span class="film-acc-index">04</span>
-                  <svg class="film-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
                 </button>
                 <div class="film-acc-body">
                   <ul class="pdp-festivals">
-                    <li><span class="pdp-fest-year">2021</span>Visions du Réel — Short Competition</li>
-                    <li><span class="pdp-fest-year">2022</span>CPH:DOX Copenhagen — Best Short Documentary</li>
-                    <li><span class="pdp-fest-year">2022</span>Docudays UA — Official Selection</li>
+                    <li>
+                      <span class="pdp-fest-year">2021</span>Visions du Réel —
+                      Short Competition
+                    </li>
+                    <li>
+                      <span class="pdp-fest-year">2022</span>CPH:DOX Copenhagen
+                      — Best Short Documentary
+                    </li>
+                    <li>
+                      <span class="pdp-fest-year">2022</span>Docudays UA —
+                      Official Selection
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="film-footer">
-              <button class="pdp-close" aria-label="Close film detail">Close ✕</button>
+              <button class="pdp-close" aria-label="Close film detail">
+                Close ✕
+              </button>
             </div>
           </div>
         </div>
 
         <!-- PRODUCTION 3 -->
-        <div class="production-item reveal reveal-delay-2" data-film="dust-and-memory">
+        <div
+          class="production-item reveal reveal-delay-2"
+          data-film="dust-and-memory"
+        >
           <div class="prod-row">
             <div class="prod-image">
-              <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=400&q=80" alt="Dust & Memory" />
+              <img
+                src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=400&q=80"
+                alt="Dust & Memory"
+              />
             </div>
             <div class="prod-info">
               <div class="prod-year">2020 — FEATURE</div>
               <h3 class="prod-title">Dust &amp; Memory</h3>
-              <p class="prod-desc">A meditation on what we choose to remember and what time erases. Shot across five Eastern European cities over two years.</p>
+              <p class="prod-desc">
+                A meditation on what we choose to remember and what time erases.
+                Shot across five Eastern European cities over two years.
+              </p>
             </div>
             <div class="prod-rating">
               <div class="rating-score">8.4</div>
@@ -676,9 +1332,24 @@
               </div>
               <div class="rating-label">IMDb Score</div>
             </div>
-            <button class="prod-expand-btn" aria-label="Expand film details" aria-expanded="false">
+            <button
+              class="prod-expand-btn"
+              aria-label="Expand film details"
+              aria-expanded="false"
+            >
               <span class="prod-expand-label">Details</span>
-              <svg class="prod-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+              <svg
+                class="prod-arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <polyline points="6,13 12,19 18,13" />
+              </svg>
             </button>
           </div>
           <div class="prod-detail-panel" aria-hidden="true">
@@ -687,52 +1358,129 @@
                 <button class="film-acc-trigger" aria-expanded="true">
                   <span class="film-acc-label">Film Details</span>
                   <span class="film-acc-index">01</span>
-                  <svg class="film-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
                 </button>
                 <div class="film-acc-body">
                   <dl class="pdp-defs">
-                    <dt>Director</dt><dd>Marta Hryhorenko</dd>
-                    <dt>Producer</dt><dd>Dmytro Savchenko</dd>
-                    <dt>Editor</dt><dd>Olena Bondar</dd>
-                    <dt>Country</dt><dd>Ukraine · Germany · Georgia</dd>
-                    <dt>Runtime</dt><dd>112 min</dd>
-                    <dt>Format</dt><dd>2.39:1 · DCP</dd>
-                    <dt>Year</dt><dd>2020</dd>
-                    <dt>Stage</dt><dd><span class="stage-badge stage-released">Released</span></dd>
-                    <dt>Release date</dt><dd>September 2020</dd>
+                    <dt>Director</dt>
+                    <dd>Marta Hryhorenko</dd>
+                    <dt>Producer</dt>
+                    <dd>Dmytro Savchenko</dd>
+                    <dt>Editor</dt>
+                    <dd>Olena Bondar</dd>
+                    <dt>Country</dt>
+                    <dd>Ukraine · Germany · Georgia</dd>
+                    <dt>Runtime</dt>
+                    <dd>112 min</dd>
+                    <dt>Format</dt>
+                    <dd>2.39:1 · DCP</dd>
+                    <dt>Year</dt>
+                    <dd>2020</dd>
+                    <dt>Stage</dt>
+                    <dd>
+                      <span class="stage-badge stage-released">Released</span>
+                    </dd>
+                    <dt>Release date</dt>
+                    <dd>September 2020</dd>
                   </dl>
                 </div>
               </div>
-<div class="film-acc-item">
+              <div class="film-acc-item">
                 <button class="film-acc-trigger" aria-expanded="false">
                   <span class="film-acc-label">Watch the Film</span>
                   <span class="film-acc-index" data-next="true"></span>
-                  <svg class="film-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
                 </button>
                 <div class="film-acc-body">
                   <div class="watch-section">
-                    <div class="watch-embed"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Dust and Memory" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                    <div class="watch-platforms"><p class="watch-label">Available on</p><div class="platform-links"><a href="#" class="platform-link">YouTube</a><a href="#" class="platform-link">MUBI</a><a href="#" class="platform-link">DocAlliance</a></div></div>
+                    <div class="watch-embed">
+                      <iframe
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                        title="Dust and Memory"
+                        frameborder="0"
+                        allow="
+                          accelerometer;
+                          autoplay;
+                          clipboard-write;
+                          encrypted-media;
+                          gyroscope;
+                          picture-in-picture;
+                        "
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                    <div class="watch-platforms">
+                      <p class="watch-label">Available on</p>
+                      <div class="platform-links">
+                        <a href="#" class="platform-link">YouTube</a
+                        ><a href="#" class="platform-link">MUBI</a
+                        ><a href="#" class="platform-link">DocAlliance</a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-                            <div class="film-acc-item">
+              <div class="film-acc-item">
                 <button class="film-acc-trigger" aria-expanded="false">
                   <span class="film-acc-label">Festivals &amp; Partners</span>
                   <span class="film-acc-index">02</span>
-                  <svg class="film-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
                 </button>
                 <div class="film-acc-body">
                   <ul class="pdp-festivals">
-                    <li><span class="pdp-fest-year">2020</span>Berlinale — Documentary Forum</li>
-                    <li><span class="pdp-fest-year">2020</span>DOK Leipzig — Special Jury Prize</li>
-                    <li><span class="pdp-fest-year">2021</span>IDFA — Audience Award</li>
+                    <li>
+                      <span class="pdp-fest-year">2020</span>Berlinale —
+                      Documentary Forum
+                    </li>
+                    <li>
+                      <span class="pdp-fest-year">2020</span>DOK Leipzig —
+                      Special Jury Prize
+                    </li>
+                    <li>
+                      <span class="pdp-fest-year">2021</span>IDFA — Audience
+                      Award
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="film-footer">
-              <button class="pdp-close" aria-label="Close film detail">Close ✕</button>
+              <button class="pdp-close" aria-label="Close film detail">
+                Close ✕
+              </button>
             </div>
           </div>
         </div>
@@ -741,12 +1489,19 @@
         <div class="production-item hidden-item" data-film="iron-cartography">
           <div class="prod-row">
             <div class="prod-image">
-              <img src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=400&q=80" alt="Iron Cartography" />
+              <img
+                src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=400&q=80"
+                alt="Iron Cartography"
+              />
             </div>
             <div class="prod-info">
               <div class="prod-year">2023 — FEATURE</div>
               <h3 class="prod-title">Iron Cartography</h3>
-              <p class="prod-desc">A visual essay on the invisible borders drawn by conflict — on how war changes the internal maps by which people navigate identity and home.</p>
+              <p class="prod-desc">
+                A visual essay on the invisible borders drawn by conflict — on
+                how war changes the internal maps by which people navigate
+                identity and home.
+              </p>
             </div>
             <div class="prod-rating">
               <div class="rating-score">9.4</div>
@@ -759,9 +1514,24 @@
               </div>
               <div class="rating-label">IMDb Score</div>
             </div>
-            <button class="prod-expand-btn" aria-label="Expand film details" aria-expanded="false">
+            <button
+              class="prod-expand-btn"
+              aria-label="Expand film details"
+              aria-expanded="false"
+            >
               <span class="prod-expand-label">Details</span>
-              <svg class="prod-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+              <svg
+                class="prod-arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <polyline points="6,13 12,19 18,13" />
+              </svg>
             </button>
           </div>
           <div class="prod-detail-panel" aria-hidden="true">
@@ -770,39 +1540,95 @@
                 <button class="film-acc-trigger" aria-expanded="true">
                   <span class="film-acc-label">Film Details</span>
                   <span class="film-acc-index">01</span>
-                  <svg class="film-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
                 </button>
                 <div class="film-acc-body">
                   <dl class="pdp-defs">
-                    <dt>Director</dt><dd>Marta Hryhorenko</dd>
-                    <dt>Producer</dt><dd>Dmytro Savchenko</dd>
-                    <dt>Country</dt><dd>Ukraine · France · UK</dd>
-                    <dt>Runtime</dt><dd>88 min</dd>
-                    <dt>Year</dt><dd>2023</dd>
-                    <dt>Stage</dt><dd><span class="stage-badge stage-postproduction">Post-production</span></dd>
-                    <dt>Expected release</dt><dd>2025</dd>
+                    <dt>Director</dt>
+                    <dd>Marta Hryhorenko</dd>
+                    <dt>Producer</dt>
+                    <dd>Dmytro Savchenko</dd>
+                    <dt>Country</dt>
+                    <dd>Ukraine · France · UK</dd>
+                    <dt>Runtime</dt>
+                    <dd>88 min</dd>
+                    <dt>Year</dt>
+                    <dd>2023</dd>
+                    <dt>Stage</dt>
+                    <dd>
+                      <span class="stage-badge stage-postproduction"
+                        >Post-production</span
+                      >
+                    </dd>
+                    <dt>Expected release</dt>
+                    <dd>2025</dd>
                   </dl>
                 </div>
               </div>
             </div>
-<div class="film-acc-item">
-                <button class="film-acc-trigger" aria-expanded="false">
-                  <span class="film-acc-label">Request a Screener</span>
-                  <span class="film-acc-index" data-next="true"></span>
-                  <svg class="film-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
-                </button>
-                <div class="film-acc-body">
-                  <div class="screener-section">
-                    <p class="screener-note">This film is currently in post-production. Festival programmers, distributors, and press may request a screener link.</p>
-                    <a href="mailto:hello@phalanstery.films?subject=Screener request — Iron Cartography" class="screener-btn">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                      Request screener
-                    </a>
-                  </div>
+            <div class="film-acc-item">
+              <button class="film-acc-trigger" aria-expanded="false">
+                <span class="film-acc-label">Request a Screener</span>
+                <span class="film-acc-index" data-next="true"></span>
+                <svg
+                  class="film-acc-arrow"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <polyline points="6,13 12,19 18,13" />
+                </svg>
+              </button>
+              <div class="film-acc-body">
+                <div class="screener-section">
+                  <p class="screener-note">
+                    This film is currently in post-production. Festival
+                    programmers, distributors, and press may request a screener
+                    link.
+                  </p>
+                  <a
+                    href="mailto:hello@phalanstery.films?subject=Screener request — Iron Cartography"
+                    class="screener-btn"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      width="16"
+                      height="16"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                      />
+                      <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    Request screener
+                  </a>
                 </div>
               </div>
-                          <div class="film-footer">
-              <button class="pdp-close" aria-label="Close film detail">Close ✕</button>
+            </div>
+            <div class="film-footer">
+              <button class="pdp-close" aria-label="Close film detail">
+                Close ✕
+              </button>
             </div>
           </div>
         </div>
@@ -811,12 +1637,18 @@
         <div class="production-item hidden-item" data-film="silent-archive">
           <div class="prod-row">
             <div class="prod-image">
-              <img src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=400&q=80" alt="Silent Archive" />
+              <img
+                src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=400&q=80"
+                alt="Silent Archive"
+              />
             </div>
             <div class="prod-info">
               <div class="prod-year">2019 — SHORT</div>
               <h3 class="prod-title">Silent Archive</h3>
-              <p class="prod-desc">Journeys through the forgotten footage of Ukrainian cinema from the 1960s and the suppressed artistic identity behind it.</p>
+              <p class="prod-desc">
+                Journeys through the forgotten footage of Ukrainian cinema from
+                the 1960s and the suppressed artistic identity behind it.
+              </p>
             </div>
             <div class="prod-rating">
               <div class="rating-score">8.0</div>
@@ -829,9 +1661,24 @@
               </div>
               <div class="rating-label">IMDb Score</div>
             </div>
-            <button class="prod-expand-btn" aria-label="Expand film details" aria-expanded="false">
+            <button
+              class="prod-expand-btn"
+              aria-label="Expand film details"
+              aria-expanded="false"
+            >
               <span class="prod-expand-label">Details</span>
-              <svg class="prod-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+              <svg
+                class="prod-arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <polyline points="6,13 12,19 18,13" />
+              </svg>
             </button>
           </div>
           <div class="prod-detail-panel" aria-hidden="true">
@@ -840,46 +1687,114 @@
                 <button class="film-acc-trigger" aria-expanded="true">
                   <span class="film-acc-label">Film Details</span>
                   <span class="film-acc-index">01</span>
-                  <svg class="film-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+                  <svg
+                    class="film-acc-arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="6,13 12,19 18,13" />
+                  </svg>
                 </button>
                 <div class="film-acc-body">
                   <dl class="pdp-defs">
-                    <dt>Director</dt><dd>Marta Hryhorenko</dd>
-                    <dt>Producer</dt><dd>Dmytro Savchenko</dd>
-                    <dt>Country</dt><dd>Ukraine</dd>
-                    <dt>Runtime</dt><dd>24 min</dd>
-                    <dt>Year</dt><dd>2019</dd>
-                    <dt>Stage</dt><dd><span class="stage-badge stage-released">Released</span></dd>
-                    <dt>Release date</dt><dd>November 2019</dd>
+                    <dt>Director</dt>
+                    <dd>Marta Hryhorenko</dd>
+                    <dt>Producer</dt>
+                    <dd>Dmytro Savchenko</dd>
+                    <dt>Country</dt>
+                    <dd>Ukraine</dd>
+                    <dt>Runtime</dt>
+                    <dd>24 min</dd>
+                    <dt>Year</dt>
+                    <dd>2019</dd>
+                    <dt>Stage</dt>
+                    <dd>
+                      <span class="stage-badge stage-released">Released</span>
+                    </dd>
+                    <dt>Release date</dt>
+                    <dd>November 2019</dd>
                   </dl>
                 </div>
               </div>
             </div>
-<div class="film-acc-item">
-                <button class="film-acc-trigger" aria-expanded="false">
-                  <span class="film-acc-label">Watch the Film</span>
-                  <span class="film-acc-index" data-next="true"></span>
-                  <svg class="film-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
-                </button>
-                <div class="film-acc-body">
-                  <div class="watch-section">
-                    <div class="watch-embed"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Silent Archive" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                    <div class="watch-platforms"><p class="watch-label">Available on</p><div class="platform-links"><a href="#" class="platform-link">YouTube</a><a href="#" class="platform-link">Vimeo</a></div></div>
+            <div class="film-acc-item">
+              <button class="film-acc-trigger" aria-expanded="false">
+                <span class="film-acc-label">Watch the Film</span>
+                <span class="film-acc-index" data-next="true"></span>
+                <svg
+                  class="film-acc-arrow"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <polyline points="6,13 12,19 18,13" />
+                </svg>
+              </button>
+              <div class="film-acc-body">
+                <div class="watch-section">
+                  <div class="watch-embed">
+                    <iframe
+                      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                      title="Silent Archive"
+                      frameborder="0"
+                      allow="
+                        accelerometer;
+                        autoplay;
+                        clipboard-write;
+                        encrypted-media;
+                        gyroscope;
+                        picture-in-picture;
+                      "
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                  <div class="watch-platforms">
+                    <p class="watch-label">Available on</p>
+                    <div class="platform-links">
+                      <a href="#" class="platform-link">YouTube</a
+                      ><a href="#" class="platform-link">Vimeo</a>
+                    </div>
                   </div>
                 </div>
               </div>
-                          <div class="film-footer">
-              <button class="pdp-close" aria-label="Close film detail">Close ✕</button>
+            </div>
+            <div class="film-footer">
+              <button class="pdp-close" aria-label="Close film detail">
+                Close ✕
+              </button>
             </div>
           </div>
         </div>
-      </div><!-- /productionsList -->
+      </div>
+      <!-- /productionsList -->
 
       <div class="see-more-wrap">
-        <button id="seeMoreBtn" class="see-more-btn" onclick="toggleProductions()">
+        <button
+          id="seeMoreBtn"
+          class="see-more-btn"
+          onclick="toggleProductions()"
+        >
           <span id="seeMoreText">See more</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
-            <polyline points="6,9 12,15 18,9"/>
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            width="16"
+            height="16"
+          >
+            <polyline points="6,9 12,15 18,9" />
           </svg>
         </button>
       </div>
@@ -903,43 +1818,101 @@
             </div>
             <button class="team-row-toggle" aria-expanded="false">
               <span class="team-row-toggle-label">Open</span>
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="3,6 8,11 13,6"/>
+              <svg
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <polyline points="3,6 8,11 13,6" />
               </svg>
             </button>
           </div>
           <div class="team-detail-panel" aria-hidden="true">
             <div class="team-detail-inner">
               <div class="team-detail-photo">
-                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80" alt="Marta Hryhorenko" loading="lazy" />
+                <img
+                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80"
+                  alt="Marta Hryhorenko"
+                  loading="lazy"
+                />
               </div>
               <div class="team-detail-content">
                 <div class="team-acc-item team-acc-open">
                   <button class="team-acc-trigger" aria-expanded="true">
                     <span class="team-acc-label">About</span>
                     <span class="team-acc-num">01</span>
-                    <svg class="team-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+                    <svg
+                      class="team-acc-arrow"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <line x1="12" y1="5" x2="12" y2="19" />
+                      <polyline points="6,13 12,19 18,13" />
+                    </svg>
                   </button>
                   <div class="team-acc-body">
                     <div class="team-bio-text">
-                      <p>Marta Hryhorenko is an award-winning documentary director whose work spans a decade of filmmaking in Eastern Europe. Her films have screened at IDFA, Berlinale, Venice, and Sundance — and have been broadcast in over forty countries.</p>
-                      <p class="team-bio-more">She studied directing at the Kyiv National I.K. Karpenko-Kary Theatre and later completed a fellowship at the Berlinale Talents programme. Her approach is rooted in "patient cinema" — long-form observation that refuses to arrive at conclusions before the subject is ready.</p>
+                      <p>
+                        Marta Hryhorenko is an award-winning documentary
+                        director whose work spans a decade of filmmaking in
+                        Eastern Europe. Her films have screened at IDFA,
+                        Berlinale, Venice, and Sundance — and have been
+                        broadcast in over forty countries.
+                      </p>
+                      <p class="team-bio-more">
+                        She studied directing at the Kyiv National I.K.
+                        Karpenko-Kary Theatre and later completed a fellowship
+                        at the Berlinale Talents programme. Her approach is
+                        rooted in "patient cinema" — long-form observation that
+                        refuses to arrive at conclusions before the subject is
+                        ready.
+                      </p>
                     </div>
-                    <button class="team-read-more">Read more <span>↓</span></button>
+                    <button class="team-read-more">
+                      Read more <span>↓</span>
+                    </button>
                   </div>
                 </div>
                 <div class="team-acc-item">
                   <button class="team-acc-trigger" aria-expanded="false">
                     <span class="team-acc-label">Filmography</span>
                     <span class="team-acc-num">02</span>
-                    <svg class="team-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+                    <svg
+                      class="team-acc-arrow"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <line x1="12" y1="5" x2="12" y2="19" />
+                      <polyline points="6,13 12,19 18,13" />
+                    </svg>
                   </button>
                   <div class="team-acc-body">
                     <ul class="team-filmography">
-                      <li><span class="tf-title" data-film="iron-cartography">Iron Cartography</span><span class="tf-meta">2023 · Feature</span></li>
-                      <li><span class="tf-title" data-film="shadows-of-kyiv">Shadows of Kyiv</span><span class="tf-meta">2022 · Feature</span></li>
-                      <li><span class="tf-title" data-film="the-last-witness">The Last Witness</span><span class="tf-meta">2021 · Short</span></li>
-                      <li><span class="tf-title" data-film="silent-archive">Silent Archive</span><span class="tf-meta">2019 · Short</span></li>
+                      <li>
+                        <span class="tf-title" data-film="iron-cartography"
+                          >Iron Cartography</span
+                        ><span class="tf-meta">2023 · Feature</span>
+                      </li>
+                      <li>
+                        <span class="tf-title" data-film="shadows-of-kyiv"
+                          >Shadows of Kyiv</span
+                        ><span class="tf-meta">2022 · Feature</span>
+                      </li>
+                      <li>
+                        <span class="tf-title" data-film="the-last-witness"
+                          >The Last Witness</span
+                        ><span class="tf-meta">2021 · Short</span>
+                      </li>
+                      <li>
+                        <span class="tf-title" data-film="silent-archive"
+                          >Silent Archive</span
+                        ><span class="tf-meta">2019 · Short</span>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -949,7 +1922,10 @@
         </div>
 
         <!-- TEAM MEMBER 2 -->
-        <div class="team-item reveal reveal-delay-1" data-team="dmytro-savchenko">
+        <div
+          class="team-item reveal reveal-delay-1"
+          data-team="dmytro-savchenko"
+        >
           <div class="team-row">
             <div class="team-row-main">
               <div class="team-row-num">02</div>
@@ -958,43 +1934,99 @@
             </div>
             <button class="team-row-toggle" aria-expanded="false">
               <span class="team-row-toggle-label">Open</span>
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="3,6 8,11 13,6"/>
+              <svg
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <polyline points="3,6 8,11 13,6" />
               </svg>
             </button>
           </div>
           <div class="team-detail-panel" aria-hidden="true">
             <div class="team-detail-inner">
               <div class="team-detail-photo">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=85" alt="Dmytro Savchenko" loading="lazy" />
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=85"
+                  alt="Dmytro Savchenko"
+                  loading="lazy"
+                />
               </div>
               <div class="team-detail-content">
                 <div class="team-acc-item team-acc-open">
                   <button class="team-acc-trigger" aria-expanded="true">
                     <span class="team-acc-label">About</span>
                     <span class="team-acc-num">01</span>
-                    <svg class="team-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+                    <svg
+                      class="team-acc-arrow"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <line x1="12" y1="5" x2="12" y2="19" />
+                      <polyline points="6,13 12,19 18,13" />
+                    </svg>
                   </button>
                   <div class="team-acc-body">
                     <div class="team-bio-text">
-                      <p>Dmytro Savchenko has produced fourteen documentary features and over twenty shorts across Europe and the Middle East. He entered the industry as a fixer in conflict zones and carries that discipline into every production.</p>
-                      <p class="team-bio-more">His producing philosophy is one of radical trust: in the director's instinct, in the subject's time, and in the audience's intelligence. He does not rush stories to their conclusions.</p>
+                      <p>
+                        Dmytro Savchenko has produced fourteen documentary
+                        features and over twenty shorts across Europe and the
+                        Middle East. He entered the industry as a fixer in
+                        conflict zones and carries that discipline into every
+                        production.
+                      </p>
+                      <p class="team-bio-more">
+                        His producing philosophy is one of radical trust: in the
+                        director's instinct, in the subject's time, and in the
+                        audience's intelligence. He does not rush stories to
+                        their conclusions.
+                      </p>
                     </div>
-                    <button class="team-read-more">Read more <span>↓</span></button>
+                    <button class="team-read-more">
+                      Read more <span>↓</span>
+                    </button>
                   </div>
                 </div>
                 <div class="team-acc-item">
                   <button class="team-acc-trigger" aria-expanded="false">
                     <span class="team-acc-label">Filmography</span>
                     <span class="team-acc-num">02</span>
-                    <svg class="team-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+                    <svg
+                      class="team-acc-arrow"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <line x1="12" y1="5" x2="12" y2="19" />
+                      <polyline points="6,13 12,19 18,13" />
+                    </svg>
                   </button>
                   <div class="team-acc-body">
                     <ul class="team-filmography">
-                      <li><span class="tf-title" data-film="iron-cartography">Iron Cartography</span><span class="tf-meta">2023 · Feature</span></li>
-                      <li><span class="tf-title" data-film="shadows-of-kyiv">Shadows of Kyiv</span><span class="tf-meta">2022 · Feature</span></li>
-                      <li><span class="tf-title" data-film="the-last-witness">The Last Witness</span><span class="tf-meta">2021 · Short</span></li>
-                      <li><span class="tf-title" data-film="dust-and-memory">Dust &amp; Memory</span><span class="tf-meta">2020 · Feature</span></li>
+                      <li>
+                        <span class="tf-title" data-film="iron-cartography"
+                          >Iron Cartography</span
+                        ><span class="tf-meta">2023 · Feature</span>
+                      </li>
+                      <li>
+                        <span class="tf-title" data-film="shadows-of-kyiv"
+                          >Shadows of Kyiv</span
+                        ><span class="tf-meta">2022 · Feature</span>
+                      </li>
+                      <li>
+                        <span class="tf-title" data-film="the-last-witness"
+                          >The Last Witness</span
+                        ><span class="tf-meta">2021 · Short</span>
+                      </li>
+                      <li>
+                        <span class="tf-title" data-film="dust-and-memory"
+                          >Dust &amp; Memory</span
+                        ><span class="tf-meta">2020 · Feature</span>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -1013,43 +2045,99 @@
             </div>
             <button class="team-row-toggle" aria-expanded="false">
               <span class="team-row-toggle-label">Open</span>
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="3,6 8,11 13,6"/>
+              <svg
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <polyline points="3,6 8,11 13,6" />
               </svg>
             </button>
           </div>
           <div class="team-detail-panel" aria-hidden="true">
             <div class="team-detail-inner">
               <div class="team-detail-photo">
-                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=900&q=85" alt="Olena Bondar" loading="lazy" />
+                <img
+                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=900&q=85"
+                  alt="Olena Bondar"
+                  loading="lazy"
+                />
               </div>
               <div class="team-detail-content">
                 <div class="team-acc-item team-acc-open">
                   <button class="team-acc-trigger" aria-expanded="true">
                     <span class="team-acc-label">About</span>
                     <span class="team-acc-num">01</span>
-                    <svg class="team-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+                    <svg
+                      class="team-acc-arrow"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <line x1="12" y1="5" x2="12" y2="19" />
+                      <polyline points="6,13 12,19 18,13" />
+                    </svg>
                   </button>
                   <div class="team-acc-body">
                     <div class="team-bio-text">
-                      <p>Olena Bondar assembles silence as much as image. Her editorial approach — developed across twelve years and over thirty projects — treats each cut not as a break but as a breath: the space between where meaning lives.</p>
-                      <p class="team-bio-more">Trained at the National Film School of Łódź, Olena has collaborated with directors across Ukraine, Poland, Germany, and Georgia. Her work on Dust &amp; Memory was cited by DOK Leipzig's jury for "an editorial intelligence that transforms documentation into poetry."</p>
+                      <p>
+                        Olena Bondar assembles silence as much as image. Her
+                        editorial approach — developed across twelve years and
+                        over thirty projects — treats each cut not as a break
+                        but as a breath: the space between where meaning lives.
+                      </p>
+                      <p class="team-bio-more">
+                        Trained at the National Film School of Łódź, Olena has
+                        collaborated with directors across Ukraine, Poland,
+                        Germany, and Georgia. Her work on Dust &amp; Memory was
+                        cited by DOK Leipzig's jury for "an editorial
+                        intelligence that transforms documentation into poetry."
+                      </p>
                     </div>
-                    <button class="team-read-more">Read more <span>↓</span></button>
+                    <button class="team-read-more">
+                      Read more <span>↓</span>
+                    </button>
                   </div>
                 </div>
                 <div class="team-acc-item">
                   <button class="team-acc-trigger" aria-expanded="false">
                     <span class="team-acc-label">Filmography</span>
                     <span class="team-acc-num">02</span>
-                    <svg class="team-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+                    <svg
+                      class="team-acc-arrow"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <line x1="12" y1="5" x2="12" y2="19" />
+                      <polyline points="6,13 12,19 18,13" />
+                    </svg>
                   </button>
                   <div class="team-acc-body">
                     <ul class="team-filmography">
-                      <li><span class="tf-title" data-film="iron-cartography">Iron Cartography</span><span class="tf-meta">2023 · Feature</span></li>
-                      <li><span class="tf-title" data-film="shadows-of-kyiv">Shadows of Kyiv</span><span class="tf-meta">2022 · Feature</span></li>
-                      <li><span class="tf-title" data-film="dust-and-memory">Dust &amp; Memory</span><span class="tf-meta">2020 · Feature</span></li>
-                      <li><span class="tf-title" data-film="silent-archive">Silent Archive</span><span class="tf-meta">2019 · Short</span></li>
+                      <li>
+                        <span class="tf-title" data-film="iron-cartography"
+                          >Iron Cartography</span
+                        ><span class="tf-meta">2023 · Feature</span>
+                      </li>
+                      <li>
+                        <span class="tf-title" data-film="shadows-of-kyiv"
+                          >Shadows of Kyiv</span
+                        ><span class="tf-meta">2022 · Feature</span>
+                      </li>
+                      <li>
+                        <span class="tf-title" data-film="dust-and-memory"
+                          >Dust &amp; Memory</span
+                        ><span class="tf-meta">2020 · Feature</span>
+                      </li>
+                      <li>
+                        <span class="tf-title" data-film="silent-archive"
+                          >Silent Archive</span
+                        ><span class="tf-meta">2019 · Short</span>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -1066,12 +2154,23 @@
     <section id="about">
       <div class="about-inner">
         <div class="about-quote reveal">
-          We do not tell stories —<br />we <span class="highlight">excavate</span> them from<br />the silence history leaves behind
+          We do not tell stories —<br />we
+          <span class="highlight">excavate</span> them from<br />the silence
+          history leaves behind
         </div>
         <div class="about-right">
           <div class="section-label reveal"><span>Who We Are</span></div>
-          <p class="about-text reveal reveal-delay-1">Phalanstery Films is an independent documentary production studio founded on the belief that truth is the most radical form of storytelling. We work at the intersection of cinema, journalism, and art.</p>
-          <p class="about-text reveal reveal-delay-2">From long-form investigations to intimate short portraits, every project we undertake begins with a single question: what is the world trying not to see?</p>
+          <p class="about-text reveal reveal-delay-1">
+            Phalanstery Films is an independent documentary production studio
+            founded on the belief that truth is the most radical form of
+            storytelling. We work at the intersection of cinema, journalism, and
+            art.
+          </p>
+          <p class="about-text reveal reveal-delay-2">
+            From long-form investigations to intimate short portraits, every
+            project we undertake begins with a single question: what is the
+            world trying not to see?
+          </p>
           <div class="about-stats reveal reveal-delay-1">
             <div class="stat-item">
               <div class="stat-number">18</div>
@@ -1090,7 +2189,11 @@
               <div class="stat-label">Years Active</div>
             </div>
           </div>
-          <a href="mailto:hello@phalanstery.films" class="cta-collaborate reveal reveal-delay-2">Let's create together <span class="cta-arrow">→</span></a>
+          <a
+            href="mailto:hello@phalanstery.films"
+            class="cta-collaborate reveal reveal-delay-2"
+            >Let's create together <span class="cta-arrow">→</span></a
+          >
         </div>
       </div>
     </section>
@@ -1102,14 +2205,38 @@
       <div class="footer-inner">
         <div class="footer-left reveal">
           <div class="footer-logo">
-            <svg viewBox="0 0 36 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="28">
-              <path d="M18 0L36 10V30L18 40L0 30V10L18 0Z" fill="none" stroke="currentColor" stroke-width="1.2"/>
-              <rect x="11" y="18" width="14" height="14" stroke="currentColor" stroke-width="0.8"/>
-              <path d="M11 18L18 11L25 18" stroke="currentColor" stroke-width="0.8"/>
+            <svg
+              viewBox="0 0 36 40"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="28"
+            >
+              <path
+                d="M18 0L36 10V30L18 40L0 30V10L18 0Z"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.2"
+              />
+              <rect
+                x="11"
+                y="18"
+                width="14"
+                height="14"
+                stroke="currentColor"
+                stroke-width="0.8"
+              />
+              <path
+                d="M11 18L18 11L25 18"
+                stroke="currentColor"
+                stroke-width="0.8"
+              />
             </svg>
-            <span>phalanstery<br>films</span>
+            <span>phalanstery<br />films</span>
           </div>
-          <p class="footer-tagline">Independent documentary production.<br />Kyiv — Warsaw — Tbilisi</p>
+          <p class="footer-tagline">
+            Independent documentary production.<br />Kyiv — Warsaw — Tbilisi
+          </p>
           <nav class="footer-nav">
             <a href="#films">films</a>
             <a href="#productions">productions</a>
@@ -1120,29 +2247,65 @@
         <div class="footer-right reveal reveal-delay-1">
           <div class="footer-social">
             <a href="#" aria-label="Facebook">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                />
               </svg>
             </a>
             <a href="#" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
               </svg>
             </a>
             <a href="#" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5"/>
-                <circle cx="12" cy="12" r="4"/>
-                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle
+                  cx="17.5"
+                  cy="6.5"
+                  r="0.5"
+                  fill="currentColor"
+                  stroke="none"
+                />
               </svg>
             </a>
           </div>
-          <a href="mailto:hello@phalanstery.films" class="footer-email">hello@phalanstery.films</a>
+          <a href="mailto:hello@phalanstery.films" class="footer-email"
+            >hello@phalanstery.films</a
+          >
         </div>
       </div>
       <div class="footer-bottom">
-        <div class="footer-copy">© 2026 Phalanstery Films. All rights reserved.</div>
+        <div class="footer-copy">
+          © 2026 Phalanstery Films. All rights reserved.
+        </div>
         <div class="footer-strip">
           <div class="footer-strip-frame"></div>
           <div class="footer-strip-frame"></div>
@@ -1162,10 +2325,22 @@
     <!-- ═══════════════════════════════════════════
          TEAM OVERLAY (збережено без змін для JS-сумісності)
          ═══════════════════════════════════════════ -->
-    <div class="overlay-panel" id="teamOverlay" role="dialog" aria-modal="true" aria-label="Team member profile">
+    <div
+      class="overlay-panel"
+      id="teamOverlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Team member profile"
+    >
       <div class="overlay-close-bar">
-        <span class="bar-logo" onclick="closeTeamOverlay()">phalanstery films</span>
-        <button class="overlay-close-btn" onclick="closeTeamOverlay()" aria-label="Close">
+        <span class="bar-logo" onclick="closeTeamOverlay()"
+          >phalanstery films</span
+        >
+        <button
+          class="overlay-close-btn"
+          onclick="closeTeamOverlay()"
+          aria-label="Close"
+        >
           Close <span class="overlay-close-x"></span>
         </button>
       </div>

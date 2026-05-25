@@ -662,6 +662,9 @@ function toggleProductions() {
    ───────────────────────────────────────────── */
 const burger = document.getElementById("burger");
 const mobileMenu = document.getElementById("mobileMenu");
+const mmClose = document.getElementById("mmClose");
+const mmLogoLink = document.getElementById("mmLogoLink");
+
 function toggleMenu() {
   const open = mobileMenu.classList.toggle("open");
   burger.classList.toggle("open", open);
@@ -672,7 +675,10 @@ function closeMenu() {
   mobileMenu.classList.remove("open");
   document.body.style.overflow = "";
 }
+
 burger.addEventListener("click", toggleMenu);
+mmClose.addEventListener("click", closeMenu);
+mmLogoLink.addEventListener("click", closeMenu);
 mobileMenu
   .querySelectorAll("a[href]")
   .forEach((a) => a.addEventListener("click", closeMenu));
