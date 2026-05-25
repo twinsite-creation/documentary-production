@@ -318,10 +318,11 @@ function handleFilmHash(id) {
   const card = document.getElementById("film-" + id);
   if (card) {
     openFilmCard(id);
-    setTimeout(
-      () => card.scrollIntoView({ behavior: "smooth", block: "center" }),
-      200,
-    );
+    const filmsSection = document.getElementById("films");
+    setTimeout(() => {
+      if (filmsSection) filmsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      else card.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 200);
     return;
   }
   /* Try production item */
@@ -532,7 +533,15 @@ document.querySelectorAll(".team-read-more").forEach((btn) => {
 document.querySelectorAll(".tf-title[data-film]").forEach((el) => {
   el.addEventListener("click", (e) => {
     e.stopPropagation();
-    openFilmCard(el.dataset.film);
+    const id = el.dataset.film;
+    openFilmCard(id);
+    /* Scroll to #films section so the strip is visible */
+    const filmsSection = document.getElementById("films");
+    if (filmsSection) {
+      setTimeout(() => {
+        filmsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 80);
+    }
   });
 });
 
@@ -592,7 +601,7 @@ window.addEventListener("scroll", () => {
   );
   heroContent.style.opacity = 1 - prog;
   heroContent.style.transform = `translateY(${prog * 40}px)`;
-  hdrLogo.classList.toggle("visible", prog > 0.4);
+  // Logo always visible — hdrLogo.classList.toggle removed
 
   document.querySelectorAll(".hero-beam").forEach((b, i) => {
     const s = sy * 0.15;
