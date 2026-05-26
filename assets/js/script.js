@@ -320,7 +320,8 @@ function handleFilmHash(id) {
     openFilmCard(id);
     const filmsSection = document.getElementById("films");
     setTimeout(() => {
-      if (filmsSection) filmsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (filmsSection)
+        filmsSection.scrollIntoView({ behavior: "smooth", block: "start" });
       else card.scrollIntoView({ behavior: "smooth", block: "center" });
     }, 200);
     return;
