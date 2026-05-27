@@ -664,7 +664,8 @@ function toggleProductions() {
 const burger = document.getElementById("burger");
 const mobileMenu = document.getElementById("mobileMenu");
 const mmClose = document.getElementById("mmClose");
-const mmLogoLink = document.getElementById("mmLogoLink");
+const mmLogoLink = document.querySelector(".mobile-menu .header-logo");
+if (mmLogoLink) mmLogoLink.addEventListener("click", closeMenu);
 
 function toggleMenu() {
   const open = mobileMenu.classList.toggle("open");
@@ -679,7 +680,6 @@ function closeMenu() {
 
 burger.addEventListener("click", toggleMenu);
 mmClose.addEventListener("click", closeMenu);
-mmLogoLink.addEventListener("click", closeMenu);
 mobileMenu
   .querySelectorAll("a[href]")
   .forEach((a) => a.addEventListener("click", closeMenu));
@@ -697,3 +697,20 @@ const btt = document.querySelector(".back-to-top");
 window.addEventListener("scroll", () => {
   btt.classList.toggle("visible", window.scrollY > 600);
 });
+
+/* ─────────────────────────────────────────────
+     FSTRIP-INFO SCROLL FADE HINT
+   ───────────────────────────────────────────── */
+function initFstripScrollHint(panel) {
+  function checkScroll() {
+    const atEnd = panel.scrollHeight - panel.scrollTop - panel.clientHeight < 8;
+    panel.classList.toggle('scrolled-end', atEnd);
+  }
+  panel.addEventListener('scroll', checkScroll, { passive: true });
+  // Re-check when strip becomes active (content reflows)
+  const observer = new MutationObserver(checkScroll);
+  observer.observe(panel.closest('.film-strip'), { attributes: true, attributeFilter: ['class'] });
+  checkScroll();
+}
+
+document.querySelectorAll('.fstrip-info').forEach(initFstripScrollHint);
