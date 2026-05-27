@@ -826,8 +826,8 @@ nav ul li a:hover {
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--accent);
-  border: 2px solid rgba(198, 46, 0, 0.4);
+  color: var(--silver);
+  border: 2px solid var(--silver);
   padding: 3px 8px;
   border-radius: 1px;
 }
@@ -2145,8 +2145,8 @@ nav ul li a:hover {
   border-color: #808bc3;
 }
 .fsi-tag--production {
-  color: #c62e00;
-  border-color: #c62e00;
+  color: var(--silver);
+  border-color: var(--silver);
 }
 .fsi-tag--development {
   color: var(--silver);
