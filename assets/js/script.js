@@ -714,3 +714,138 @@ function initFstripScrollHint(panel) {
 }
 
 document.querySelectorAll('.fstrip-info').forEach(initFstripScrollHint);
+
+/* ─────────────────────────────────────────────
+     PRODUCTIONS FILTER SYSTEM
+     Масштабований: нові значення — лише новий <button> в HTML.
+     Логіка не потребує змін при розширенні до 15+ фільмів.
+   ───────────────────────────────────────────── */
+(function initProductionFilters() {
+  const filtersEl = document.getElementById('prodFilters');
+  const listEl = document.getElementById('productionsList');
+  const countEl = document.getElementById('pfCount');
+  const resetBtn = document.getElementById('pfReset');
+  if (!filtersEl || !listEl) return;
+
+  /*
+   * Active filter state: { groupName: activeValue | null }
+   * null means no filter for that group (show all).
+   */
+  const activeFilters = {};
+
+  /* Build initial state from groups */
+  filtersEl.querySelectorAll('[data-filter-group]').forEach(group => {
+    const groupName = group.dataset.filterGroup;
+    activeFilters[groupName] = null;
+  });
+
+  /* Map group names to data-attributes on production-item */
+  const GROUP_TO_ATTR = {
+    'status':    'status',
+    'format':    'format',
+    'genre':     'genre',
+    'prod-type': 'prodType',
+  };
+
+  /* ── Chip click handler ── */
+  filtersEl.querySelectorAll('.pf-group').forEach(group => {
+    const groupName = group.dataset.filterGroup;
+
+    group.querySelectorAll('.pf-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        const value = chip.dataset.value;
+        const current = activeFilters[groupName];
+
+        if (current === value) {
+          /* Toggle off — reset this group */
+          activeFilters[groupName] = null;
+        } else {
+          activeFilters[groupName] = value;
+        }
+
+        updateChipStates(group, groupName);
+        applyFilters();
+      });
+    });
+  });
+
+  function updateChipStates(group, groupName) {
+    const activeVal = activeFilters[groupName];
+    group.querySelectorAll('.pf-chip').forEach(c => {
+      c.classList.remove('pf-chip--active', 'pf-chip--inactive');
+      if (activeVal === null) {
+        /* Nothing selected — all chips neutral */
+        return;
+      }
+      if (c.dataset.value === activeVal) {
+        c.classList.add('pf-chip--active');
+      } else {
+        c.classList.add('pf-chip--inactive');
+      }
+    });
+  }
+
+  function applyFilters() {
+    const items = listEl.querySelectorAll('.production-item[data-film]');
+    let visibleCount = 0;
+    let hasActiveFilter = false;
+
+    Object.values(activeFilters).forEach(val => {
+      if (val !== null) hasActiveFilter = true;
+    });
+
+    items.forEach(item => {
+      const matches = itemMatchesAllFilters(item);
+      if (matches) {
+        item.classList.remove('pf-hidden');
+        visibleCount++;
+      } else {
+        item.classList.add('pf-hidden');
+        if (item.classList.contains('prod-open')) {
+          closeProdDetail(item, false);
+        }
+      }
+    });
+
+    const total = items.length;
+    countEl.textContent = hasActiveFilter
+      ? `${visibleCount} of ${total} film${total !== 1 ? 's' : ''}`
+      : `${total} film${total !== 1 ? 's' : ''}`;
+
+    resetBtn.classList.toggle('visible', hasActiveFilter);
+
+    let noResults = listEl.querySelector('.pf-no-results');
+    if (!noResults) {
+      noResults = document.createElement('div');
+      noResults.className = 'pf-no-results';
+      noResults.textContent = 'No films match the selected filters.';
+      listEl.appendChild(noResults);
+    }
+    noResults.classList.toggle('visible', visibleCount === 0);
+  }
+
+  function itemMatchesAllFilters(item) {
+    for (const [groupName, activeVal] of Object.entries(activeFilters)) {
+      if (activeVal === null) continue;
+
+      const attrKey = GROUP_TO_ATTR[groupName];
+      const itemValues = (item.dataset[attrKey] || '').trim().toLowerCase().split(/\s+/);
+
+      if (!itemValues.includes(activeVal)) return false;
+    }
+    return true;
+  }
+
+  /* Reset all filters */
+  resetBtn.addEventListener('click', () => {
+    filtersEl.querySelectorAll('[data-filter-group]').forEach(group => {
+      const groupName = group.dataset.filterGroup;
+      activeFilters[groupName] = null;
+      updateChipStates(group, groupName);
+    });
+    applyFilters();
+  });
+
+  /* Initial count render */
+  applyFilters();
+})();

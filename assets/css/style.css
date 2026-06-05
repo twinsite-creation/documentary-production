@@ -373,6 +373,7 @@ nav ul {
   display: flex;
   gap: 36px;
   align-items: center;
+  text-transform: uppercase;
 }
 nav ul li a {
   font-family: var(--font-body);
@@ -1227,6 +1228,24 @@ nav ul li a:hover {
 .film-still:hover img {
   transform: scale(1.04);
 }
+/* Placeholder stills — до додавання реальних фото */
+.film-still--placeholder {
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  border-radius: 2px;
+}
+.film-still--placeholder span {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.25);
+  text-transform: uppercase;
+  font-family: var(--font-mono, monospace);
+}
+/* Як тільки є реальне фото — просто видали клас film-still--placeholder
+   і додай <img src="..." alt="..." loading="lazy" /> всередині .film-still */
 .film-trailer-wrap {
   width: 100%;
 }
@@ -2303,4 +2322,211 @@ nav ul li a:hover {
   border-color: rgba(255, 152, 0, 0.5);
   color: #ff9800;
   background: rgba(255, 152, 0, 0.05);
+}
+
+/* ─── PRODUCTIONS FILTER BAR ─── */
+.prod-filters {
+  margin-bottom: 40px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+/* Row with 4 groups side by side */
+.pf-groups-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.pf-group {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border);
+  padding: 16px 18px 14px;
+  gap: 10px;
+}
+.pf-group:last-child {
+  border-right: none;
+}
+
+.pf-group-label {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(236, 229, 219, 0.35);
+  flex-shrink: 0;
+}
+
+/* Chips container */
+.pf-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Individual chip */
+.pf-chip {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(236, 229, 219, 0.5);
+  background: none;
+  border: 1px solid rgba(236, 229, 219, 0.12);
+  padding: 5px 11px;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition:
+    color 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease;
+}
+
+.pf-chip:hover {
+  color: var(--text-light);
+  border-color: rgba(236, 229, 219, 0.28);
+}
+
+/* Active (selected) chip */
+.pf-chip.pf-chip--active {
+  color: var(--text-light);
+  border-color: rgba(236, 229, 219, 0.45);
+  background: rgba(236, 229, 219, 0.07);
+}
+
+/* The × icon inside active chip */
+.pf-chip-x {
+  display: none;
+  font-style: normal;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1;
+  color: rgba(236, 229, 219, 0.5);
+  flex-shrink: 0;
+  transition: color 0.15s ease;
+}
+
+.pf-chip.pf-chip--active .pf-chip-x {
+  display: inline;
+}
+
+.pf-chip.pf-chip--active:hover .pf-chip-x {
+  color: var(--text-light);
+}
+
+/* Inactive chips — hidden completely */
+.pf-chip.pf-chip--inactive {
+  display: none;
+}
+
+/* Meta row: count + reset */
+.pf-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 18px;
+  border-top: 1px solid var(--border);
+  background: rgba(236, 229, 219, 0.015);
+}
+
+.pf-count {
+  font-family: var(--font-body);
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(236, 229, 219, 0.35);
+}
+
+.pf-reset {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(236, 229, 219, 0.35);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.pf-reset.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.pf-reset:hover {
+  color: var(--accent);
+}
+
+/* Filtered-out state for production items */
+.production-item.pf-hidden {
+  display: none !important;
+}
+
+/* No results message */
+.pf-no-results {
+  padding: 60px 20px;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  border-top: 1px solid var(--border);
+  display: none;
+}
+.pf-no-results.visible {
+  display: block;
+}
+
+/* Responsive — stack groups on mobile */
+@media (max-width: 900px) {
+  .pf-groups-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pf-group:nth-child(2) {
+    border-right: none;
+  }
+  .pf-group:nth-child(1),
+  .pf-group:nth-child(2) {
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 560px) {
+  .pf-groups-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .pf-group {
+    padding: 12px 14px 10px;
+    gap: 8px;
+  }
+  .pf-chip {
+    font-size: 10px;
+    padding: 4px 9px;
+  }
+  .pf-group:nth-child(odd) {
+    border-right: 1px solid var(--border);
+  }
+  .pf-group:nth-child(even) {
+    border-right: none;
+  }
+  .pf-group:nth-child(1),
+  .pf-group:nth-child(2),
+  .pf-group:nth-child(3) {
+    border-bottom: 1px solid var(--border);
+  }
 }
