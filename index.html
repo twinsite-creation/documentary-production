@@ -533,6 +533,12 @@
         </div>
       </div>
 
+      <!-- Scroll hint — visible on mobile/tablet when a filter is active -->
+      <div class="pf-scroll-hint" id="pfScrollHint" aria-hidden="true">
+        <span>Scroll for more</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6,13 12,19 18,13"/></svg>
+      </div>
+
       <div id="productionsList">
         <!-- ═══════════════════════════════════════════
              PRODUCTION ITEM TEMPLATE (для масштабування):
@@ -702,24 +708,30 @@
                 </button>
                 <div class="film-acc-body">
                   <!-- STILLS: замінити src на реальні фотографії коли будуть готові -->
-                  <div class="film-stills-grid">
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 01</span>
+                  <!-- STILLS: замінити film-still--placeholder на реальні фото:
+                       видали клас film-still--placeholder і додай <img src="..." alt="..." loading="lazy" /> -->
+                  <div class="film-stills-slider" data-index="0">
+                    <div class="fss-track">
+                      <div class="film-still film-still--placeholder"><span>Still 01</span></div>
+                      <div class="film-still film-still--placeholder"><span>Still 02</span></div>
+                      <div class="film-still film-still--placeholder"><span>Still 03</span></div>
+                      <div class="film-still film-still--placeholder"><span>Still 04</span></div>
+                      <div class="film-still film-still--placeholder"><span>Still 05</span></div>
+                      <div class="film-still film-still--placeholder"><span>Still 06</span></div>
                     </div>
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 02</span>
-                    </div>
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 03</span>
-                    </div>
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 04</span>
-                    </div>
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 05</span>
-                    </div>
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 06</span>
+                    <button class="fss-btn fss-prev" aria-label="Previous still">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15,18 9,12 15,6"/></svg>
+                    </button>
+                    <button class="fss-btn fss-next" aria-label="Next still">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,18 15,12 9,6"/></svg>
+                    </button>
+                    <div class="fss-meta">
+                      <div class="fss-dots"></div>
+                      <div class="fss-counter">
+                        <span class="fss-current">01</span>
+                        <span class="fss-sep">—</span>
+                        <span class="fss-total">06</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -925,24 +937,30 @@
                 </button>
                 <div class="film-acc-body">
                   <!-- STILLS: замінити src на реальні фотографії коли будуть готові -->
-                  <div class="film-stills-grid">
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 01</span>
+                  <!-- STILLS: замінити film-still--placeholder на реальні фото:
+                       видали клас film-still--placeholder і додай <img src="..." alt="..." loading="lazy" /> -->
+                  <div class="film-stills-slider" data-index="0">
+                    <div class="fss-track">
+                      <div class="film-still film-still--placeholder"><span>Still 01</span></div>
+                      <div class="film-still film-still--placeholder"><span>Still 02</span></div>
+                      <div class="film-still film-still--placeholder"><span>Still 03</span></div>
+                      <div class="film-still film-still--placeholder"><span>Still 04</span></div>
+                      <div class="film-still film-still--placeholder"><span>Still 05</span></div>
+                      <div class="film-still film-still--placeholder"><span>Still 06</span></div>
                     </div>
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 02</span>
-                    </div>
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 03</span>
-                    </div>
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 04</span>
-                    </div>
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 05</span>
-                    </div>
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 06</span>
+                    <button class="fss-btn fss-prev" aria-label="Previous still">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15,18 9,12 15,6"/></svg>
+                    </button>
+                    <button class="fss-btn fss-next" aria-label="Next still">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,18 15,12 9,6"/></svg>
+                    </button>
+                    <div class="fss-meta">
+                      <div class="fss-dots"></div>
+                      <div class="fss-counter">
+                        <span class="fss-current">01</span>
+                        <span class="fss-sep">—</span>
+                        <span class="fss-total">06</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1147,24 +1165,30 @@
                 </button>
                 <div class="film-acc-body">
                   <!-- STILLS: замінити src на реальні фотографії коли будуть готові -->
-                  <div class="film-stills-grid">
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 01</span>
+                  <!-- STILLS: замінити film-still--placeholder на реальні фото:
+                       видали клас film-still--placeholder і додай <img src="..." alt="..." loading="lazy" /> -->
+                  <div class="film-stills-slider" data-index="0">
+                    <div class="fss-track">
+                      <div class="film-still film-still--placeholder"><span>Still 01</span></div>
+                      <div class="film-still film-still--placeholder"><span>Still 02</span></div>
+                      <div class="film-still film-still--placeholder"><span>Still 03</span></div>
+                      <div class="film-still film-still--placeholder"><span>Still 04</span></div>
+                      <div class="film-still film-still--placeholder"><span>Still 05</span></div>
+                      <div class="film-still film-still--placeholder"><span>Still 06</span></div>
                     </div>
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 02</span>
-                    </div>
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 03</span>
-                    </div>
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 04</span>
-                    </div>
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 05</span>
-                    </div>
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 06</span>
+                    <button class="fss-btn fss-prev" aria-label="Previous still">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15,18 9,12 15,6"/></svg>
+                    </button>
+                    <button class="fss-btn fss-next" aria-label="Next still">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,18 15,12 9,6"/></svg>
+                    </button>
+                    <div class="fss-meta">
+                      <div class="fss-dots"></div>
+                      <div class="fss-counter">
+                        <span class="fss-current">01</span>
+                        <span class="fss-sep">—</span>
+                        <span class="fss-total">06</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1369,24 +1393,30 @@
                 </button>
                 <div class="film-acc-body">
                   <!-- STILLS: замінити src на реальні фотографії коли будуть готові -->
-                  <div class="film-stills-grid">
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 01</span>
+                  <!-- STILLS: замінити film-still--placeholder на реальні фото:
+                       видали клас film-still--placeholder і додай <img src="..." alt="..." loading="lazy" /> -->
+                  <div class="film-stills-slider" data-index="0">
+                    <div class="fss-track">
+                      <div class="film-still film-still--placeholder"><span>Still 01</span></div>
+                      <div class="film-still film-still--placeholder"><span>Still 02</span></div>
+                      <div class="film-still film-still--placeholder"><span>Still 03</span></div>
+                      <div class="film-still film-still--placeholder"><span>Still 04</span></div>
+                      <div class="film-still film-still--placeholder"><span>Still 05</span></div>
+                      <div class="film-still film-still--placeholder"><span>Still 06</span></div>
                     </div>
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 02</span>
-                    </div>
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 03</span>
-                    </div>
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 04</span>
-                    </div>
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 05</span>
-                    </div>
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 06</span>
+                    <button class="fss-btn fss-prev" aria-label="Previous still">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15,18 9,12 15,6"/></svg>
+                    </button>
+                    <button class="fss-btn fss-next" aria-label="Next still">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,18 15,12 9,6"/></svg>
+                    </button>
+                    <div class="fss-meta">
+                      <div class="fss-dots"></div>
+                      <div class="fss-counter">
+                        <span class="fss-current">01</span>
+                        <span class="fss-sep">—</span>
+                        <span class="fss-total">06</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1591,24 +1621,30 @@
                 </button>
                 <div class="film-acc-body">
                   <!-- STILLS: замінити src на реальні фотографії коли будуть готові -->
-                  <div class="film-stills-grid">
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 01</span>
+                  <!-- STILLS: замінити film-still--placeholder на реальні фото:
+                       видали клас film-still--placeholder і додай <img src="..." alt="..." loading="lazy" /> -->
+                  <div class="film-stills-slider" data-index="0">
+                    <div class="fss-track">
+                      <div class="film-still film-still--placeholder"><span>Still 01</span></div>
+                      <div class="film-still film-still--placeholder"><span>Still 02</span></div>
+                      <div class="film-still film-still--placeholder"><span>Still 03</span></div>
+                      <div class="film-still film-still--placeholder"><span>Still 04</span></div>
+                      <div class="film-still film-still--placeholder"><span>Still 05</span></div>
+                      <div class="film-still film-still--placeholder"><span>Still 06</span></div>
                     </div>
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 02</span>
-                    </div>
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 03</span>
-                    </div>
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 04</span>
-                    </div>
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 05</span>
-                    </div>
-                    <div class="film-still film-still--placeholder">
-                      <span>Still 06</span>
+                    <button class="fss-btn fss-prev" aria-label="Previous still">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15,18 9,12 15,6"/></svg>
+                    </button>
+                    <button class="fss-btn fss-next" aria-label="Next still">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,18 15,12 9,6"/></svg>
+                    </button>
+                    <div class="fss-meta">
+                      <div class="fss-dots"></div>
+                      <div class="fss-counter">
+                        <span class="fss-current">01</span>
+                        <span class="fss-sep">—</span>
+                        <span class="fss-total">06</span>
+                      </div>
                     </div>
                   </div>
                 </div>

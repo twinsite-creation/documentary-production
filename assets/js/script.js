@@ -785,6 +785,8 @@ document.querySelectorAll('.fstrip-info').forEach(initFstripScrollHint);
     });
   }
 
+  const scrollHintEl = document.getElementById('pfScrollHint');
+
   function applyFilters() {
     const items = listEl.querySelectorAll('.production-item[data-film]');
     let visibleCount = 0;
@@ -813,6 +815,16 @@ document.querySelectorAll('.fstrip-info').forEach(initFstripScrollHint);
       : `${total} film${total !== 1 ? 's' : ''}`;
 
     resetBtn.classList.toggle('visible', hasActiveFilter);
+
+    /* ── Filtered scroll mode ── */
+    listEl.classList.toggle('pf-filtered', hasActiveFilter);
+    if (hasActiveFilter) {
+      /* Scroll list back to top when filter changes */
+      listEl.scrollTop = 0;
+    }
+    if (scrollHintEl) {
+      scrollHintEl.classList.toggle('visible', hasActiveFilter);
+    }
 
     let noResults = listEl.querySelector('.pf-no-results');
     if (!noResults) {
@@ -848,4 +860,160 @@ document.querySelectorAll('.fstrip-info').forEach(initFstripScrollHint);
 
   /* Initial count render */
   applyFilters();
+})();
+
+/* ═══════════════════════════════════════════════
+   FILM STILLS SLIDER  — peek / multi-visible
+   ═══════════════════════════════════════════════ */
+(function () {
+  'use strict';
+
+  function initSlider(slider) {
+    if (slider.dataset.sliderInit) return;
+    slider.dataset.sliderInit = '1';
+
+    const track = slider.querySelector('.fss-track');
+    if (!track) return;
+    const slides = Array.from(track.querySelectorAll('.film-still'));
+    const total = slides.length;
+    if (total === 0) return;
+
+    const prevBtn = slider.querySelector('.fss-prev');
+    const nextBtn = slider.querySelector('.fss-next');
+    const currentEl = slider.querySelector('.fss-current');
+    const totalEl = slider.querySelector('.fss-total');
+    const dotsEl = slider.querySelector('.fss-dots');
+
+    // Wrap track in viewport if not already done
+    if (!slider.querySelector('.fss-track-viewport')) {
+      const viewport = document.createElement('div');
+      viewport.className = 'fss-track-viewport';
+      track.parentNode.insertBefore(viewport, track);
+      viewport.appendChild(track);
+    }
+
+    let current = 0;
+
+    // Build dots
+    if (dotsEl) {
+      dotsEl.innerHTML = '';
+      slides.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.className = 'fss-dot' + (i === 0 ? ' active' : '');
+        dotsEl.appendChild(dot);
+      });
+    }
+    const dots = dotsEl ? Array.from(dotsEl.querySelectorAll('.fss-dot')) : [];
+
+    if (totalEl) totalEl.textContent = String(total).padStart(2, '0');
+
+    /* Step = one slide width + gap */
+    function getStep() {
+      const gap = parseFloat(getComputedStyle(track).gap) || 8;
+      return slides[0].offsetWidth + gap;
+    }
+
+    // Clone slides at both ends for seamless infinite loop
+    // Prepend `total` clones, append `total` clones
+    // Real slides sit at indices [total … 2*total-1] in the extended track
+    const clonesBefore = slides.map(s => { const c = s.cloneNode(true); c.setAttribute('aria-hidden','true'); return c; });
+    const clonesAfter  = slides.map(s => { const c = s.cloneNode(true); c.setAttribute('aria-hidden','true'); return c; });
+    clonesBefore.forEach(c => track.prepend(c));
+    clonesAfter.forEach(c => track.append(c));
+
+    // Offset so we start at first real slide (index `total` in extended track)
+    let extIndex = total; // position in extended track
+
+    function goToExt(idx, animate) {
+      if (!animate) track.style.transition = 'none';
+      const step = getStep();
+      track.style.transform = `translateX(-${idx * step}px)`;
+      if (!animate) {
+        // Force reflow then re-enable transition
+        track.getBoundingClientRect();
+        track.style.transition = '';
+      }
+    }
+
+    function goTo(index) {
+      // Which real slide (0-based)
+      current = ((index % total) + total) % total;
+      extIndex = total + current;
+
+      goToExt(extIndex, true);
+
+      if (currentEl) currentEl.textContent = String(current + 1).padStart(2, '0');
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+      slides.forEach((s, i) => s.classList.toggle('fss-active', i === current));
+      if (prevBtn) prevBtn.disabled = false;
+      if (nextBtn) nextBtn.disabled = false;
+    }
+
+    // After transition ends, silently jump to real position if we're in clone territory
+    track.addEventListener('transitionend', () => {
+      // Already in real zone — nothing to do
+    });
+
+    // Recalculate on resize
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        goToExt(extIndex, false);
+      }, 120);
+    });
+
+    prevBtn && prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn && nextBtn.addEventListener('click', () => goTo(current + 1));
+
+    // Keyboard navigation
+    slider.setAttribute('tabindex', '0');
+    slider.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft')  { e.preventDefault(); goTo(current - 1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); }
+    });
+
+    // Touch / swipe
+    let touchStartX = 0;
+    let touchDeltaX = 0;
+    slider.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+      touchDeltaX = 0;
+      track.style.transition = 'none';
+    }, { passive: true });
+    slider.addEventListener('touchmove', (e) => {
+      touchDeltaX = e.touches[0].clientX - touchStartX;
+      const step = getStep();
+      track.style.transform = `translateX(${-extIndex * step + touchDeltaX}px)`;
+    }, { passive: true });
+    slider.addEventListener('touchend', () => {
+      track.style.transition = '';
+      if (touchDeltaX < -40) goTo(current + 1);
+      else if (touchDeltaX > 40) goTo(current - 1);
+      else goToExt(extIndex, true);
+    });
+
+    goTo(0);
+  }
+
+  function attachToAccordions() {
+    document.querySelectorAll('.film-acc-trigger').forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        setTimeout(() => {
+          const body = trigger.nextElementSibling;
+          if (!body) return;
+          body.querySelectorAll('.film-stills-slider').forEach(initSlider);
+        }, 60);
+      });
+    });
+
+    // Init already-open accordions
+    document.querySelectorAll('.film-acc-item.film-acc-open .film-stills-slider').forEach(initSlider);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', attachToAccordions);
+  } else {
+    attachToAccordions();
+  }
 })();

@@ -1209,43 +1209,193 @@ nav ul li a:hover {
   color: var(--text-muted);
   line-height: 1.6;
 }
-.film-stills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+/* ═══════════════════════════════════════════════
+   FILM STILLS SLIDER  — peek / multi-visible
+   ═══════════════════════════════════════════════ */
+
+/* Outer wrapper: clips the track but lets arrows sit on top */
+.film-stills-slider {
+  position: relative;
+  /* gap between slides, kept as CSS var for JS to read */
+  --fss-gap: 8px;
+  /* slide width as a fraction of the container:
+     desktop ~3.5 visible  → 1 / 3.5 ≈ 28.57%
+     JS overrides per breakpoint via inline style on .film-still */
+  --fss-slide-w: 28.57%;
+  margin: 0 -4px; /* compensate so first slide aligns with content edge */
 }
+
+/* Viewport: clips everything beyond its bounds */
+.fss-track-viewport {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 2px;
+}
+
+/* Track: flex row of all slides */
+.fss-track {
+  display: flex;
+  gap: var(--fss-gap);
+  transition: transform 0.52s cubic-bezier(0.6, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* Each slide */
 .film-still {
+  flex: 0 0 var(--fss-slide-w);
+  width: var(--fss-slide-w);
   aspect-ratio: 16/10;
   overflow: hidden;
   border-radius: 2px;
+  position: relative;
+  /* slight dim on non-active slides */
+  opacity: 0.72;
+  transition: opacity 0.35s ease;
 }
+.film-still.fss-active {
+  opacity: 1;
+}
+
 .film-still img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  display: block;
 }
-.film-still:hover img {
-  transform: scale(1.04);
-}
-/* Placeholder stills — до додавання реальних фото */
+
+/* Placeholder stills */
 .film-still--placeholder {
   background: var(--surface);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px dashed rgba(255, 255, 255, 0.12);
-  border-radius: 2px;
+  border: 1px dashed rgba(255, 255, 255, 0.08);
 }
 .film-still--placeholder span {
   font-size: 11px;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.2);
   text-transform: uppercase;
   font-family: var(--font-mono, monospace);
 }
-/* Як тільки є реальне фото — просто видали клас film-still--placeholder
+/* Як тільки є реальне фото — видали film-still--placeholder
    і додай <img src="..." alt="..." loading="lazy" /> всередині .film-still */
+
+/* ── Arrow buttons ──────────────────────────── */
+.fss-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background: rgba(8, 8, 8, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 6;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.fss-btn svg {
+  width: 18px;
+  height: 18px;
+  /* Red chevrons like the reference */
+  stroke: #c0392b;
+}
+.fss-btn:hover {
+  background: rgba(192, 57, 43, 0.15);
+  border-color: rgba(192, 57, 43, 0.4);
+}
+.fss-btn:disabled,
+.fss-btn[aria-disabled="true"] {
+  opacity: 0.2;
+  pointer-events: none;
+}
+/* Prev sits at the very left edge of the viewport */
+.fss-prev {
+  left: 0;
+}
+/* Next sits at the right edge */
+.fss-next {
+  right: 0;
+}
+
+/* ── Counter ────────────────────────────────── */
+.fss-counter {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  font-family: var(--font-mono, monospace);
+  color: rgba(255, 255, 255, 0.4);
+}
+.fss-sep {
+  opacity: 0.5;
+}
+.fss-current {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ── Dot indicators ─────────────────────────── */
+.fss-dots {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+.fss-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transition:
+    background 0.28s ease,
+    transform 0.28s ease;
+}
+.fss-dot.active {
+  background: rgba(255, 255, 255, 0.85);
+  transform: scale(1.5);
+}
+
+/* ── Below-slider meta row ──────────────────── */
+.fss-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 0 2px;
+}
+
+/* ── Responsive slide widths ────────────────── */
+/* Tablet: ~2.5 visible */
+@media (max-width: 900px) {
+  .film-stills-slider {
+    --fss-slide-w: 40%; /* 1/2.5 = 40% */
+  }
+}
+/* Mobile: ~1.5 visible */
+@media (max-width: 560px) {
+  .film-stills-slider {
+    --fss-slide-w: 66.66%; /* 1/1.5 ≈ 66.66% */
+    margin: 0 -2px;
+  }
+  .fss-btn {
+    width: 36px;
+    height: 36px;
+  }
+  .fss-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+}
 .film-trailer-wrap {
   width: 100%;
 }
@@ -1951,6 +2101,22 @@ nav ul li a:hover {
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 1024px) {
+  .burger {
+    display: flex;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .mm-links li a {
+    font-size: 45px;
+  }
+
+  .desktop-social {
+    display: none;
+  }
+
   .hero-bg-house {
     bottom: 6%;
   }
@@ -1989,28 +2155,12 @@ nav ul li a:hover {
 }
 
 @media (max-width: 768px) {
-  .burger {
-    display: flex;
-  }
-
   .logo-mark img {
     width: 56px;
   }
 
   header.scrolled .logo-mark img {
     width: 30px;
-  }
-
-  nav {
-    display: none;
-  }
-
-  .mm-links li a {
-    font-size: 45px;
-  }
-
-  .desktop-social {
-    display: none;
   }
 
   .hero-logo-main {
@@ -2528,5 +2678,84 @@ nav ul li a:hover {
   .pf-group:nth-child(2),
   .pf-group:nth-child(3) {
     border-bottom: 1px solid var(--border);
+  }
+}
+
+/* ─────────────────────────────────────────────
+   PRODUCTIONS — FILTERED SCROLL MODE
+   Activated when any filter is active.
+   Desktop: constrained height + inner scroll for list only.
+   Mobile: same + scroll hint indicator.
+   ───────────────────────────────────────────── */
+
+#productionsList.pf-filtered {
+  max-height: 70vh;
+  overflow-y: auto;
+  border-radius: 2px;
+
+  /* Scrollbar — matches .fstrip-info style */
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) transparent;
+}
+
+#productionsList.pf-filtered::-webkit-scrollbar {
+  width: 2px;
+}
+#productionsList.pf-filtered::-webkit-scrollbar-track {
+  background: transparent;
+}
+#productionsList.pf-filtered::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 1px;
+}
+
+/* Bottom fade — "more content below" hint */
+#productionsList.pf-filtered::after {
+  content: "";
+  display: block;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to top, var(--bg, #0a0a0a) 0%, transparent 100%);
+  pointer-events: none;
+  margin-top: -60px;
+}
+
+/* Scroll hint indicator — mobile/tablet only */
+.pf-scroll-hint {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(236, 229, 219, 0.3);
+  padding: 8px 0 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.pf-scroll-hint.visible {
+  opacity: 1;
+}
+
+.pf-scroll-hint svg {
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .pf-scroll-hint {
+    display: flex;
+  }
+
+  /* On mobile, reduce scroll height slightly */
+  #productionsList.pf-filtered {
+    max-height: 60vh;
   }
 }
