@@ -712,8 +712,8 @@ nav ul li a:hover {
 }
 .fstrip-idle-title {
   font-family: var(--font-body);
-  font-size: clamp(11px, 1.1vw, 14px);
-  font-weight: 500;
+  font-size: 17px;
+  font-weight: 700;
   color: var(--text);
 }
 .fstrip-year {
@@ -1194,19 +1194,10 @@ nav ul li a:hover {
   line-height: 1.4;
 }
 .pdp-body {
-  font-size: 13px;
-  font-weight: 300;
+  font-size: 17px;
   color: var(--text-dim);
   line-height: 1.7;
-  margin-bottom: 12px;
-}
-.pdp-quote {
-  border-left: 2px solid var(--accent);
-  padding-left: 16px;
-  font-size: 13px;
-  font-style: italic;
-  color: var(--text-muted);
-  line-height: 1.6;
+  margin-bottom: 29px;
 }
 /* ═══════════════════════════════════════════════
    FILM STILLS SLIDER  — peek / multi-visible
@@ -2259,10 +2250,6 @@ nav ul li a:hover {
   .films-header {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .fstrip-idle-title {
-    font-size: 10px;
   }
 
   .prod-row {
