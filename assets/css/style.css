@@ -654,11 +654,11 @@ nav ul li a:hover {
     transform 0.5s ease;
 }
 .films-stage.has-active .film-strip.strip-dim {
-  flex: 0.34;
+  flex: 0.55;
   opacity: 0.8;
 }
 .film-strip.strip-active {
-  flex: 2.8;
+  flex: 2.3;
 }
 
 /* Strip background */
@@ -715,6 +715,7 @@ nav ul li a:hover {
   font-size: 17px;
   font-weight: 700;
   color: var(--text);
+  min-height: 55px;
 }
 .fstrip-year {
   font-size: 14px;
@@ -2692,5 +2693,349 @@ nav ul li a:hover {
 @media (max-width: 768px) {
   .prod-filters.pf-sticky {
     top: 78px;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   FILM DETAILS BLOCK — new structured layout
+   Replaces .pdp-defs grid
+   ═══════════════════════════════════════════════ */
+
+.film-details-block {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 4px 0 8px;
+}
+
+/* ── Spec badges row ── */
+.fdb-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.fdb-spec {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  background: transparent;
+  white-space: nowrap;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* Stage spec inherits stage-* colour classes */
+.fdb-spec.fdb-spec--stage {
+  gap: 7px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.fdb-spec.fdb-spec--stage::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* Inherit the stage colour palette */
+.fdb-spec.stage-released {
+  color: #4caf50;
+  border-color: rgba(76, 175, 80, 0.3);
+  background: rgba(76, 175, 80, 0.06);
+}
+.fdb-spec.stage-postproduction {
+  color: #ff9800;
+  border-color: rgba(255, 152, 0, 0.3);
+  background: rgba(255, 152, 0, 0.06);
+}
+.fdb-spec.stage-editing {
+  color: #2196f3;
+  border-color: rgba(33, 150, 243, 0.3);
+  background: rgba(33, 150, 243, 0.06);
+}
+.fdb-spec.stage-production {
+  color: #c62e00;
+  border-color: rgba(198, 46, 0, 0.3);
+  background: rgba(198, 46, 0, 0.06);
+}
+.fdb-spec.stage-development {
+  color: var(--silver);
+  border-color: rgba(195, 196, 193, 0.3);
+  background: rgba(195, 196, 193, 0.04);
+}
+
+/* ── Credits block ── */
+.fdb-credits {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+
+.fdb-credit-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 12px;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.fdb-credit-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.fdb-credit-value {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-light);
+  line-height: 1.45;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .fdb-credit-row {
+    grid-template-columns: 110px 1fr;
+    gap: 8px;
+    padding: 9px 0;
+  }
+  .fdb-credit-value {
+    font-size: 14px;
+  }
+  .fdb-spec {
+    padding: 5px 11px;
+    font-size: 10px;
+  }
+}
+
+/* prod-mobile-desc hidden by default; revealed only inside mobile media query */
+.prod-mobile-desc {
+  display: none;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE PRODUCTIONS — POSTER CARD LAYOUT
+   Applies to: max-width 768px
+   Desktop layout untouched above this block.
+   ═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  /* Reset the inherited mobile overrides for prod-row/prod-image
+     that were set earlier in the file — we're fully replacing them */
+  #productionsList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  .production-item {
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .production-item:last-child {
+    border-bottom: none;
+  }
+
+  /* ── Poster card: full-width image as card background ── */
+  .prod-row {
+    display: block;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    border-radius: 3px;
+    overflow: hidden;
+    /* kill the hover bg from desktop */
+    background: transparent;
+  }
+
+  .prod-row:hover {
+    background: transparent;
+  }
+
+  /* Image fills entire card */
+  .prod-image {
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 */
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+  }
+
+  .prod-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.7) brightness(0.65);
+    transition:
+      filter 0.4s ease,
+      transform 0.5s ease;
+  }
+
+  .prod-row:hover .prod-image img,
+  .production-item.prod-open .prod-image img {
+    filter: saturate(0.85) brightness(0.55);
+    transform: scale(1.04);
+  }
+
+  /* Text overlay on poster */
+  .prod-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 36px 16px 14px;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.82) 0%,
+      rgba(0, 0, 0, 0.3) 65%,
+      transparent 100%
+    );
+    z-index: 2;
+    /* reset any inherited min-width */
+    min-width: 0;
+  }
+
+  .prod-year {
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    margin-bottom: 4px;
+    color: rgba(236, 229, 219, 0.65);
+  }
+
+  .prod-title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0;
+    color: var(--text-light);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Hide description from prod-row on mobile — it moves to detail panel */
+  .prod-desc {
+    display: none;
+  }
+
+  /* Hide rating on mobile */
+  .prod-rating {
+    display: none;
+  }
+
+  /* Details button: bottom-right corner of the poster */
+  .prod-expand-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    z-index: 3;
+    padding: 6px 12px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    border-color: rgba(236, 229, 219, 0.35);
+    color: rgba(236, 229, 219, 0.8);
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    /* reset grid positioning from earlier media block */
+    grid-column: unset;
+    justify-self: unset;
+  }
+
+  .prod-expand-btn:hover {
+    border-color: rgba(236, 229, 219, 0.7);
+    color: var(--text-light);
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  /* Open state: highlight the card border */
+  .production-item.prod-open .prod-image {
+    border-radius: 3px 3px 0 0;
+  }
+
+  .production-item.prod-open .prod-row {
+    border-radius: 3px 3px 0 0;
+  }
+
+  /* Mobile description lives inside the detail panel's film-body */
+  .prod-mobile-desc {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.6;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Separator between production items */
+  #productionsList .production-item + .production-item {
+    /* gap already handled by flex gap */
+  }
+}
+
+/* ── 480px: tighten up ── */
+@media (max-width: 480px) {
+  #productionsList {
+    gap: 12px;
+    padding: 0 12px;
+  }
+
+  .prod-title {
+    font-size: 16px;
+  }
+
+  .prod-expand-btn {
+    font-size: 9px;
+    padding: 5px 10px;
+  }
+
+  .prod-mobile-desc {
+    font-size: 13px;
+    padding: 14px 16px;
+  }
+}
+
+/* prod-mobile-desc: never shown on desktop — only via mobile media query below */
+
+/* ── Mobile poster card: tap hint line at bottom of image ── */
+@media (max-width: 768px) {
+  .prod-row::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: transparent;
+    transition: background 0.3s ease;
+    z-index: 4;
+  }
+  .production-item.prod-open .prod-row::after {
+    background: var(--accent);
   }
 }
