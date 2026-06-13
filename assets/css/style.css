@@ -46,7 +46,7 @@
 
   /* Spacing */
   --page-pad: clamp(24px, 5vw, 50px);
-  --section-gap: clamp(80px, 10vw, 140px);
+  --section-gap: clamp(24px, 10vw, 40px);
 }
 
 html {
@@ -2105,6 +2105,13 @@ nav ul li a:hover {
     display: none;
   }
 
+  .productions-title,
+  .team-title,
+  .films-title {
+    font-size: 44px;
+    line-height: 46px;
+  }
+
   .hero-bg-house {
     bottom: 6%;
   }
@@ -2187,12 +2194,6 @@ nav ul li a:hover {
   .prod-expand-btn {
     grid-column: 2;
     justify-self: start;
-  }
-
-  .productions-title,
-  .team-title,
-  .films-title {
-    font-size: 56px;
   }
 
   .team-detail-inner {
@@ -2561,17 +2562,17 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 9px 18px;
+  padding: 5px 18px;
   border-top: 1px solid var(--border);
   background: rgba(236, 229, 219, 0.015);
 }
 
 .pf-count {
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(236, 229, 219, 0.35);
+  color: rgba(236, 229, 219, 0.77);
 }
 
 .pf-reset {
@@ -2580,7 +2581,7 @@ nav ul li a:hover {
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(236, 229, 219, 0.35);
+  color: rgba(236, 229, 219, 0.77);
   background: none;
   border: none;
   cursor: pointer;
