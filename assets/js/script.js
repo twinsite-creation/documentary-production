@@ -437,6 +437,7 @@ const hdr = document.getElementById("header");
 const hdrLogo = document.getElementById("headerLogo");
 const heroContent = document.getElementById("heroContent");
 
+
 window.addEventListener("scroll", () => {
 
   const sy = window.scrollY;
@@ -661,14 +662,19 @@ document.querySelectorAll('.fstrip-info').forEach(initFstripScrollHint);
 
     resetBtn.classList.toggle('visible', hasActiveFilter);
 
-    /* ── Filtered scroll mode ── */
-    listEl.classList.toggle('pf-filtered', hasActiveFilter);
-    if (hasActiveFilter) {
-      /* Scroll list back to top when filter changes */
-      listEl.scrollTop = 0;
-    }
-    if (scrollHintEl) {
-      scrollHintEl.classList.toggle('visible', hasActiveFilter);
+    /* ── Sticky filter bar mode ── */
+    filtersEl.classList.toggle('pf-sticky', hasActiveFilter);
+
+    /* ── See More button visibility ── */
+    const seeMoreBtn = document.getElementById('seeMoreBtn');
+    const seeMoreWrap = seeMoreBtn ? seeMoreBtn.closest('.see-more-wrap') : null;
+    if (seeMoreWrap) {
+      const hiddenVisibleCount = Array.from(items).filter(
+        item => !item.classList.contains('pf-hidden') &&
+                item.classList.contains('hidden-item') &&
+                !item.classList.contains('revealed')
+      ).length;
+      seeMoreWrap.style.display = hiddenVisibleCount > 0 ? '' : 'none';
     }
 
     let noResults = listEl.querySelector('.pf-no-results');

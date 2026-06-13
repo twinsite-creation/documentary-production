@@ -2472,7 +2472,7 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column;
   border-right: 1px solid var(--border);
-  padding: 16px 18px 14px;
+  padding: 12px;
   gap: 10px;
 }
 .pf-group:last-child {
@@ -2481,11 +2481,11 @@ nav ul li a:hover {
 
 .pf-group-label {
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(236, 229, 219, 0.35);
+  color: rgba(225, 225, 225, 0.7);
   flex-shrink: 0;
 }
 
@@ -2661,81 +2661,35 @@ nav ul li a:hover {
   }
 }
 
-/* ─────────────────────────────────────────────
-   PRODUCTIONS — FILTERED SCROLL MODE
-   Activated when any filter is active.
-   Desktop: constrained height + inner scroll for list only.
-   Mobile: same + scroll hint indicator.
-   ───────────────────────────────────────────── */
-
-#productionsList.pf-filtered {
-  max-height: 70vh;
-  overflow-y: auto;
-  border-radius: 2px;
-
-  /* Scrollbar — matches .fstrip-info style */
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent) transparent;
-}
-
-#productionsList.pf-filtered::-webkit-scrollbar {
-  width: 2px;
-}
-#productionsList.pf-filtered::-webkit-scrollbar-track {
-  background: transparent;
-}
-#productionsList.pf-filtered::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 1px;
-}
-
-/* Bottom fade — "more content below" hint */
-#productionsList.pf-filtered::after {
-  content: "";
-  display: block;
+.prod-filters.pf-sticky {
   position: sticky;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background: linear-gradient(to top, var(--bg, #0a0a0a) 0%, transparent 100%);
-  pointer-events: none;
-  margin-top: -60px;
+  top: 113px;
+  z-index: 100;
+  /* Add a slight backdrop so the filters read clearly over the content below */
+  background: rgba(10, 10, 10, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  /* Keep the border but add a subtle shadow to lift the bar */
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+  /* Smooth transition in/out */
+  transition:
+    top 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-/* Scroll hint indicator — mobile/tablet only */
+/* Scroll hint — hidden permanently (no inner scroll) */
 .pf-scroll-hint {
-  display: none;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-body);
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(236, 229, 219, 0.3);
-  padding: 8px 0 10px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+  display: none !important;
 }
 
-.pf-scroll-hint.visible {
-  opacity: 1;
-}
-
-.pf-scroll-hint svg {
-  opacity: 0.5;
-  flex-shrink: 0;
-}
-
-@media (max-width: 900px) {
-  .pf-scroll-hint {
-    display: flex;
+@media (max-width: 1024px) {
+  .prod-filters.pf-sticky {
+    top: 78px;
   }
+}
 
-  /* On mobile, reduce scroll height slightly */
-  #productionsList.pf-filtered {
-    max-height: 60vh;
+@media (max-width: 768px) {
+  .prod-filters.pf-sticky {
+    top: 78px;
   }
 }
