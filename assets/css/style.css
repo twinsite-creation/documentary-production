@@ -3215,6 +3215,7 @@ header.scrolled .logo-mark img {
   .footer-nav {
     flex-direction: column;
     gap: 12px;
+    align-items: center;
   }
 }
 
