@@ -3212,9 +3212,9 @@ header.scrolled .logo-mark img {
     border-bottom: 1px solid var(--border);
   }
 
-  /* Separator between production items */
-  #productionsList .production-item + .production-item {
-    /* gap already handled by flex gap */
+  .footer-nav {
+    flex-direction: column;
+    gap: 12px;
   }
 }
 
