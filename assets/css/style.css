@@ -146,6 +146,12 @@ body {
   z-index: 10;
 }
 
+.mm-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
 .mm-close {
   background: none;
   border: none;
@@ -1146,6 +1152,47 @@ header.scrolled .logo-mark img {
   max-width: 56ch;
 }
 
+/* ── Ratings & links row (Letterboxd / IMDb / Trailer) ── */
+.prod-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.01em;
+}
+.prod-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.prod-link:hover {
+  color: var(--text-light);
+}
+.prod-link-star {
+  color: var(--accent);
+  font-size: 11px;
+  line-height: 1;
+}
+.prod-link-rating {
+  color: var(--text-light);
+  font-weight: 600;
+}
+.prod-link-sep {
+  color: var(--text-dim);
+  opacity: 0.4;
+  font-size: 11px;
+}
+.prod-link--trailer .prod-link-arrow {
+  color: var(--accent);
+  font-size: 9px;
+}
+
 /* ── Compact spec strip (Director / Country / Runtime / Format) ── */
 .prod-specs {
   display: flex;
@@ -2143,7 +2190,7 @@ header.scrolled .logo-mark img {
   right: 40px;
   width: 40px;
   height: 40px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--accent);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -2268,8 +2315,52 @@ header.scrolled .logo-mark img {
   display: none;
 }
 
-/* ─── LANG SWITCH (compatibility) ─── */
+/* ─── LANG SWITCH (UA / EN) ─── */
+
 .lang-switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.lang-switch-link {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  padding: 5px 10px;
+  border-radius: 16px;
+  color: var(--linen-white);
+  opacity: 0.55;
+  text-decoration: none;
+  transition:
+    color 0.25s ease,
+    opacity 0.25s ease;
+}
+.lang-switch-link:hover {
+  opacity: 0.9;
+  color: var(--text-light);
+}
+.lang-switch-link.is-active {
+  opacity: 1;
+  color: var(--linen-white);
+  background: var(--accent);
+  pointer-events: none;
+}
+.lang-switch-sep {
+  display: none;
+}
+.lang-switch--mobile {
   display: none;
 }
 
@@ -2289,6 +2380,14 @@ header.scrolled .logo-mark img {
 
   .desktop-social {
     display: none;
+  }
+
+  .header-right > .lang-switch {
+    display: none;
+  }
+
+  .lang-switch--mobile {
+    display: flex;
   }
 
   .productions-title,
@@ -3158,11 +3257,12 @@ header.scrolled .logo-mark img {
     display: none;
   }
 
-  /* Editorial card additions (index tag, spec strip, festival badge)
+  /* Editorial card additions (index tag, spec strip, festival badge, links row)
      are desktop-only — mobile keeps the full-poster overlay clean */
   .prod-index,
   .prod-specs,
-  .prod-festival {
+  .prod-festival,
+  .prod-links {
     display: none;
   }
 
