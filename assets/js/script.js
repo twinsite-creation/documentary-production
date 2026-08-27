@@ -195,6 +195,13 @@ function closeProdDetail(item, updateHash = true) {
   const expandBtn = item.querySelector(".prod-expand-btn");
   if (expandBtn) expandBtn.setAttribute("aria-expanded", "false");
 
+  /* Stop any playing trailer inside this panel */
+  const embed = item.querySelector(".film-trailer-embed");
+  if (embed) {
+    const id = embed.getAttribute("data-vimeo-id");
+    embed.replaceWith(buildTrailerFacade(id));
+  }
+
   if (_activeProdItem === item) _activeProdItem = null;
   if (updateHash) history.pushState(null, "", window.location.pathname);
 }
@@ -231,6 +238,33 @@ document.querySelectorAll(".prod-detail-panel .pdp-close").forEach((btn) => {
   });
 });
 
+/* ─── Trailer facade: lazy-load Vimeo iframe on click, stop on accordion close ─── */
+function buildTrailerFacade(id) {
+  const facade = document.createElement("button");
+  facade.className = "film-trailer-facade";
+  facade.type = "button";
+  facade.setAttribute("data-vimeo-id", id);
+  facade.setAttribute("aria-label", "Play trailer");
+  facade.innerHTML = `<span class="film-trailer-facade-play">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <polygon points="6,4 20,12 6,20" />
+    </svg>
+  </span>`;
+  return facade;
+}
+
+document.addEventListener("click", (e) => {
+  const facade = e.target.closest(".film-trailer-facade");
+  if (!facade) return;
+  const id = facade.getAttribute("data-vimeo-id");
+  if (!id) return;
+  const embed = document.createElement("div");
+  embed.className = "film-trailer-embed";
+  embed.setAttribute("data-vimeo-id", id);
+  embed.innerHTML = `<iframe src="https://player.vimeo.com/video/${id}?dnt=1&autoplay=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Trailer"></iframe>`;
+  facade.replaceWith(embed);
+});
+
 /* ─── Inner film accordion (Film Details, Synopsis, Stills, Trailer, Festivals) ─── */
 document.querySelectorAll(".film-acc-trigger").forEach((trigger) => {
   trigger.addEventListener("click", (e) => {
@@ -241,12 +275,19 @@ document.querySelectorAll(".film-acc-trigger").forEach((trigger) => {
     if (isOpen) {
       accItem.classList.remove("film-acc-open");
       trigger.setAttribute("aria-expanded", "false");
+      /* Stop trailer playback: destroy iframe, restore facade */
+      const embed = accItem.querySelector(".film-trailer-embed");
+      if (embed) {
+        const id = embed.getAttribute("data-vimeo-id");
+        embed.replaceWith(buildTrailerFacade(id));
+      }
     } else {
       accItem.classList.add("film-acc-open");
       trigger.setAttribute("aria-expanded", "true");
     }
   });
 });
+
 
 /* ─────────────────────────────────────────────
       ЗМІНА 3: HASH NAVIGATION (film cards + productions)
