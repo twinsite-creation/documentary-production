@@ -1224,6 +1224,12 @@ header.scrolled .logo-mark img {
   white-space: nowrap;
 }
 
+.prod-spec-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
 /* ── Festival / premiere accent ── */
 .prod-festival {
   display: inline-flex;
@@ -1617,31 +1623,50 @@ header.scrolled .logo-mark img {
   padding: 0;
   display: block;
 }
+.film-trailer-facade-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.film-trailer-facade::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: background 0.3s ease;
+}
+.film-trailer-facade:hover::before {
+  background: rgba(0, 0, 0, 0.5);
+}
 .film-trailer-facade-play {
   position: absolute;
   top: 50%;
   left: 50%;
+  z-index: 1;
   transform: translate(-50%, -50%);
-  width: 64px;
-  height: 64px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
-  border: 1px solid var(--border);
+  background: var(--accent);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text);
+  color: var(--text-light);
   transition:
     transform 0.3s ease,
-    border-color 0.3s ease;
+    background 0.3s ease;
 }
 .film-trailer-facade-play svg {
-  width: 20px;
-  height: 20px;
-  margin-left: 2px;
+  width: 24px;
+  height: 24px;
+  margin-left: 3px;
 }
 .film-trailer-facade:hover .film-trailer-facade-play {
   transform: translate(-50%, -50%) scale(1.08);
-  border-color: var(--text);
+  background: var(--accent-hover);
 }
 .film-trailer-embed {
   position: relative;

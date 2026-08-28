@@ -199,7 +199,8 @@ function closeProdDetail(item, updateHash = true) {
   const embed = item.querySelector(".film-trailer-embed");
   if (embed) {
     const id = embed.getAttribute("data-vimeo-id");
-    embed.replaceWith(buildTrailerFacade(id));
+    const poster = embed.getAttribute("data-poster");
+    embed.replaceWith(buildTrailerFacade(id, poster));
   }
 
   if (_activeProdItem === item) _activeProdItem = null;
@@ -239,13 +240,15 @@ document.querySelectorAll(".prod-detail-panel .pdp-close").forEach((btn) => {
 });
 
 /* ─── Trailer facade: lazy-load Vimeo iframe on click, stop on accordion close ─── */
-function buildTrailerFacade(id) {
+function buildTrailerFacade(id, poster) {
   const facade = document.createElement("button");
   facade.className = "film-trailer-facade";
   facade.type = "button";
   facade.setAttribute("data-vimeo-id", id);
-  facade.setAttribute("aria-label", "Play trailer");
-  facade.innerHTML = `<span class="film-trailer-facade-play">
+  if (poster) facade.setAttribute("data-poster", poster);
+  facade.setAttribute("aria-label", "Відтворити трейлер");
+  facade.innerHTML = `${poster ? `<img class="film-trailer-facade-poster" src="${poster}" alt="" loading="lazy" />` : ""}
+  <span class="film-trailer-facade-play">
     <svg viewBox="0 0 24 24" fill="currentColor">
       <polygon points="6,4 20,12 6,20" />
     </svg>
@@ -258,9 +261,11 @@ document.addEventListener("click", (e) => {
   if (!facade) return;
   const id = facade.getAttribute("data-vimeo-id");
   if (!id) return;
+  const poster = facade.getAttribute("data-poster");
   const embed = document.createElement("div");
   embed.className = "film-trailer-embed";
   embed.setAttribute("data-vimeo-id", id);
+  if (poster) embed.setAttribute("data-poster", poster);
   embed.innerHTML = `<iframe src="https://player.vimeo.com/video/${id}?dnt=1&autoplay=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Trailer"></iframe>`;
   facade.replaceWith(embed);
 });
@@ -279,7 +284,8 @@ document.querySelectorAll(".film-acc-trigger").forEach((trigger) => {
       const embed = accItem.querySelector(".film-trailer-embed");
       if (embed) {
         const id = embed.getAttribute("data-vimeo-id");
-        embed.replaceWith(buildTrailerFacade(id));
+        const poster = embed.getAttribute("data-poster");
+        embed.replaceWith(buildTrailerFacade(id, poster));
       }
     } else {
       accItem.classList.add("film-acc-open");
